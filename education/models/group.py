@@ -76,19 +76,20 @@ class EducationGroup(models.Model):
         self.ensure_one()
         self.state = 'cancel'
 
-    @api.model
+    @api.model_create_multi
     def create(self, vals):
-        if vals.get('code', _('New')) == _('New'):
-            if 'company_id' in vals:
-                vals['code'] = self.env['ir.sequence'].with_context(
-                    force_company=vals['company_id']).next_by_code(
-                    'education.group') or _('New')
-            else:
-                vals['code'] = self.env['ir.sequence'].next_by_code(
-                    'education.group') or _('New')
+        for val in vals:
+            if val.get('code', _('New')) == _('New'):
+                if 'company_id' in val:
+                    val['code'] = self.env['ir.sequence'].with_context(
+                        force_company=val['company_id']).next_by_code(
+                        'education.group') or _('New')
+                else:
+                    val['code'] = self.env['ir.sequence'].next_by_code(
+                        'education.group') or _('New')
         return super(EducationGroup, self).create(vals)
 
-    @api.multi
+    
     def unlink(self):
         for group in self:
             if group.enrollment_ids:

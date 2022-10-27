@@ -10,8 +10,7 @@
       <field name="email">rain@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="teacher">True</field>
       <field name="active">True</field>
     </record>
@@ -22,8 +21,8 @@
       <field name="email">sindelm@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
+      <field name="teacher">True</field>
       <field name="active">True</field>
     </record>
 
@@ -33,8 +32,7 @@
       <field name="email">jade@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="teacher">True</field>
       <field name="active">True</field>
     </record>
@@ -45,8 +43,7 @@
       <field name="email">kabal@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="teacher">True</field>
       <field name="active">True</field>
     </record>
@@ -57,8 +54,7 @@
       <field name="email">nightwolf@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="teacher">True</field>
       <field name="active">True</field>
     </record>
@@ -69,8 +65,7 @@
       <field name="email">shangtsung@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="teacher">True</field>
       <field name="active">True</field>
     </record>
@@ -81,8 +76,7 @@
       <field name="email">kotalkahn@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="teacher">True</field>
       <field name="active">True</field>
     </record>
@@ -93,8 +87,7 @@
       <field name="email">takahashitakeda@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="teacher">True</field>
       <field name="active">True</field>
     </record>
@@ -105,8 +98,7 @@
       <field name="email">Kenshi@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="teacher">True</field>
       <field name="active">True</field>
     </record>
@@ -117,8 +109,7 @@
       <field name="email">boraicho@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="teacher">True</field>
       <field name="active">True</field>
     </record>
@@ -129,8 +120,7 @@
       <field name="email">jasonvoorhees@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="teacher">True</field>
       <field name="active">True</field>
     </record>
@@ -141,8 +131,7 @@
       <field name="email">tanya@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="teacher">True</field>
       <field name="active">True</field>
     </record>

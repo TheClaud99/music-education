@@ -63,10 +63,10 @@
         <field name="category_id"/>
         <field name="duration"/>
         <filter name="active" string="Archived" domain="[('active', '=', False)]"/>
-        <group string="Group By" name="groupby">
-          <filter string="Name" context="{'group_by': 'name'}"/>
-          <filter string="Code" context="{'group_by': 'code'}"/>
-          <filter string="Category" context="{'group_by': 'category_id'}"/>
+        <group string="Group By">
+          <filter string="Name" name="name" context="{'group_by': 'name'}"/>
+          <filter string="Code" name="code" context="{'group_by': 'code'}"/>
+          <filter string="Category" name="category_id" context="{'group_by': 'category_id'}"/>
         </group>
       </search>
     </field>

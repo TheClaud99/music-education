@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_partner_education_form
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_form
 msgid "<span class=\"o_stat_text\">\n"
 "              Enrollments\n"
 "            </span>"
@@ -25,7 +25,7 @@ msgstr "<span class=\"o_stat_text\">\n"
 "            </span>"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_partner_education_form
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_form
 msgid "<span class=\"o_stat_text\">\n"
 "              Groups\n"
 "            </span>"
@@ -41,18 +41,18 @@ msgid "Academic Groups"
 msgstr "Grupos Académicos"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_enrollment_enrollment_date
+#: model:ir.model.fields,field_description:education.field_education_enrollment__enrollment_date
 msgid "Enrollment Date"
 msgstr "Fecha de Matriculación"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_enrollment_form
-#: model:ir.ui.view,arch_db:education.view_education_group_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_group_form
 msgid "To draft"
 msgstr "Borrador"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_enrollment_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
 msgid "Academic Information"
 msgstr "Información Académica"
 
@@ -60,9 +60,9 @@ msgstr "Información Académica"
 #: model:ir.actions.act_window,name:education.education_course_category_action
 #: model:ir.model,name:education.model_education_course_category
 #: model:ir.ui.menu,name:education.education_course_category_menu
-#: model:ir.ui.view,arch_db:education.view_education_course_category_form
-#: model:ir.ui.view,arch_db:education.view_education_course_category_search
-#: model:ir.ui.view,arch_db:education.view_education_course_category_tree
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_category_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_category_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_category_tree
 msgid "Course Category"
 msgstr "Categorías"
 
@@ -79,9 +79,9 @@ msgstr "Expediente de Asignaturas"
 
 #. module: education
 #: model:ir.model.fields,field_description:education.field_education_record_subject_group_record_subject_id
-#: model:ir.ui.view,arch_db:education.view_record_subject_form
-#: model:ir.ui.view,arch_db:education.view_record_subject_search
-#: model:ir.ui.view,arch_db:education.view_record_subject_tree
+#: model_terms:ir.ui.view,arch_db:education.view_record_subject_form
+#: model_terms:ir.ui.view,arch_db:education.view_record_subject_search
+#: model_terms:ir.ui.view,arch_db:education.view_record_subject_tree
 msgid "Subject Record"
 msgstr "Expediente de asignatura"
 
@@ -96,17 +96,17 @@ msgid "Subjects Records"
 msgstr "Expedientes de Asignaturas"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_record_subject_search
+#: model_terms:ir.ui.view,arch_db:education.view_record_subject_search
 msgid "Course"
 msgstr "Curso"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_record_subject_search
+#: model_terms:ir.ui.view,arch_db:education.view_record_subject_search
 msgid "Student"
 msgstr "Alumno"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_course_category_parent_id
+#: model:ir.model.fields,field_description:education.field_education_course_category__parent_id
 msgid "Parent Category"
 msgstr "Categoría padre"
 
@@ -122,7 +122,7 @@ msgid "You can not delete a group with registered students"
 msgstr "No puedes borrar un grupo académico con alumnos matriculados"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_student_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_student_form
 msgid "Admission Details"
 msgstr "Expedientes Académicos"
 
@@ -134,14 +134,14 @@ msgstr "# de Pedido de Venta"
 
 #. module: education
 #: model:ir.model.fields,field_description:education.field_education_student_record_ids
-#: model:ir.ui.view,arch_db:education.view_education_student_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_student_form
 msgid "Academic Records"
 msgstr "Expediente Académico"
 
 #. module: education
 #: model:ir.model.fields,field_description:education.field_res_partner_record_ids
 #: model:ir.model.fields,field_description:education.field_res_users_record_ids
-#: model:ir.ui.view,arch_db:education.view_partner_education_form
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_form
 msgid "Academic Records"
 msgstr "Expediente Académico"
 
@@ -164,11 +164,10 @@ msgid "Action Needed"
 msgstr "Acción Necesaria"
 
 #. module: education
-#: selection:education.group,state:0
-#: model:ir.model.fields,field_description:education.field_education_course_active
-#: model:ir.model.fields,field_description:education.field_education_student_active
-#: model:ir.model.fields,field_description:education.field_education_teacher_active
-#: model:ir.ui.view,arch_db:education.view_education_group_form
+#: model:ir.model.fields,field_description:education.field_education_course__active
+#: model:ir.model.fields,field_description:education.field_education_group__active
+#: model:ir.model.fields.selection,name:education.selection__education_group__state__active
+#: model_terms:ir.ui.view,arch_db:education.view_education_group_form
 msgid "Active"
 msgstr "Activo"
 
@@ -208,45 +207,37 @@ msgid "Bounce"
 msgstr "Rebote"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_enrollment_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
 msgid "Cancel Enroll"
 msgstr "Anular Matrícula"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_enrollment_form
-#: model:ir.ui.view,arch_db:education.view_education_group_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_group_form
 msgid "Cancel"
 msgstr "Cancelar"
 
 #. module: education
-#: selection:education.course,state:0
-#: selection:education.enrollment,state:0
-#: selection:education.group,state:0
-#: selection:education.record,state:0
-#: model:ir.ui.view,arch_db:education.view_education_course_form
-#: model:ir.ui.view,arch_db:education.view_education_group_form
+#: model:ir.model.fields.selection,name:education.selection__education_enrollment__state__cancel
+#: model:ir.model.fields.selection,name:education.selection__education_group__state__cancel
 msgid "Cancelled"
 msgstr "Anulado"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_course_form
-#: model:ir.ui.view,arch_db:education.view_education_group_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_group_form
 msgid "Cancelled"
 msgstr "Anular"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_course_category_id_1543
-#: model:ir.ui.view,arch_db:education.view_education_course_search
+#: model:ir.model.fields,field_description:education.field_education_course__category_id
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_tree
 msgid "Category"
 msgstr "Categoria"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_course_tree
-msgid "Category"
-msgstr "Categoria"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_course_category_complete_name
+#: model:ir.model.fields,field_description:education.field_education_course_category__complete_name
 msgid "Complete Name"
 msgstr "Nombre completo"
 
@@ -307,15 +298,14 @@ msgid "Click to create a new Record."
 msgstr "Click para crear un nuevo Expediente Académico."
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_course_code
-#: model:ir.model.fields,field_description:education.field_education_enrollment_code
-#: model:ir.model.fields,field_description:education.field_education_group_code
-#: model:ir.model.fields,field_description:education.field_education_record_code
-#: model:ir.ui.view,arch_db:education.view_education_course_form
-#: model:ir.ui.view,arch_db:education.view_education_course_search
-#: model:ir.ui.view,arch_db:education.view_education_enrollment_search
-#: model:ir.ui.view,arch_db:education.view_education_group_search
-#: model:ir.ui.view,arch_db:education.view_education_record_search
+#: model:ir.model.fields,field_description:education.field_education_course__code
+#: model:ir.model.fields,field_description:education.field_education_enrollment__code
+#: model:ir.model.fields,field_description:education.field_education_group__code
+#: model:ir.model.fields,field_description:education.field_education_record__code
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_group_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_record_search
 msgid "Code"
 msgstr "Código"
 
@@ -350,8 +340,9 @@ msgid "Companies that refers to partner"
 msgstr "Compañías que se refieren a la empresa"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_company_id
-#: model:ir.model.fields,field_description:education.field_education_teacher_company_id
+#: model:ir.model.fields,field_description:education.field_education_course__company_id
+#: model:ir.model.fields,field_description:education.field_education_enrollment__company_id
+#: model:ir.model.fields,field_description:education.field_education_group__company_id
 msgid "Company"
 msgstr "Compañía"
 
@@ -423,27 +414,22 @@ msgstr "País"
 #: model:ir.model.fields,field_description:education.field_education_record_course_id
 #: model:ir.model.fields,field_description:education.field_education_record_subject_course_id
 #: model:ir.model.fields,field_description:education.field_education_record_subject_group_course_id
-#: model:ir.ui.view,arch_db:education.view_education_enrollment_search
-#: model:ir.ui.view,arch_db:education.view_education_group_search
-#: model:ir.ui.view,arch_db:education.view_education_record_search
-#: model:ir.ui.view,arch_db:education.view_record_subject_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_group_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_record_search
+#: model_terms:ir.ui.view,arch_db:education.view_record_subject_search
 msgid "Course"
 msgstr "Curso"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_record_subject_group_enrollment_id
+#: model:ir.model.fields,field_description:education.field_education_record_subject_group__enrollment_id
 msgid "Enrollment"
 msgstr "Matrícula"
 
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_enrollment_group_id
-#: model:ir.model.fields,field_description:education.field_education_record_subject_group_group_id
-#: model:ir.ui.view,arch_db:education.view_education_enrollment_search
-msgid "Group"
-msgstr "Grupo"
+
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_record_subject_form
+#: model_terms:ir.ui.view,arch_db:education.view_record_subject_form
 msgid "Last Group"
 msgstr "Último grupo"
 
@@ -456,7 +442,7 @@ msgstr "Expediente último grupo"
 #: model:ir.actions.act_window,name:education.education_course_action
 #: model:ir.ui.menu,name:education.education_course
 #: model:ir.ui.menu,name:education.education_course_root
-#: model:ir.ui.view,arch_db:education.view_education_course_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_search
 msgid "Courses"
 msgstr "Cursos"
 
@@ -541,41 +527,41 @@ msgid "Display Name"
 msgstr "Nombre a mostrar"
 
 #. module: education
-#: selection:education.enrollment,state:0
-#: selection:education.group,state:0
-#: model:ir.ui.view,arch_db:education.view_education_group_form
+#: model:ir.model.fields.selection,name:education.selection__education_enrollment__state__done
+#: model:ir.model.fields.selection,name:education.selection__education_group__state__done
+#: model_terms:ir.ui.view,arch_db:education.view_education_group_form
 msgid "Done"
 msgstr "Finalizado"
 
 #. module: education
-#: selection:education.enrollment,state:0
-#: selection:education.group,state:0
+#: model:ir.model.fields.selection,name:education.selection__education_enrollment__state__draft
+#: model:ir.model.fields.selection,name:education.selection__education_group__state__draft
 msgid "Draft"
 msgstr "Borrador"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_course_duration
-#: model:ir.ui.view,arch_db:education.view_education_course_search
+#: model:ir.model.fields,field_description:education.field_education_course__duration
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_search
 msgid "Duration"
 msgstr "Duración"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_course_tree
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_tree
 msgid "Education Course"
 msgstr "Education Course"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_enrollment_tree
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_tree
 msgid "Education enrollment"
 msgstr "Education enrollment"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_group_tree
+#: model_terms:ir.ui.view,arch_db:education.view_education_group_tree
 msgid "Education group"
 msgstr "Education group"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_record_tree
+#: model_terms:ir.ui.view,arch_db:education.view_education_record_tree
 msgid "Education record"
 msgstr "Education record"
 
@@ -586,27 +572,27 @@ msgid "Education"
 msgstr "Formación"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_course_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_form
 msgid "Education Course"
 msgstr "Education Course"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_enrollment_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
 msgid "Education enrollment"
 msgstr "Education enrollment"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_group_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_group_form
 msgid "Education group"
 msgstr "Education group"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_record_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_record_form
 msgid "Education record"
 msgstr "Education record"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_partner_education_form
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_form
 msgid "Educational"
 msgstr "Educativo"
 
@@ -635,7 +621,7 @@ msgid "Employee"
 msgstr "Empleado"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_enrollment_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
 msgid "Enroll"
 msgstr "Matricular"
 
@@ -645,34 +631,30 @@ msgstr "Matricular"
 #: model:ir.model.fields,field_description:education.field_education_group_enrollment_ids
 #: model:ir.model.fields,field_description:education.field_education_record_enrollment_ids
 #: model:ir.ui.menu,name:education.education_enrollment
-#: model:ir.ui.view,arch_db:education.view_education_enrollment_tree
-#: model:ir.ui.view,arch_db:education.view_education_record_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_tree
+#: model_terms:ir.ui.view,arch_db:education.view_education_record_form
 #, python-format
 msgid "Enrollments"
 msgstr "Matrículas"
 
-#. module: education
-#: model:ir.ui.menu,name:education_exam_root
-msgid "Exams"
-msgstr "Exámenes"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_student_kanban
-#: model:ir.ui.view,arch_db:education.view_education_student_tree
-#: model:ir.ui.view,arch_db:education.view_education_teacher
-#: model:ir.ui.view,arch_db:education.view_education_teacher_kanban
+#: model_terms:ir.ui.view,arch_db:education.view_education_student_kanban
+#: model_terms:ir.ui.view,arch_db:education.view_education_student_tree
+#: model_terms:ir.ui.view,arch_db:education.view_education_teacher
+#: model_terms:ir.ui.view,arch_db:education.view_education_teacher_kanban
 msgid "Faculties"
 msgstr "Profesores"
 
 #. module: education
 #: model:ir.model.fields,field_description:education.field_res_partner_teacher
 #: model:ir.model.fields,field_description:education.field_res_users_teacher
-#: model:ir.ui.view,arch_db:education.view_res_partner_education_filter
+#: model_terms:ir.ui.view,arch_db:education.view_res_partner_education_filter
 msgid "Teacher"
 msgstr "Profesor"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_student_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_student_form
 msgid "Faculty"
 msgstr "Profesor"
 
@@ -719,23 +701,24 @@ msgid "Formatted Email"
 msgstr "Email formateado"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_group_date_from
+#: model:ir.model.fields,field_description:education.field_education_group__date_from
 msgid "From Date"
 msgstr "Fecha Inicio"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_enrollment_group_id
-#: model:ir.ui.view,arch_db:education.view_education_enrollment_search
+#: model:ir.model.fields,field_description:education.field_education_enrollment__group_id
+#: model:ir.model.fields,field_description:education.field_education_record_subject_group__group_id
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_search
 msgid "Group"
 msgstr "Grupo Académico"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_course_search
-#: model:ir.ui.view,arch_db:education.view_education_enrollment_search
-#: model:ir.ui.view,arch_db:education.view_education_group_search
-#: model:ir.ui.view,arch_db:education.view_education_record_search
-#: model:ir.ui.view,arch_db:education.view_education_student_search
-#: model:ir.ui.view,arch_db:education.view_education_teacher_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_group_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_record_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_student_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_teacher_search
 msgid "Group By"
 msgstr "Agrupar por"
 
@@ -743,7 +726,7 @@ msgstr "Agrupar por"
 #: model:ir.actions.act_window,name:education.education_group_action
 #: model:ir.model.fields,field_description:education.field_education_record_group_ids
 #: model:ir.ui.menu,name:education.education_group
-#: model:ir.ui.view,arch_db:education.view_education_record_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_record_form
 msgid "Groups"
 msgstr "Grupos Académicos"
 
@@ -968,18 +951,13 @@ msgid "Mobile"
 msgstr "Móvil"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_course_category_name
-#: model:ir.model.fields,field_description:education.field_education_course_name
-#: model:ir.model.fields,field_description:education.field_education_group_name
-#: model:ir.model.fields,field_description:education.field_education_record_name
-#: model:ir.model.fields,field_description:education.field_education_student_name
-#: model:ir.model.fields,field_description:education.field_education_subject_name
-#: model:ir.model.fields,field_description:education.field_education_teacher_name
-#: model:ir.ui.view,arch_db:education.view_education_course_category_search
-#: model:ir.ui.view,arch_db:education.view_education_course_search
-#: model:ir.ui.view,arch_db:education.view_education_group_search
-#: model:ir.ui.view,arch_db:education.view_education_record_form
-#: model:ir.ui.view,arch_db:education.view_education_record_search
+#: model:ir.model.fields,field_description:education.field_education_course__name
+#: model:ir.model.fields,field_description:education.field_education_course_category__name
+#: model:ir.model.fields,field_description:education.field_education_group__name
+#: model:ir.model.fields,field_description:education.field_education_subject__name
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_category_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_group_search
 msgid "Name"
 msgstr "Nombre"
 
@@ -989,16 +967,16 @@ msgstr "Nombre"
 #: model:ir.model.fields,field_description:education.field_education_record_enrollment_ids
 #: model:ir.model.fields,field_description:education.field_education_record_record_subject_ids
 #: model:ir.ui.menu,name:education.education_enrollment
-#: model:ir.ui.view,arch_db:education.view_education_enrollment_tree
-#: model:ir.ui.view,arch_db:education.view_education_record_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_tree
+#: model_terms:ir.ui.view,arch_db:education.view_education_record_form
 msgid "Enrollments"
 msgstr "Matrículas"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_course_subject_subject_id
-#: model:ir.model.fields,field_description:education.field_education_record_subject_group_subject_id
-#: model:ir.model.fields,field_description:education.field_education_record_subject_subject_id
-#: model:ir.ui.view,arch_db:education.view_record_subject_search
+#: model:ir.model.fields,field_description:education.field_education_course_subject__subject_id
+#: model:ir.model.fields,field_description:education.field_education_record_subject__subject_id
+#: model:ir.model.fields,field_description:education.field_education_record_subject_group__subject_id
+#: model_terms:ir.ui.view,arch_db:education.view_record_subject_search
 msgid "Subject"
 msgstr "Asignatura"
 
@@ -1056,7 +1034,7 @@ msgid "Partner id"
 msgstr "Partner id"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_course_category_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_category_search
 msgid "Parent"
 msgstr "Categoría Padre"
 
@@ -1089,7 +1067,7 @@ msgstr "Política para recibir correos electrónicos para los nuevos mensajes in
 "- Todos los mensajes: Se enviará un correo para cada notificación que reciba en su bandeja de entrada"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_enrollment_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
 msgid "Re-Enroll"
 msgstr "Rematricular"
 
@@ -1097,7 +1075,7 @@ msgstr "Rematricular"
 #: model:ir.model.fields,field_description:education.field_education_enrollment_record_id
 #: model:ir.model.fields,field_description:education.field_education_group_record_id
 #: model:ir.model.fields,field_description:education.field_education_record_subject_record_id
-#: model:ir.ui.view,arch_db:education.view_education_group_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_group_search
 msgid "Record"
 msgstr "Registro"
 
@@ -1209,10 +1187,8 @@ msgid "State"
 msgstr "Estado"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_course_state
-#: model:ir.model.fields,field_description:education.field_education_enrollment_state
-#: model:ir.model.fields,field_description:education.field_education_group_state
-#: model:ir.model.fields,field_description:education.field_education_record_state
+#: model:ir.model.fields,field_description:education.field_education_enrollment__state
+#: model:ir.model.fields,field_description:education.field_education_group__state
 msgid "Status"
 msgstr "Estado"
 
@@ -1229,16 +1205,16 @@ msgid "Street2"
 msgstr "Calle2"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_enrollment_student_id
-#: model:ir.model.fields,field_description:education.field_education_record_student_id
-#: model:ir.model.fields,field_description:education.field_education_record_subject_group_student_id
-#: model:ir.model.fields,field_description:education.field_education_record_subject_student_id
-#: model:ir.model.fields,field_description:education.field_res_partner_student
-#: model:ir.model.fields,field_description:education.field_res_users_student
-#: model:ir.ui.view,arch_db:education.view_education_enrollment_search
-#: model:ir.ui.view,arch_db:education.view_education_record_search
-#: model:ir.ui.view,arch_db:education.view_record_subject_search
-#: model:ir.ui.view,arch_db:education.view_res_partner_education_filter
+#: model:ir.model.fields,field_description:education.field_education_enrollment__student_id
+#: model:ir.model.fields,field_description:education.field_education_record__student_id
+#: model:ir.model.fields,field_description:education.field_education_record_subject__student_id
+#: model:ir.model.fields,field_description:education.field_education_record_subject_group__student_id
+#: model:ir.model.fields,field_description:education.field_res_partner__student
+#: model:ir.model.fields,field_description:education.field_res_users__student
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_record_search
+#: model_terms:ir.ui.view,arch_db:education.view_record_subject_search
+#: model_terms:ir.ui.view,arch_db:education.view_res_partner_education_filter
 msgid "Student"
 msgstr "Alumno"
 
@@ -1246,9 +1222,9 @@ msgstr "Alumno"
 #: model:ir.actions.act_window,name:education.education_student_action
 #: model:ir.ui.menu,name:education.education_student_menu
 #: model:ir.ui.menu,name:education.education_student_root
-#: model:ir.ui.view,arch_db:education.view_education_group_form
-#: model:ir.ui.view,arch_db:education.view_education_student_kanban
-#: model:ir.ui.view,arch_db:education.view_education_student_tree
+#: model_terms:ir.ui.view,arch_db:education.view_education_group_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_student_kanban
+#: model_terms:ir.ui.view,arch_db:education.view_education_student_tree
 msgid "Students"
 msgstr "Alumnos"
 
@@ -1257,9 +1233,9 @@ msgstr "Alumnos"
 #: model:ir.model.fields,field_description:education.field_education_course_subject_ids
 #: model:ir.model.fields,field_description:education.field_education_enrollment_subject_ids
 #: model:ir.ui.menu,name:education.education_subject_menu
-#: model:ir.ui.view,arch_db:education.view_education_course_form
-#: model:ir.ui.view,arch_db:education.view_education_enrollment_form
-#: model:ir.ui.view,arch_db:education.view_education_record_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_record_form
 msgid "Subjects"
 msgstr "Asignaturas"
 
@@ -1293,7 +1269,16 @@ msgid "Teacher in charge"
 msgstr "Tutor"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_group_course_id
+#: model:ir.model.fields,field_description:education.field_education_course_subject__course_id
+#: model:ir.model.fields,field_description:education.field_education_enrollment__course_id
+#: model:ir.model.fields,field_description:education.field_education_group__course_id
+#: model:ir.model.fields,field_description:education.field_education_record__course_id
+#: model:ir.model.fields,field_description:education.field_education_record_subject__course_id
+#: model:ir.model.fields,field_description:education.field_education_record_subject_group__course_id
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_group_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_record_search
+#: model_terms:ir.ui.view,arch_db:education.view_record_subject_search
 msgid "Course"
 msgstr "Curso"
 
@@ -1383,27 +1368,27 @@ msgid "Title"
 msgstr "Título"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_group_date_to
+#: model:ir.model.fields,field_description:education.field_education_group__date_to
 msgid "To Date"
 msgstr "Fecha Fin"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_group_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_group_form
 msgid "Toggle Active"
 msgstr "Iniciar"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_enrollment_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
 msgid "Toggle Approve"
 msgstr "Aprobar"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_enrollment_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
 msgid "Get Subjects"
 msgstr "Obtener Asignaturas"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_enrollment_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
 msgid "Toggle Done"
 msgstr "Finalizar"
 
@@ -1537,45 +1522,40 @@ msgid "res.partner"
 msgstr "res.partner"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_enrollment_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_search
 msgid "enrollments"
 msgstr "Matrículas"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_group_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_group_search
 msgid "groups"
 msgstr "Grupos Académicos"
 
 #. module: education
 #: model:ir.actions.act_window,name:education.education_group_action
 #: model:ir.ui.menu,name:education.education_group
-#: model:ir.ui.view,arch_db:education.view_record_subject_form
+#: model_terms:ir.ui.view,arch_db:education.view_record_subject_form
 msgid "Groups"
 msgstr "Grupos"
 
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_enrollment_group_id
-#: model:ir.model.fields,field_description:education.field_education_record_group_id
-#: model:ir.ui.view,arch_db:education.view_education_enrollment_search
-msgid "Group"
-msgstr "Grupo"
+
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_record_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_record_search
 msgid "records"
 msgstr "Expedientes Académicos"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_student_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_student_search
 msgid "students"
 msgstr "Alumnos"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_teacher_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_teacher_form
 msgid "teacher"
 msgstr "Profesor"
 
 #. module: education
-#: model:ir.ui.view,arch_db:education.view_education_teacher_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_teacher_search
 msgid "teachers"
 msgstr "Profesores"

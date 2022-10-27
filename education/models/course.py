@@ -10,7 +10,7 @@ class EducationCourseCategory(models.Model):
     _parent_store = True
     _parent_order = 'name'
     _rec_name = 'complete_name'
-    _order = 'parent_left'
+    _order = 'name'
 
     name = fields.Char(
         string='Name',
@@ -20,6 +20,7 @@ class EducationCourseCategory(models.Model):
     complete_name = fields.Char(
         string='Complete Name',
         compute='_compute_complete_name',
+        recursive=True,
         store=True)
     parent_id = fields.Many2one(
         comodel_name='education.course.category',
@@ -30,12 +31,8 @@ class EducationCourseCategory(models.Model):
         comodel_name='education.course.category',
         inverse_name='parent_id',
         string='Child Categories')
-    parent_left = fields.Integer(
-        string='Left Parent',
-        index=1)
-    parent_right = fields.Integer(
-        'Right Parent',
-        index=1)
+    parent_path = fields.Char(index=True, unaccent=False)
+   
 
     @api.depends('name', 'parent_id.complete_name')
     def _compute_complete_name(self):

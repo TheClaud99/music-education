@@ -4,10 +4,10 @@
 {
     'name': 'Education',
     'summary': 'Education Management for Odoo',
-    'version': '11.0.1.0.0',
+    'version': '16.0.1.0.0',
     'category': 'Education',
-    'website': 'https://github.com/OCA/vertical_education',
-    'author': 'PESOL, Odoo Community Association (OCA)',
+    'website': 'https://pesol.es',
+    'author': 'PESOL',
     'license': 'AGPL-3',
     'application': True,
     'installable': True,
@@ -16,6 +16,8 @@
         'mail'
     ],
     'data': [
+        'security/education_security.xml',
+        'security/ir.model.access.csv',
         'views/menu_view.xml',
         'views/course_view.xml',
         'views/course_category_view.xml',
@@ -26,8 +28,6 @@
         'views/record_view.xml',
         'views/record_subject_view.xml',
         'views/partner_view.xml',
-        'security/education_security.xml',
-        'security/ir.model.access.csv',
     ],
     'demo': [
         'demo/education_res_partner_demo.xml',

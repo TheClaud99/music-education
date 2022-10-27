@@ -10,8 +10,7 @@
       <field name="email">meleena@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="student">True</field>
       <field name="active">True</field>
     </record>
@@ -22,8 +21,7 @@
       <field name="email">baraka@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="student">True</field>
       <field name="active">True</field>
     </record>
@@ -34,8 +32,7 @@
       <field name="email">scorpion@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="student">True</field>
       <field name="active">True</field>
     </record>
@@ -45,9 +42,8 @@
       <field name="name">Sub Zero</field>
       <field name="email">subzero@demo.com</field>
       <field name="city">New York</field>
+      <field name="company_type">person</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
       <field name="student">True</field>
       <field name="active">True</field>
     </record>
@@ -57,9 +53,8 @@
       <field name="name">Liu Kang</field>
       <field name="email">liukang@demo.com</field>
       <field name="city">New York</field>
+      <field name="company_type">person</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
       <field name="student">True</field>
       <field name="active">True</field>
     </record>
@@ -69,9 +64,8 @@
       <field name="name">Smoke</field>
       <field name="email">smoke@demo.com</field>
       <field name="city">New York</field>
+      <field name="company_type">person</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
       <field name="student">True</field>
       <field name="active">True</field>
     </record>
@@ -81,9 +75,8 @@
       <field name="name">Jax</field>
       <field name="email">jax@demo.com</field>
       <field name="city">New York</field>
+      <field name="company_type">person</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
       <field name="student">True</field>
       <field name="active">True</field>
     </record>
@@ -93,9 +86,8 @@
       <field name="name">Sonya</field>
       <field name="email">sonya@demo.com</field>
       <field name="city">New York</field>
+      <field name="company_type">person</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
       <field name="student">True</field>
       <field name="active">True</field>
     </record>
@@ -106,8 +98,7 @@
       <field name="email">sektor@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="student">True</field>
       <field name="active">True</field>
     </record>
@@ -118,8 +109,7 @@
       <field name="email">cyrax@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="student">True</field>
       <field name="active">True</field>
     </record>
@@ -130,8 +120,7 @@
       <field name="email">goro@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="student">True</field>
       <field name="active">True</field>
     </record>
@@ -142,8 +131,7 @@
       <field name="email">shaokahn@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="student">True</field>
       <field name="active">True</field>
     </record>
@@ -154,8 +142,7 @@
       <field name="email">kitana@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="student">True</field>
       <field name="active">True</field>
     </record>
@@ -166,8 +153,7 @@
       <field name="email">ermac@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="student">True</field>
       <field name="active">True</field>
     </record>
@@ -178,8 +164,7 @@
       <field name="email">raiden@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="student">True</field>
       <field name="active">True</field>
     </record>
@@ -190,8 +175,7 @@
       <field name="email">johnnycage@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="student">True</field>
       <field name="active">True</field>
     </record>
@@ -202,8 +186,7 @@
       <field name="email">kunlao@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="student">True</field>
       <field name="active">True</field>
     </record>
@@ -214,8 +197,7 @@
       <field name="email">reptile@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="student">True</field>
       <field name="active">True</field>
     </record>
@@ -226,8 +208,7 @@
       <field name="email">quanchi@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="student">True</field>
       <field name="active">True</field>
     </record>
@@ -238,8 +219,7 @@
       <field name="email">kano@demo.com</field>
       <field name="city">New York</field>
       <field name="country_id" ref="base.us"/>
-      <field name="type">contact</field>
-      <field name="customer">True</field>
+      <field name="company_type">person</field>
       <field name="student">True</field>
       <field name="active">True</field>
     </record>

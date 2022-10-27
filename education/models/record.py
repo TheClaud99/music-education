@@ -25,11 +25,12 @@ class EducationRecord(models.Model):
         inverse_name='record_id',
         string='Subjects Records')
 
-    @api.model
+    @api.model_create_multi
     def create(self, vals):
-        if vals.get('code', 'New') == 'New':
-            vals['code'] = self.env['ir.sequence'].next_by_code(
-                'education.record') or 'New'
+        for val in vals:
+            if val.get('code', 'New') == 'New':
+                val['code'] = self.env['ir.sequence'].next_by_code(
+                    'education.record') or 'New'
         return super(EducationRecord, self).create(vals)
 
 
@@ -63,7 +64,7 @@ class EducationRecordSubject(models.Model):
         string='Last Group Record',
         compute='_compute_last_record_subject_group_id')
 
-    @api.multi
+    
     def _compute_last_record_subject_group_id(self):
         for record in self:
             record.last_record_subject_group_id = \

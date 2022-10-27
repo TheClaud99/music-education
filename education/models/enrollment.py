@@ -58,17 +58,17 @@ class EducationEnrollment(models.Model):
         string='Status',
         default="draft")
 
-    @api.multi
+    
     def action_draft(self):
         self.ensure_one()
         self.state = 'draft'
 
-    @api.multi
+    
     def action_cancel(self):
         self.ensure_one()
         self.state = 'cancel'
 
-    @api.multi
+    
     def get_record_subject_values(self):
         record_subject_values = []
         for subject in self.subject_ids:
@@ -77,7 +77,7 @@ class EducationEnrollment(models.Model):
             )
         return record_subject_values
 
-    @api.multi
+    
     def get_record_values(self):
         self.ensure_one()
 
@@ -92,13 +92,13 @@ class EducationEnrollment(models.Model):
             'record_subject_ids': self.get_record_subject_values()
         }
 
-    @api.multi
+    
     def set_done(self):
         self.ensure_one()
         self.student_id.student = True
         self.state = 'done'
 
-    @api.multi
+    
     def action_done(self):
         self.ensure_one()
         record_obj = self.env['education.record']
@@ -125,11 +125,12 @@ class EducationEnrollment(models.Model):
             self.subject_ids = False
         self.group_id = False
 
-    @api.model
+    @api.model_create_multi
     def create(self, vals):
-        if vals.get('code', 'New') == 'New':
-            vals['code'] = self.env['ir.sequence'].next_by_code(
-                'education.enrollment') or 'New'
+        for val in vals:
+            if val.get('code', 'New') == 'New':
+                val['code'] = self.env['ir.sequence'].next_by_code(
+                    'education.enrollment') or 'New'
         return super(EducationEnrollment, self).create(vals)
 
     @api.constrains('student_id', 'group_id', 'state')

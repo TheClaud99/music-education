@@ -25,11 +25,11 @@
             <field name="record_id" attrs="{'invisible':[('state','!=', 'done')]}" readonly="1"/>
             <field name="company_id" widget="selection" groups="base.group_multi_company"/>
           </group>
-          <notebook>
+          <notebook colspan="4">
             <page string="Academic Information">
-              <group name="subjects">
-                <separator string="Subjects" colspan="2"/>
-                <field name="subject_ids" nolabel="1"/>
+              <group name="subjects" col="4">
+                <separator string="Subjects" colspan="4"/>
+                <field name="subject_ids" nolabel="1" colspan="4"/>
               </group>
             </page>
           </notebook>
@@ -66,11 +66,11 @@
         <field name="student_id"/>
         <field name="course_id"/>
         <field name="group_id"/>
-        <group string="Group By" name="groupby">
-          <filter string="Code" context="{'group_by': 'code'}"/>
-          <filter string="Student" context="{'group_by': 'student_id'}"/>
-          <filter string="Course" context="{'group_by': 'course_id'}"/>
-          <filter string="Group" context="{'group_by': 'group_id'}"/>
+        <group string="Group By">
+          <filter string="Code" name="code" context="{'group_by': 'code'}"/>
+          <filter string="Student" name="student_id" context="{'group_by': 'student_id'}"/>
+          <filter string="Course" name="course_id" context="{'group_by': 'course_id'}"/>
+          <filter string="Group" name="group_id" context="{'group_by': 'group_id'}"/>
         </group>
       </search>
     </field>

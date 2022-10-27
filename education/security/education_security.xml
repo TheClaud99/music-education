@@ -10,13 +10,14 @@
   <record id="education_user" model="res.groups">
     <field name="name">User</field>
     <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
-    <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    <!-- <field name="users" eval="[(4, ref('base.user_admin'))]"/> -->
     <field name="category_id" ref="education.education_category"/>
   </record>
 
   <record id="education_manager" model="res.groups">
     <field name="name">Manager</field>
     <field name="category_id" ref="education.education_category"/>
+    <field name="users" eval="[(4, ref('base.user_admin'))]"/>
     <field name="implied_ids" eval="[(4, ref('education.education_user'))]"/>
   </record>
   <data noupdate="1">
