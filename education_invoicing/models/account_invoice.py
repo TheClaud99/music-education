@@ -19,7 +19,7 @@ class AccountInvoice(models.Model):
         comodel_name="education.enrollment.invoicing.line", string="Invoicing Lines"
     )
 
-    @api.multi
+    
     def action_invoice_paid(self):
         res = super(AccountInvoice, self).action_invoice_paid()
         for record in self:
@@ -40,7 +40,7 @@ class AccountInvoice(models.Model):
                             )
         return res
 
-    @api.multi
+    
     def action_invoice_open(self):
         super(AccountInvoice, self).action_invoice_open()
         invoicing_method_line_obj = self.env["education.enrollment.invoicing.line"]
@@ -70,7 +70,7 @@ class AccountInvoice(models.Model):
         else:
             line.write({"invoiced": True, "state": "invoiced"})
 
-    @api.multi
+    
     def paid_and_validate(self):
         self.action_invoice_open()
         journal_id = (

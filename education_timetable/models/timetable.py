@@ -81,13 +81,13 @@ class EducationTimetableLine(models.Model):
         ]
         return {"domain": {"subject_id": subject_fields_domain}}
 
-    @api.multi
+    
     def get_days(self, start, end):
         step = timedelta(days=1)
         for i in range((end - start).days + 1):
             yield start + i * step
 
-    @api.multi
+    
     def generate_new_sessions(self):
         self.ensure_one()
         self.state = "done"
@@ -121,7 +121,7 @@ class EducationTimetableLine(models.Model):
             )
         return super(EducationTimetableLine, self).create(vals)
 
-    @api.multi
+    
     def unlink(self):
         for record in self:
             if record.mapped("session_ids").filtered(lambda s: s.state in ["done"]):

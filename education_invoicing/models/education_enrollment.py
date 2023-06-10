@@ -85,7 +85,7 @@ class EducationEnrollment(models.Model):
         #     self.invoicing_method_id and \
         #     self.invoicing_method_id.compute_invoicing_method() or False
 
-    @api.multi
+    
     def compute_invoicing_method(self):
         self.ensure_one()
         amount = self.amount
@@ -114,7 +114,7 @@ class EducationEnrollment(models.Model):
         invoicing_method_line_data.append((0, 0, line_values))
         self.invoicing_line_ids = invoicing_method_line_data
 
-    @api.multi
+    
     @api.depends(
         "invoicing_line_ids.total",
         "invoicing_line_ids.subtotal",
@@ -126,14 +126,14 @@ class EducationEnrollment(models.Model):
                 record.invoicing_line_ids.mapped(lambda l: l.subtotal * l.quantity)
             )
 
-    @api.multi
+    
     def _compute_invoicing_method_amount(self):
         for record in self:
             record.invoicing_method_amount = sum(
                 self.invoicing_line_ids.mapped(lambda l: l.subtotal * l.quantity)
             )
 
-    @api.multi
+    
     def invoices_generate(self):
         self.ensure_one()
         # TODO: generate invoices on planned date
@@ -234,7 +234,7 @@ class EducationEnrollment(models.Model):
             invoicing_fields_domain = expression.FALSE_DOMAIN
         return {"domain": {"invoicing_method_id": invoicing_fields_domain}}
 
-    @api.multi
+    
     def _compute_count_invoices(self):
         for record in self:
             record.invoices_count = self.env["account.invoice"].search_count(
@@ -244,18 +244,18 @@ class EducationEnrollment(models.Model):
                 ]
             )
 
-    @api.multi
+    
     def action_done(self):
         super(EducationEnrollment, self).action_done()
         self.student_id.write({"customer": True})
         self.compute_invoicing_method()
         self.invoices_generate()
 
-    @api.multi
+    
     def action_cancel(self):
         super(EducationEnrollment, self).action_cancel()
 
-    @api.multi
+    
     def unlink(self):
         for record in self:
             if not record.invoice_ids.filtered(lambda i: i.state in ["paid", "open"]):
@@ -320,13 +320,13 @@ class EducationEnrollmentInvoicingMethodLine(models.Model):
 
     invoiced = fields.Boolean(string="Invoiced")
 
-    @api.multi
+    
     @api.depends("subtotal", "quantity")
     def _compute_total(self):
         for record in self:
             record.total = record.subtotal * record.quantity
 
-    @api.multi
+    
     def unlink(self):
         for record in self:
             if record.invoice_ids.mapped("state") in ["paid"] and record.invoiced:

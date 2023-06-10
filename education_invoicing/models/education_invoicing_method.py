@@ -36,7 +36,7 @@ class EducationInvoicingMethod(models.Model):
         help="Repeat every (Days/Week/Month/Year)",
     )
 
-    @api.multi
+    
     def _compute_name(self):
         for record in self:
             name = ""
@@ -54,7 +54,7 @@ class EducationInvoicingMethod(models.Model):
                 name += " x %s" % (record.quantity)
             record.name = name
 
-    @api.multi
+    
     def compute_invoicing_method(self):
         self.ensure_one()
         amount = self.amount

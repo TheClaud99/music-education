@@ -64,7 +64,7 @@ class EducationSession(models.Model):
         default=lambda self: self.env.user.company_id,
     )
 
-    @api.multi
+    
     def get_hours(self, hours):
         return "{0:02.0f}:{1:02.0f}:00".format(*divmod(float(hours) * 60, 60))
 

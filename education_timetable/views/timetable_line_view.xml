@@ -7,33 +7,36 @@
       <field name="arch" type="xml">
         <form string="Education Timetable">
           <header>
-            <button name="generate_new_sessions" type="object" attrs="{'invisible': [('state','!=','draft')]}" string="Generate New Sessions" class="oe_highlight"/>
-            <field name="state" widget="statusbar"/>
+            <button name="generate_new_sessions" type="object"
+              attrs="{'invisible': [('state','!=','draft')]}" string="Generate New Sessions"
+              class="oe_highlight" />
+            <field name="state" widget="statusbar" />
           </header>
           <sheet>
             <group>
               <group>
-                <field name="course_id"/>
-                <field name="group_id" domain="[('course_id', '=', course_id), '|', ('state', '=', 'active'), ('date_from', '&gt;', context_today().strftime('%Y-%m-%d'))]"/>
-                <field name="subject_id" domain="[('course_ids.course_id', '=', course_id)]"/>
-                <field name="teacher_id" domain="[('teacher', '=', True)]"/>
+                <field name="course_id" />
+                <field name="group_id"
+                  domain="[('course_id', '=', course_id), '|', ('state', '=', 'active'), ('date_from', '&gt;', context_today().strftime('%Y-%m-%d'))]" />
+                <field name="subject_id" domain="[('course_ids.course_id', '=', course_id)]" />
+                <field name="teacher_id" domain="[('teacher', '=', True)]" />
               </group>
               <group>
-                <field name="timerange_id"/>
-                <field name="date_from"/>
-                <field name="date_to"/>
+                <field name="timerange_id" />
+                <field name="date_from" />
+                <field name="date_to" />
               </group>
             </group>
             <group>
-              <field name="day_ids" widget="many2many_checkboxes" style="display: inline-flex"/>
+              <field name="day_ids" widget="many2many_checkboxes" style="display: inline-flex" />
             </group>
             <group name="name" attrs="{'invisible': [('state', '!=', 'done')]}">
-              <field name="session_ids" nolabel="1"/>
+              <field name="session_ids" nolabel="1" />
             </group>
           </sheet>
           <div class="oe_chatter">
-            <field name="message_follower_ids" widget="mail_followers"/>
-            <field name="message_ids" widget="mail_thread"/>
+            <field name="message_follower_ids" widget="mail_followers" />
+            <field name="message_ids" widget="mail_thread" />
           </div>
         </form>
       </field>
@@ -44,15 +47,15 @@
       <field name="model">education.timetable.line</field>
       <field name="arch" type="xml">
         <tree string="Education Timetable">
-          <field name="course_id"/>
-          <field name="group_id"/>
-          <field name="subject_id"/>
-          <field name="teacher_id"/>
-          <field name="timerange_id"/>
-          <field name="day_ids" widget="many2many_tags"/>
-          <field name="date_from"/>
-          <field name="date_to"/>
-          <field name="state"/>
+          <field name="course_id" />
+          <field name="group_id" />
+          <field name="subject_id" />
+          <field name="teacher_id" />
+          <field name="timerange_id" />
+          <field name="day_ids" widget="many2many_tags" />
+          <field name="date_from" />
+          <field name="date_to" />
+          <field name="state" />
         </tree>
       </field>
     </record>
@@ -62,21 +65,21 @@
       <field name="model">education.timetable.line</field>
       <field name="arch" type="xml">
         <search string="Education Timetable">
-          <field name="course_id"/>
-          <field name="group_id"/>
-          <field name="subject_id"/>
-          <field name="teacher_id"/>
-          <field name="timerange_id"/>
+          <field name="course_id" />
+          <field name="group_id" />
+          <field name="subject_id" />
+          <field name="teacher_id" />
+          <field name="timerange_id" />
           <!-- <field name="day_ids"/> -->
-          <field name="date_from"/>
-          <field name="date_to"/>
+          <field name="date_from" />
+          <field name="date_to" />
           <group string="Group By" name="groupby">
-            <filter string="Course" context="{'group_by': 'course_id'}"/>
-            <filter string="Group" context="{'group_by': 'group_id'}"/>
-            <filter string="Subject" context="{'group_by': 'subject_id'}"/>
-            <filter string="teacher_id" context="{'group_by': 'teacher_id'}"/>
+            <filter string="Course" name="course_id" context="{'group_by': 'course_id'}" />
+            <filter string="Group" name="group_id" context="{'group_by': 'group_id'}" />
+            <filter string="Subject" name="subject_id" context="{'group_by': 'subject_id'}" />
+            <filter string="teacher_id" name="teacher_id" context="{'group_by': 'teacher_id'}" />
             <!-- <filter string="Day" context="{'group_by': 'day_ids'}"/> -->
-            <filter string="timetable_id" context="{'group_by': 'timerange_id'}"/>
+            <filter string="timetable_id" name="timerange_id" context="{'group_by': 'timerange_id'}" />
           </group>
         </search>
       </field>
@@ -96,11 +99,12 @@
     <record id="view_calendar_timetable" model="ir.ui.view">
       <field name="name">view_calendar_timetable</field>
       <field name="model">education.timetable.line</field>
-      <field name="priority" eval="1"/>
+      <field name="priority" eval="1" />
       <field name="arch" type="xml">
-        <calendar string="Timetable" date_start="date_from" date_stop="date_to" color="user_id" mode="month">
-          <field name="subject_id"/>
-          <field name="teacher_id"/>
+        <calendar string="Timetable" date_start="date_from" date_stop="date_to" color="user_id"
+          mode="month">
+          <field name="subject_id" />
+          <field name="teacher_id" />
         </calendar>
       </field>
     </record>
@@ -112,8 +116,10 @@
       <field name="padding">3</field>
     </record>
 
-    <menuitem id="education_assistance_root" parent="education.education_base_menu" name="Timetable" sequence="60"/>
-    <menuitem id="education_timetable_menu" parent="education_assistance_root" action="education_timetable_action" sequence="20"/>
+    <menuitem id="education_assistance_root" parent="education.education_base_menu" name="Timetable"
+      sequence="60" />
+    <menuitem id="education_timetable_menu" parent="education_assistance_root"
+      action="education_timetable_action" sequence="20" />
 
   </data>
 </odoo>

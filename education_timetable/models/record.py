@@ -26,13 +26,13 @@ class EducationRecordSubjectGroup(models.Model):
         string="Consecutive faults", compute="_compute_cons_faults"
     )
 
-    @api.multi
+    
     def _compute_faults(self):
         for subject in self:
             subject.faults = len(subject.ausence_ids)
 
     # TODO:
-    @api.multi
+    
     def _compute_cons_faults(self):
         timatable_obj = self.env["education.timetable.line"]
         session_obj = self.env["education.session"]

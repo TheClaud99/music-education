@@ -58,14 +58,14 @@ class EducationExam(models.Model):
         ]
         return {"domain": {"subject_id": subject_fields_domain}}
 
-    @api.multi
+    
     def _compute_name(self):
         for record in self:
             record.name = (
                 record.group_id.name + "/" + record.subject_id.name + "/" + record.date
             )
 
-    @api.multi
+    
     def set_planned(self):
         if not len(self.group_id.enrollment_ids) > 0:
             raise ValidationError(
@@ -91,15 +91,15 @@ class EducationExam(models.Model):
             )
         self.result_ids = values
 
-    @api.multi
+    
     def set_done(self):
         self.state = "done"
 
-    @api.multi
+    
     def set_cancel(self):
         self.state = "cancel"
 
-    @api.multi
+    
     def unlink(self):
         for record in self:
             if record.state not in ["done"]:

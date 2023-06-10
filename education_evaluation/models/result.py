@@ -33,7 +33,7 @@ class EducationEvaluable(models.AbstractModel):
                 "Max " + str(self.exam_id.grading_id.decimals_number) + " decimals"
             )
 
-    @api.multi
+    
     @api.depends("score_type", "score_manual", "score_computed")
     def _compute_score(self):
         for evaluable in self:
@@ -44,14 +44,14 @@ class EducationEvaluable(models.AbstractModel):
                 or evaluable.score_manual
             )
 
-    @api.multi
+    
     def _compute_score_computed(self):
         for evaluable in self:
             evaluable.score_computed = round(
                 evaluable.score_computed, evaluable.grading_id.decimals_number
             )
 
-    @api.multi
+    
     def _compute_grade(self):
         for result in self:
             for grade in result.grading_id.grade_ids:
@@ -90,7 +90,7 @@ class EducationResult(models.Model):
         readonly=True,
     )
 
-    @api.multi
+    
     def _compute_grade(self):
         for result in self:
             for grade in result.exam_id.grading_id.grade_ids:
@@ -142,7 +142,7 @@ class EducationRecordSubjectGroup(models.Model):
         string="Weight", related="record_subject_id.weight", readonly=True
     )
 
-    @api.multi
+    
     @api.depends("evaluation_result_ids.exam_id.weight", "evaluation_result_ids.score")
     def _compute_score_computed(self):
         for record in self:
@@ -157,7 +157,7 @@ class EducationRecord(models.Model):
     _name = "education.record"
     _inherit = ["education.record", "education.evaluable"]
 
-    @api.multi
+    
     @api.depends("record_subject_ids.weight", "record_subject_ids.score")
     def _compute_score_computed(self):
         for record in self:

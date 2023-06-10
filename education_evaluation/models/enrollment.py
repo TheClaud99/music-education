@@ -4,7 +4,7 @@ from odoo import api, models
 class EducationEnrollment(models.Model):
     _inherit = "education.enrollment"
 
-    @api.multi
+    
     def action_done(self):
         super(EducationEnrollment, self).action_done()
         course_subject_obj = self.env["education.course.subject"]

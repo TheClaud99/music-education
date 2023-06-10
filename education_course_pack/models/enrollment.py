@@ -23,7 +23,7 @@ class EducationEnrollment(models.Model):
 
     state = fields.Selection(selection_add=[("in_process", "In Process")])
 
-    @api.multi
+    
     def action_done(self):
         if self.pack:
             super(EducationEnrollment, self).action_done()
@@ -32,7 +32,7 @@ class EducationEnrollment(models.Model):
         else:
             super(EducationEnrollment, self).action_done()
 
-    @api.multi
+    
     def create_pack_lines(self):
         self.ensure_one()
         if not self.pack:
@@ -49,7 +49,7 @@ class EducationEnrollment(models.Model):
             line_values.append((0, 0, data))
         self.write({"pack_enrollment_ids": line_values})
 
-    @api.multi
+    
     def get_record_values(self):
         if self.pack:
             return {
@@ -65,7 +65,7 @@ class EducationEnrollment(models.Model):
                 )
             return values
 
-    @api.multi
+    
     def set_done(self):
         if not self.pack:
             super(EducationEnrollment, self).set_done()

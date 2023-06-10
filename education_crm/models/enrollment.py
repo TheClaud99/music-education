@@ -11,7 +11,7 @@ class EducationEnrollment(models.Model):
 
     lead_id = fields.Many2one(comodel_name="crm.lead", string="Lead")
 
-    @api.multi
+    
     def action_done(self):
         if self.lead_id:
             self.lead_id.date_won = fields.Date.today()

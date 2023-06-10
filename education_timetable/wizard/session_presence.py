@@ -25,7 +25,7 @@ class EducationSessionPresence(models.TransientModel):
             lines.append((0, 0, {"student_id": enroll.student_id.id}))
         self.session_presence_ids = lines
 
-    @api.multi
+    
     def create_ausences(self):
         values = []
         self.ensure_one()
