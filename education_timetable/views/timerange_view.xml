@@ -8,11 +8,11 @@
         <form string="Education timerange">
           <sheet>
             <group name="main">
-              <field name="name"/>
+              <field name="name" />
             </group>
             <group string="Time Range" col="4">
-              <field name="start_time" widget="float_time"/>
-              <field name="end_time" widget="float_time"/>
+              <field name="start_time" widget="float_time" />
+              <field name="end_time" widget="float_time" />
             </group>
           </sheet>
         </form>
@@ -24,7 +24,7 @@
       <field name="model">education.timerange</field>
       <field name="arch" type="xml">
         <tree string="Education timerange">
-          <field name="name"/>
+          <field name="name" />
         </tree>
       </field>
     </record>
@@ -34,9 +34,9 @@
       <field name="model">education.timerange</field>
       <field name="arch" type="xml">
         <search string="Education timerange">
-          <field name="name"/>
+          <field name="name" />
           <group string="Group By" name="groupby">
-            <filter name="name_groupby" string="name" context="{'group_by': 'name'}"/>
+            <filter name="name_groupby" string="name" context="{'group_by': 'name'}" />
           </group>
         </search>
       </field>
@@ -53,7 +53,8 @@
       </field>
     </record>
 
-    <menuitem id="education_timerange_menu" parent="education_assistance_root" action="education_timerange_action" sequence="20"/>
+    <menuitem id="education_timerange_menu" parent="education_assistance_root"
+      action="education_timerange_action" sequence="20" />
 
   </data>
 </odoo>

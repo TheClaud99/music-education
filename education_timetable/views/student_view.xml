@@ -3,15 +3,15 @@
   <record id="view_education_student_form_timetable_inherit" model="ir.ui.view">
     <field name="name">view.res.partner.form.inherit</field>
     <field name="model">res.partner</field>
-    <field name="inherit_id" ref="education.view_partner_education_form"/>
+    <field name="inherit_id" ref="education.view_partner_education_form" />
     <field name="arch" type="xml">
       <group name="academic_record" position="after">
         <group string="Student Ausences">
           <field name="ausence_ids" nolabel="1">
             <tree>
-              <field name="session_id"/>
-              <field name="notes"/>
-              <field name="supporting_document"/>
+              <field name="session_id" />
+              <field name="notes" />
+              <field name="supporting_document" />
             </tree>
           </field>
         </group>

@@ -6,37 +6,41 @@
     <field name="arch" type="xml">
       <form string="Education enrollment">
         <header>
-          <button name="action_draft" type="object" states="cancel" string="To draft" class="oe_highlight"/>
-          <button name="action_done" type="object" states="draft" string="Enroll" class="oe_highlight"/>
-          <button name="action_cancel" type="object" states="draft,in_process,done" string="Cancel" class="oe_highlight"/>
-          <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+          <button name="action_draft" type="object" states="cancel" string="To draft"
+            class="oe_highlight" />
+          <button name="action_done" type="object" states="draft" string="Enroll"
+            class="oe_highlight" />
+          <button name="action_cancel" type="object" states="draft,in_process,done" string="Cancel"
+            class="oe_highlight" />
+          <field name="state" widget="statusbar" statusbar_visible="draft,done" />
         </header>
         <sheet>
           <div class="oe_button_box" name="button_box"></div>
           <div class="oe_title">
             <h1>
-              <field name="code" readonly="1"/>
+              <field name="code" readonly="1" />
             </h1>
           </div>
           <group name="Information" col="4">
-            <field name="student_id"/>
-            <field name="course_id"/>
-            <field name="group_id" domain="[('course_id', '=', course_id), ('state', 'in', ['active'])]"/>
-            <field name="record_id" attrs="{'invisible':[('state','!=', 'done')]}" readonly="1"/>
-            <field name="company_id" widget="selection" groups="base.group_multi_company"/>
+            <field name="student_id" />
+            <field name="course_id" />
+            <field name="group_id"
+              domain="[('course_id', '=', course_id), ('state', 'in', ['active'])]" />
+            <field name="record_id" attrs="{'invisible':[('state','!=', 'done')]}" readonly="1" />
+            <field name="company_id" widget="selection" groups="base.group_multi_company" />
           </group>
           <notebook colspan="4">
             <page string="Academic Information">
               <group name="subjects" col="4">
-                <separator string="Subjects" colspan="4"/>
-                <field name="subject_ids" nolabel="1" colspan="4"/>
+                <separator string="Subjects" colspan="4" />
+                <field name="subject_ids" nolabel="1" colspan="4" />
               </group>
             </page>
           </notebook>
         </sheet>
         <div class="oe_chatter">
-          <field name="message_follower_ids" widget="mail_followers"/>
-          <field name="message_ids" widget="mail_thread"/>
+          <field name="message_follower_ids" widget="mail_followers" />
+          <field name="message_ids" widget="mail_thread" />
         </div>
       </form>
     </field>
@@ -47,12 +51,12 @@
     <field name="model">education.enrollment</field>
     <field name="arch" type="xml">
       <tree string="Enrollments">
-        <field name="enrollment_date"/>
-        <field name="code"/>
-        <field name="student_id"/>
-        <field name="course_id"/>
-        <field name="group_id"/>
-        <field name="state"/>
+        <field name="enrollment_date" />
+        <field name="code" />
+        <field name="student_id" />
+        <field name="course_id" />
+        <field name="group_id" />
+        <field name="state" />
       </tree>
     </field>
   </record>
@@ -62,15 +66,15 @@
     <field name="model">education.enrollment</field>
     <field name="arch" type="xml">
       <search string="enrollments">
-        <field name="code"/>
-        <field name="student_id"/>
-        <field name="course_id"/>
-        <field name="group_id"/>
+        <field name="code" />
+        <field name="student_id" />
+        <field name="course_id" />
+        <field name="group_id" />
         <group string="Group By">
-          <filter string="Code" name="code" context="{'group_by': 'code'}"/>
-          <filter string="Student" name="student_id" context="{'group_by': 'student_id'}"/>
-          <filter string="Course" name="course_id" context="{'group_by': 'course_id'}"/>
-          <filter string="Group" name="group_id" context="{'group_by': 'group_id'}"/>
+          <filter string="Code" name="code" context="{'group_by': 'code'}" />
+          <filter string="Student" name="student_id" context="{'group_by': 'student_id'}" />
+          <filter string="Course" name="course_id" context="{'group_by': 'course_id'}" />
+          <filter string="Group" name="group_id" context="{'group_by': 'group_id'}" />
         </group>
       </search>
     </field>
@@ -92,9 +96,10 @@
     <field name="code">education.enrollment</field>
     <field name="prefix">ENR</field>
     <field name="padding">4</field>
-    <field eval="1" name="company_id"/>
+    <field eval="1" name="company_id" />
   </record>
 
-  <menuitem id="education_enrollment" parent="education_student_root" action="education_enrollment_action" sequence="20"/>
+  <menuitem id="education_enrollment" parent="education_student_root"
+    action="education_enrollment_action" sequence="20" />
 
 </odoo>

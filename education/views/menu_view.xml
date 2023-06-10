@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
   <data>
-    <menuitem id="education_base_menu" name="Education" sequence="1" web_icon="education,static/description/icon.png" groups="education.education_user"/>
+    <menuitem id="education_base_menu" name="Education" sequence="1"
+      web_icon="education,static/description/icon.png" groups="education.education_user" />
 
-    <menuitem id="education_student_root" parent="education.education_base_menu" name="Students" sequence="10"/>
-    <menuitem id="education_record_root" parent="education.education_base_menu" name="Records" sequence="20"/>
-    <menuitem id="education_course_root" parent="education.education_base_menu" name="Courses" sequence="30"/>
-    <menuitem id="education_teacher_root" parent="education.education_base_menu" name="Teachers" sequence="40"/>
+    <menuitem id="education_student_root" parent="education.education_base_menu" name="Students"
+      sequence="10" />
+    <menuitem id="education_record_root" parent="education.education_base_menu" name="Records"
+      sequence="20" />
+    <menuitem id="education_course_root" parent="education.education_base_menu" name="Courses"
+      sequence="30" />
+    <menuitem id="education_teacher_root" parent="education.education_base_menu" name="Teachers"
+      sequence="40" />
 
-    <menuitem id="education_config_root" parent="education.education_base_menu" name="Configuration" sequence="100"/>
+    <menuitem id="education_config_root" parent="education.education_base_menu" name="Configuration"
+      sequence="100" />
 
   </data>
 

@@ -7,41 +7,47 @@
     <field name="arch" type="xml">
       <form string="Education group">
         <header>
-          <button name="action_draft" type="object" states="cancel" string="To draft" class="oe_highlight"/>
-          <button name="action_active" type="object" states="draft" string="Active" class="oe_highlight"/>
-          <button name="action_done" type="object" states="active" string="Done" class="oe_highlight"/>
-          <button name="action_cancel" type="object" states="draft" string="Cancel" class="oe_highlight"/>
-          <field name="state" widget="statusbar" statusbar_visible="draft,active,done"/>
+          <button name="action_draft" type="object" states="cancel" string="To draft"
+            class="oe_highlight" />
+          <button name="action_active" type="object" states="draft" string="Active"
+            class="oe_highlight" />
+          <button name="action_done" type="object" states="active" string="Done"
+            class="oe_highlight" />
+          <button name="action_cancel" type="object" states="draft" string="Cancel"
+            class="oe_highlight" />
+          <field name="state" widget="statusbar" statusbar_visible="draft,active,done" />
         </header>
         <sheet>
           <div class="oe_button_box" name="button_box" modifiers="{}">
-            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive" modifiers="{}" options="{}">
-              <field name="active" widget="boolean_button" options="{'terminology': 'archive'}" modifiers="{}"/>
+            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive"
+              modifiers="{}" options="{}">
+              <field name="active" widget="boolean_button" options="{'terminology': 'archive'}"
+                modifiers="{}" />
             </button>
           </div>
           <div class="oe_title">
             <h1>
-              <field name="code" readonly="1"/>
+              <field name="code" readonly="1" />
             </h1>
           </div>
-          <group >
-            <field name="name"/>
+          <group>
+            <field name="name" />
           </group>
           <group name="general" col="4">
-            <field name="course_id"/>
-            <field name="tutor_id"/>
-            <field name="date_from"/>
-            <field name="date_to"/>
-            <field name="company_id" widget="selection" groups="base.group_multi_company"/>
+            <field name="course_id" />
+            <field name="tutor_id" />
+            <field name="date_from" />
+            <field name="date_to" />
+            <field name="company_id" widget="selection" groups="base.group_multi_company" />
           </group>
           <notebook>
             <page name="students" string="Students">
               <group name="Enrollments" col="4">
                 <field name="enrollment_ids" nolabel="1" readonly="1" colspan="4">
                   <tree>
-                    <field name="code"/>
-                    <field name="student_id"/>
-                    <field name="state"/>
+                    <field name="code" />
+                    <field name="student_id" />
+                    <field name="state" />
                   </tree>
                 </field>
               </group>
@@ -49,8 +55,8 @@
           </notebook>
         </sheet>
         <div class="oe_chatter">
-          <field name="message_follower_ids" widget="mail_followers"/>
-          <field name="message_ids" widget="mail_thread"/>
+          <field name="message_follower_ids" widget="mail_followers" />
+          <field name="message_ids" widget="mail_thread" />
         </div>
       </form>
     </field>
@@ -61,12 +67,12 @@
     <field name="model">education.group</field>
     <field name="arch" type="xml">
       <tree string="Education group">
-        <field name="name"/>
-        <field name="code"/>
-        <field name="course_id"/>
-        <field name="date_from"/>
-        <field name="date_to"/>
-        <field name="state"/>
+        <field name="name" />
+        <field name="code" />
+        <field name="course_id" />
+        <field name="date_from" />
+        <field name="date_to" />
+        <field name="state" />
       </tree>
     </field>
   </record>
@@ -76,16 +82,16 @@
     <field name="model">education.group</field>
     <field name="arch" type="xml">
       <search string="groups">
-        <field name="name"/>
-        <field name="code"/>
-        <field name="course_id"/>
-        <field name="date_from"/>
-        <field name="date_to"/>
-        <field name="state"/>
+        <field name="name" />
+        <field name="code" />
+        <field name="course_id" />
+        <field name="date_from" />
+        <field name="date_to" />
+        <field name="state" />
         <group string="Group By">
-          <filter string="Name" name="name" context="{'group_by': 'name'}"/>
-          <filter string="Code" name="code" context="{'group_by': 'code'}"/>
-          <filter string="Course" name="course_id" context="{'group_by': 'course_id'}"/>
+          <filter string="Name" name="name" context="{'group_by': 'name'}" />
+          <filter string="Code" name="code" context="{'group_by': 'code'}" />
+          <filter string="Course" name="course_id" context="{'group_by': 'course_id'}" />
         </group>
       </search>
     </field>
@@ -107,9 +113,10 @@
     <field name="code">education.group</field>
     <field name="prefix">GRP</field>
     <field name="padding">4</field>
-    <field eval="1" name="company_id"/>
+    <field eval="1" name="company_id" />
   </record>
 
-  <menuitem id="education_group" parent="education_course_root" action="education_group_action" sequence="20"/>
+  <menuitem id="education_group" parent="education_course_root" action="education_group_action"
+    sequence="20" />
 
 </odoo>

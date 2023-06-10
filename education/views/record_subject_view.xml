@@ -7,20 +7,20 @@
       <form string="Subject Record">
         <sheet>
           <group name="main">
-            <field name="student_id"/>
-            <field name="course_id"/>
-            <field name="subject_id"/>
+            <field name="student_id" />
+            <field name="course_id" />
+            <field name="subject_id" />
           </group>
           <group name="group" string="Groups">
             <field name="record_subject_group_ids" nolabel="1" colspan="2">
               <tree>
-                <field name="group_id"/>
-                <field name="enrollment_id"/>
+                <field name="group_id" />
+                <field name="enrollment_id" />
               </tree>
             </field>
           </group>
           <group name="last_group" string="Last Group">
-            <field name="last_record_subject_group_id"/>
+            <field name="last_record_subject_group_id" />
           </group>
         </sheet>
       </form>
@@ -32,9 +32,9 @@
     <field name="model">education.record.subject</field>
     <field name="arch" type="xml">
       <tree string="Subject Record">
-        <field name="student_id"/>
-        <field name="course_id"/>
-        <field name="subject_id"/>
+        <field name="student_id" />
+        <field name="course_id" />
+        <field name="subject_id" />
       </tree>
     </field>
   </record>
@@ -44,13 +44,13 @@
     <field name="model">education.record.subject</field>
     <field name="arch" type="xml">
       <search string="Subject Record">
-        <field name="student_id"/>
-        <field name="course_id"/>
-        <field name="subject_id"/>
+        <field name="student_id" />
+        <field name="course_id" />
+        <field name="subject_id" />
         <group string="Group By">
-          <filter name="student_id" string="Student" context="{'group_by': 'student_id'}"/>
-          <filter name="course_id" string="Course" context="{'group_by': 'course_id'}"/>
-          <filter name="subject_id" string="Subject" context="{'group_by': 'subject_id'}"/>
+          <filter name="student_id" string="Student" context="{'group_by': 'student_id'}" />
+          <filter name="course_id" string="Course" context="{'group_by': 'course_id'}" />
+          <filter name="subject_id" string="Subject" context="{'group_by': 'subject_id'}" />
         </group>
       </search>
     </field>
@@ -67,6 +67,7 @@
     </field>
   </record>
 
-  <menuitem id="record_subject_menu" parent="education_record_root" action="record_subject_action" sequence="20"/>
+  <menuitem id="record_subject_menu" parent="education_record_root" action="record_subject_action"
+    sequence="20" />
 
 </odoo>

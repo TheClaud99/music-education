@@ -8,9 +8,9 @@
         <form string="Education Vacation">
           <sheet>
             <group name="main">
-              <field name="name"/>
-              <field name="init_date"/>
-              <field name="end_date"/>
+              <field name="name" />
+              <field name="init_date" />
+              <field name="end_date" />
             </group>
           </sheet>
         </form>
@@ -22,9 +22,9 @@
       <field name="model">education.vacation</field>
       <field name="arch" type="xml">
         <tree string="Education  Vacation">
-          <field name="name"/>
-          <field name="init_date"/>
-          <field name="end_date"/>
+          <field name="name" />
+          <field name="init_date" />
+          <field name="end_date" />
         </tree>
       </field>
     </record>
@@ -34,13 +34,13 @@
       <field name="model">education.vacation</field>
       <field name="arch" type="xml">
         <search string="Education Vacation">
-          <field name="name"/>
-          <field name="init_date"/>
-          <field name="end_date"/>
+          <field name="name" />
+          <field name="init_date" />
+          <field name="end_date" />
           <group string="Group By" name="groupby">
-            <filter string="Name" context="{'group_by': 'name'}"/>
-            <filter string="Init Date" context="{'group_by': 'init_date'}"/>
-            <filter string="End Date" context="{'group_by': 'end_date'}"/>
+            <filter string="Name" context="{'group_by': 'name'}" />
+            <filter string="Init Date" context="{'group_by': 'init_date'}" />
+            <filter string="End Date" context="{'group_by': 'end_date'}" />
           </group>
         </search>
       </field>
@@ -57,7 +57,8 @@
       </field>
     </record>
 
-    <menuitem id="education_vacation_menu" parent="education_timetable.education_assistance_root" action="education_vacation_action" sequence="20"/>
+    <menuitem id="education_vacation_menu" parent="education_timetable.education_assistance_root"
+      action="education_vacation_action" sequence="20" />
 
   </data>
 </openerp>
