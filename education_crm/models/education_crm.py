@@ -3,38 +3,38 @@
 #                Luis Adan Jimenez Hernandez <luis.jimenez@pesol.es>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
-from odoo import models, fields
+from odoo import fields, models
 
 
 class Lead(models.Model):
-    _inherit = 'crm.lead'
+    _inherit = "crm.lead"
 
     group_id = fields.Many2one(
-        comodel_name='education.group',
-        string='Group',
-        track_visibility='onchange')
+        comodel_name="education.group", string="Group", track_visibility="onchange"
+    )
 
     course_id = fields.Many2one(
-        comodel_name='education.course',
-        string='Course',
-        track_visibility='onchange')
+        comodel_name="education.course", string="Course", track_visibility="onchange"
+    )
 
     enrollment_id = fields.Many2one(
-        comodel_name='education.enrollment',
-        string='Enrollment',
-        track_visibility='onchange')
+        comodel_name="education.enrollment",
+        string="Enrollment",
+        track_visibility="onchange",
+    )
 
     def create_enrollment(self):
         return {
-            'name': 'Enrollment Registration',
-            'type': 'ir.actions.act_window',
-            'res_model': 'education.enrollment',
-            'view_type': 'form',
-            'view_mode': 'form',
-            'view_id': False,
-            'form_view_id': 'education.education_enrollment_action',
-            'context': {'default_lead_id': self.id,
-                        'default_student_id': self.partner_id.id,
-                        'default_course_id': self.course_id.id,
-                        }
+            "name": "Enrollment Registration",
+            "type": "ir.actions.act_window",
+            "res_model": "education.enrollment",
+            "view_type": "form",
+            "view_mode": "form",
+            "view_id": False,
+            "form_view_id": "education.education_enrollment_action",
+            "context": {
+                "default_lead_id": self.id,
+                "default_student_id": self.partner_id.id,
+                "default_course_id": self.course_id.id,
+            },
         }

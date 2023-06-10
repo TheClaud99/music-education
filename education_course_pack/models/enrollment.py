@@ -2,35 +2,33 @@
 #                Angel Moya <angel.moya@pesol.es>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
-from odoo import models, api, fields
+from odoo import api, fields, models
 
 
 class EducationEnrollment(models.Model):
-    _inherit = 'education.enrollment'
+    _inherit = "education.enrollment"
 
-    pack = fields.Boolean(
-        string='Pack',
-        related='course_id.pack')
+    pack = fields.Boolean(string="Pack", related="course_id.pack")
     parent_enrollment_id = fields.Many2one(
-        comodel_name='education.enrollment',
-        string='Parent Enrollment')
+        comodel_name="education.enrollment", string="Parent Enrollment"
+    )
     pack_enrollment_ids = fields.One2many(
-        comodel_name='education.enrollment',
-        inverse_name='parent_enrollment_id',
-        string='Pack enrollment')
+        comodel_name="education.enrollment",
+        inverse_name="parent_enrollment_id",
+        string="Pack enrollment",
+    )
     group_id = fields.Many2one(
-        comodel_name='education.group',
-        string='Group',
-        required=False)
+        comodel_name="education.group", string="Group", required=False
+    )
 
-    state = fields.Selection(selection_add=[('in_process', "In Process")])
+    state = fields.Selection(selection_add=[("in_process", "In Process")])
 
     @api.multi
     def action_done(self):
         if self.pack:
             super(EducationEnrollment, self).action_done()
             self.create_pack_lines()
-            self.state = 'in_process'
+            self.state = "in_process"
         else:
             super(EducationEnrollment, self).action_done()
 
@@ -43,28 +41,28 @@ class EducationEnrollment(models.Model):
         line_values = []
         for course in self.course_id.course_pack_line_ids:
             data = {
-                'student_id': self.student_id.id,
+                "student_id": self.student_id.id,
                 # 'partner_id': self.partner_id.id,
-                'course_id': course.id,
-                'subject_ids': [(6, 0, course.subject_ids.ids)]
+                "course_id": course.id,
+                "subject_ids": [(6, 0, course.subject_ids.ids)],
             }
             line_values.append((0, 0, data))
-        self.write({'pack_enrollment_ids': line_values})
+        self.write({"pack_enrollment_ids": line_values})
 
     @api.multi
     def get_record_values(self):
         if self.pack:
             return {
                 # 'partner_id': self.partner_id.id,
-                'student_id': self.student_id.id,
-                'course_id': self.course_id.id,
+                "student_id": self.student_id.id,
+                "course_id": self.course_id.id,
             }
         else:
             values = super(EducationEnrollment, self).get_record_values()
             if self.parent_enrollment_id:
-                values.update({
-                    'parent_record_id': self.parent_enrollment_id.record_id.id
-                })
+                values.update(
+                    {"parent_record_id": self.parent_enrollment_id.record_id.id}
+                )
             return values
 
     @api.multi
@@ -72,7 +70,7 @@ class EducationEnrollment(models.Model):
         if not self.pack:
             super(EducationEnrollment, self).set_done()
 
-    @api.onchange('course_id')
+    @api.onchange("course_id")
     def _onchange_course(self):
         self.pack = self.course_id.pack
 

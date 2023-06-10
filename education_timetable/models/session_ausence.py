@@ -3,27 +3,21 @@
 #                Luis Adan Jimenez Hernandez <luis.jimenez@pesol.es>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
-from odoo import models, fields
+from odoo import fields, models
 
 
 class EducationSessionAusence(models.Model):
-    _name = 'education.session.ausence'
-    _inherit = ['mail.thread']
+    _name = "education.session.ausence"
+    _inherit = ["mail.thread"]
 
-    session_id = fields.Many2one(
-        comodel_name='education.session',
-        string='Session')
+    session_id = fields.Many2one(comodel_name="education.session", string="Session")
 
     record_subject_group_id = fields.Many2one(
-        comodel_name='education.record.subject.group',
-        string='Subject Record')
+        comodel_name="education.record.subject.group", string="Subject Record"
+    )
 
-    student_id = fields.Many2one(
-        comodel_name='res.partner',
-        string='Student')
+    student_id = fields.Many2one(comodel_name="res.partner", string="Student")
 
-    notes = fields.Char(
-        string='Notes')
+    notes = fields.Char(string="Notes")
 
-    supporting_document = fields.Boolean(
-        string='Supporting Document')
+    supporting_document = fields.Boolean(string="Supporting Document")

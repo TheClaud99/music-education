@@ -3,21 +3,16 @@
 #                Luis Adan Jimenez Hernandez <luis.jimenez@pesol.es>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
-from odoo import models, fields
+from odoo import fields, models
 
 
 class EducationVacation(models.Model):
-    _name = 'education.vacation'
+    _name = "education.vacation"
 
-    name = fields.Char(
-        string='Name')
+    name = fields.Char(string="Name")
 
-    init_date = fields.Date(
-        string='Init Date')
+    init_date = fields.Date(string="Init Date")
 
-    end_date = fields.Date(
-        string='End Date')
+    end_date = fields.Date(string="End Date")
 
-    company_id = fields.Many2one(
-        comodel_name='res.company',
-        string='Company')
+    company_id = fields.Many2one(comodel_name="res.company", string="Company")

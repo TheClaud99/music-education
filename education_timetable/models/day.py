@@ -3,14 +3,12 @@
 #                Luis Adan Jimenez Hernandez <luis.jimenez@pesol.es>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
-from odoo import models, fields
+from odoo import fields, models
 
 
 class EducationDay(models.Model):
-    _name = 'education.day'
+    _name = "education.day"
 
-    name = fields.Char(
-        string='Name')
+    name = fields.Char(string="Name")
 
-    code = fields.Integer(
-        string='Code')
+    code = fields.Integer(string="Code")

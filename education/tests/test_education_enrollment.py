@@ -1,26 +1,24 @@
-
 # Copyright 2017 Pesol (<http://pesol.es>)
 #                Angel Moya <angel.moya@pesol.es>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
-from odoo.tests.common import TransactionCase
 from odoo.exceptions import ValidationError
+from odoo.tests.common import TransactionCase
 
 
 class TestEducationEnrollment(TransactionCase):
-
     def setUp(self):
         super(TestEducationEnrollment, self).setUp()
 
         # Group data
-        self.group_1 = self.env.ref('education.education_group_1')
+        self.group_1 = self.env.ref("education.education_group_1")
 
         # Enrollment data
-        self.enrollment_1 = self.env.ref('education.education_enrollment_1')
-        self.enrollment_2 = self.env.ref('education.education_enrollment_2')
+        self.enrollment_1 = self.env.ref("education.education_enrollment_1")
+        self.enrollment_2 = self.env.ref("education.education_enrollment_2")
 
     def test_group(self):
-        """ Check group flow"""
+        """Check group flow"""
         self.group_1.action_active()
         self.group_1.action_draft()
         self.group_1.action_active()
@@ -30,31 +28,32 @@ class TestEducationEnrollment(TransactionCase):
         self.group_1.action_active()
 
     def test_group_unlink(self):
-        """ Check group unlink restriction"""
+        """Check group unlink restriction"""
         with self.assertRaises(ValidationError):
             self.group_1.unlink()
 
     def test_enrollment(self):
-        """ Validate enrollment for a full course and check record.
-            Validate enrollment on same course for one subject and check
-            record for the subjects."""
+        """Validate enrollment for a full course and check record.
+        Validate enrollment on same course for one subject and check
+        record for the subjects."""
         self.enrollment_1.action_done()
-        record_subject_ids = \
-            self.enrollment_1.record_id.record_subject_ids.mapped('subject_id')
-        course_subject_ids = \
-            self.enrollment_1.subject_ids
+        record_subject_ids = self.enrollment_1.record_id.record_subject_ids.mapped(
+            "subject_id"
+        )
+        course_subject_ids = self.enrollment_1.subject_ids
 
         self.assertEquals(record_subject_ids, course_subject_ids)
 
         self.enrollment_2.action_done()
         record = self.enrollment_2.record_id
 
-        self.assertEquals(
-            record, self.enrollment_1.record_id)
+        self.assertEquals(record, self.enrollment_1.record_id)
 
         subjects_enrolled = self.enrollment_2.subject_ids
         record_subject = record.record_subject_ids.filtered(
-            lambda s: s.subject_id in subjects_enrolled)
+            lambda s: s.subject_id in subjects_enrolled
+        )
         self.assertEquals(
-            record_subject.record_subject_group_ids.mapped('enrollment_id'),
-            self.enrollment_1 + self.enrollment_2)
+            record_subject.record_subject_group_ids.mapped("enrollment_id"),
+            self.enrollment_1 + self.enrollment_2,
+        )
