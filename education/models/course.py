@@ -63,6 +63,19 @@ class EducationCourseSubject(models.Model):
     subject_id = fields.Many2one(comodel_name="education.subject", string="Subject")
 
 
+class EducationInstrument(models.Model):
+    _name = "education.instrument"
+    _inherit = ["mail.thread"]
+
+    name = fields.Char(string="Name", required=True)
+
+    course_ids = fields.One2many(
+        comodel_name="education.course",
+        inverse_name="instrument_id",
+        string="Courses",
+    )
+
+
 class EducationCourse(models.Model):
     _name = "education.course"
     _inherit = ["mail.thread"]
@@ -80,3 +93,4 @@ class EducationCourse(models.Model):
     )
     duration = fields.Float(string="Duration", company_dependent=True)
     active = fields.Boolean(string="Active", default=True)
+    instrument_id = fields.Many2one("education.instrument", "Strumento")
