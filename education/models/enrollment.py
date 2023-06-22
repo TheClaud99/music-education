@@ -33,6 +33,7 @@ class EducationEnrollment(models.Model):
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
+    teacher_id = fields.Many2one(related="course_id.teacher_id")
     group_id = fields.Many2one(
         comodel_name="education.group",
         string="Group",
