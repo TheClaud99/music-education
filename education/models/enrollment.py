@@ -10,7 +10,6 @@ class EducationEnrollment(models.Model):
 
     code = fields.Char(
         string="Code",
-        required=True,
         default=lambda self: _("New"),
         readonly=True,
         states={"draft": [("readonly", False)]},
@@ -26,8 +25,6 @@ class EducationEnrollment(models.Model):
         comodel_name="res.partner",
         string="Student",
         required=True,
-        readonly=True,
-        states={"draft": [("readonly", False)]},
     )
     course_id = fields.Many2one(
         comodel_name="education.course",
@@ -39,7 +36,6 @@ class EducationEnrollment(models.Model):
     group_id = fields.Many2one(
         comodel_name="education.group",
         string="Group",
-        required=True,
         readonly=True,
         states={"draft": [("readonly", False)]},
     )

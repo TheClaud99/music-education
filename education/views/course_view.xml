@@ -19,14 +19,23 @@
           <group name="general" col="4">
             <field name="code" />
             <field name="category_id" />
-            <field name="duration" widget="float_time" />
+            <field name="teacher_id" />
+            <!-- <field name="duration" widget="float_time" /> -->
             <field name="company_id" widget="selection" groups="base.group_multi_company" />
           </group>
           <notebook name="enrollments">
             <page name="enrollment" string="Iscrizioni">
               <field name="enrollment_ids" nolabel='1'>
-                <tree editable="bottom">
+                <tree>
                   <field name="student_id" />
+                  <field name="state" invisible="1" />
+                </tree>
+              </field>
+            </page>
+            <page name="students" string="Studenti">
+              <field name="students" nolabel='1'>
+                <tree editable="bottom">
+                  <field name="name" />
                 </tree>
               </field>
             </page>
@@ -46,6 +55,8 @@
     <field name="arch" type="xml">
       <tree string="Education Course">
         <field name="name" />
+        <field name="teacher_id" />
+        <field name="students" />
         <field name="code" />
         <field name="category_id" />
         <field name="duration" widget="float_time" />

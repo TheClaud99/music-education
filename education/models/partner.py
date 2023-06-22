@@ -12,6 +12,11 @@ class ResPartner(models.Model):
         string="Academic Records",
     )
 
+    enrollment_ids = fields.One2many("education.enrollment", "student_id", "Iscrizioni")
+    courses = fields.Many2many(
+        "education.course", "education_enrollment", "student_id", "course_id", "Corsi"
+    )
+
     def open_student_enrolled_groups(self):
         return {
             "name": _("Academic Groups"),

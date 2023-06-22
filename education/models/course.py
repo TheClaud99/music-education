@@ -94,3 +94,9 @@ class EducationCourse(models.Model):
     duration = fields.Float(string="Duration", company_dependent=True)
     active = fields.Boolean(string="Active", default=True)
     instrument_id = fields.Many2one("education.instrument", "Strumento")
+    teacher_id = fields.Many2one("res.partner", "Insegnante")
+
+    enrollment_ids = fields.One2many("education.enrollment", "course_id", "Iscrizioni")
+    students = fields.Many2many(
+        "res.partner", "education_enrollment", "course_id", "student_id", "Studenti"
+    )
