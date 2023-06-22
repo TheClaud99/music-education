@@ -10,7 +10,7 @@
     "license": "AGPL-3",
     "application": True,
     "installable": True,
-    "depends": ["base", "mail"],
+    "depends": ["base", "mail", "account"],
     "data": [
         "security/education_security.xml",
         "security/ir.model.access.csv",
@@ -21,6 +21,7 @@
         "views/enrollment_view.xml",
         "views/group_view.xml",
         "views/partner_view.xml",
+        "views/res_config_settings_views.xml",
     ],
     "demo": [
         "demo/education_res_partner_demo.xml",
