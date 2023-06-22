@@ -12,3 +12,7 @@ class EducationCourse(models.Model):
     max_faults = fields.Integer(string="Number of faults allowed")
     cons_faults = fields.Integer(string="Consecutive number of faults")
     max_cons_faults = fields.Integer(string="Consecutive number of faults allowed")
+
+    timetable_ids = fields.One2many(
+        "education.timetable.line", "course_id", "Timetables"
+    )

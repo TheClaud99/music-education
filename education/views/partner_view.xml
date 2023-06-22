@@ -51,14 +51,28 @@
       </group>
       <page name='internal_notes' position="before">
         <page name="educational" string="Educational" attrs="{'invisible':[('student','=', False)]}">
-          <group string="Academic Records" name="academic_record">
-            <field name="record_ids" nolabel="1">
-              <tree>
-                <field name="code" />
-                <field name="course_id" />
-              </tree>
-            </field>
-          </group>
+          <field name="record_ids" nolabel="1">
+            <tree>
+              <field name="code" />
+              <field name="course_id" />
+            </tree>
+          </field>
+        </page>
+        <page name="coruses" string="Corsi" attrs="{'invisible':[('student','=', False)]}">
+          <field name="courses" nolabel="1">
+            <tree>
+              <field name="name" />
+              <field name="teacher_id" />
+            </tree>
+          </field>
+        </page>
+        <page name="enrollments" string="Iscrizioni" attrs="{'invisible':[('student','=', False)]}">
+          <field name="enrollment_ids" nolabel="1">
+            <tree>
+              <field name="course_id" />
+              <field name="teacher_id" />
+            </tree>
+          </field>
         </page>
       </page>
     </field>

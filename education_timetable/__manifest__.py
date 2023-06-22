@@ -15,7 +15,6 @@
     "depends": ["base", "education", "calendar", "mail"],
     "data": [
         "views/timetable_line_view.xml",
-        "views/record_view.xml",
         "views/session_view.xml",
         "views/timerange_view.xml",
         "views/student_view.xml",
