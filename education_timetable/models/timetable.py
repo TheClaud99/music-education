@@ -20,21 +20,20 @@ class EducationTimetableLine(models.Model):
         comodel_name="education.course", string="Course", required=True
     )
 
-    group_id = fields.Many2one(
-        comodel_name="education.group", string="Group", required=True
-    )
+    group_id = fields.Many2one(comodel_name="education.group", string="Group")
 
-    subject_id = fields.Many2one(
-        comodel_name="education.subject", string="Subject", required=True
-    )
+    subject_id = fields.Many2one(comodel_name="education.subject", string="Subject")
 
     teacher_id = fields.Many2one(
         comodel_name="res.partner", string="Teacher", required=True
     )
 
     timerange_id = fields.Many2one(
-        comodel_name="education.timerange", string="Time Range", required=True
+        comodel_name="education.timerange", string="Time Range"
     )
+
+    start_time = fields.Float(string="Start time")
+    end_time = fields.Float(string="End time")
 
     day_ids = fields.Many2many(
         comodel_name="education.day",
@@ -81,17 +80,46 @@ class EducationTimetableLine(models.Model):
         ]
         return {"domain": {"subject_id": subject_fields_domain}}
 
-    
     def get_days(self, start, end):
         step = timedelta(days=1)
         for i in range((end - start).days + 1):
             yield start + i * step
 
-    
+    def get_hours(self, hours):
+        return "{0:02.0f}:{1:02.0f}:00".format(*divmod(float(hours) * 60, 60))
+
+    def _prepare_meeting_vals(self, day):
+        resource_partners = self.course_id.students
+        res_model_id = self.env.ref("education_timetable.model_education_timetable_line").id
+        res_id = self.id
+        start = day.strftime("%Y-%m-%d") + " " + self.get_hours(self.start_time)
+        stop = day.strftime("%Y-%m-%d") + " " + self.get_hours(self.end_time)
+        duration = self.end_time - self.start_time
+        return dict(
+            # alarm_ids=[(6, 0, self.type_id.alarm_ids.ids)],
+            # categ_ids=[(6, 0, self.categ_ids.ids)],
+            # description=self.type_id.requester_advice,
+            duration=duration,
+            # location=self.location,
+            name="Test",
+            partner_ids=[
+                (4, partner.id, 0) for partner in self.teacher_id | resource_partners
+            ],
+            # resource_booking_ids=[(6, 0, self.ids)],
+            start=start,
+            stop=stop,
+            user_id=self.env.user.id,
+            show_as="busy",
+            # These 2 avoid creating event as activity
+            res_model_id=False,
+            res_id=False,
+        )
+
     def generate_new_sessions(self):
         self.ensure_one()
         self.state = "done"
         session_obj = self.env["education.session"]
+        event_obj = self.env["calendar.event"]
         end = fields.Date.from_string(self.date_from)
         start = fields.Date.from_string(self.date_to)
         days = []
@@ -101,16 +129,19 @@ class EducationTimetableLine(models.Model):
         for day in self.get_days(end, start):
             if day.weekday() in day_ids_codes:
                 days.append(day)
+
         for record in self:
             for day in days:
-                session_obj.create(
-                    {
-                        "timetable_id": record.id,
-                        "timerange_id": record.timerange_id.id,
-                        "date": day,
-                        "teacher_id": record.teacher_id.id,
-                    }
-                )
+                # session_obj.create(
+                #     {
+                #         "timetable_id": record.id,
+                #         "timerange_id": record.timerange_id.id,
+                #         "date": day,
+                #         "teacher_id": record.teacher_id.id,
+                #     }
+                # )
+
+                event_obj.create(self._prepare_meeting_vals(day))
 
     @api.model
     def create(self, vals):
@@ -121,7 +152,6 @@ class EducationTimetableLine(models.Model):
             )
         return super(EducationTimetableLine, self).create(vals)
 
-    
     def unlink(self):
         for record in self:
             if record.mapped("session_ids").filtered(lambda s: s.state in ["done"]):
