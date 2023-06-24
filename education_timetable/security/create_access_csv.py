@@ -10,16 +10,13 @@ import os
 #   - chiave ruolo (la stessa del dict ROLES)
 #   - lista di permessi con il seguente ordine: (read, write, create, unlink)
 MODELS = (
-    ("education", "education.course.category", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
-    ("education", "education.course.subject", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
-    ("education", "education.course", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
-    ("education", "education.enrollment", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
-    ("education", "education.group", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
-    ("education", "education.instrument", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
-    ("education", "education.record.subject.group", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
-    ("education", "education.record.subject", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
-    ("education", "education.record", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
-    ("education", "education.subject", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
+    ("education_timetable", "education.day", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
+    ("education_timetable", "education.session.attendance", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
+    ("education_timetable", "education.session.presence.line", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
+    ("education_timetable", "education.session.presence", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
+    ("education_timetable", "education.session", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
+    ("education_timetable", "education.timerange", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
+    ("education_timetable", "education.timetable.line", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
 )
 
 # Lista di ruoli
