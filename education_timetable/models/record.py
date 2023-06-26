@@ -15,11 +15,6 @@ class EducationRecordSubject(models.Model):
 class EducationRecordSubjectGroup(models.Model):
     _inherit = "education.record.subject.group"
 
-    attendance_ids = fields.One2many(
-        comodel_name="education.session.attendance",
-        inverse_name="record_subject_group_id",
-        string="attendance",
-    )
 
     faults = fields.Integer(string="Faults", compute="_compute_faults")
     cons_faults = fields.Integer(

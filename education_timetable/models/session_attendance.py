@@ -10,10 +10,16 @@ class EducationSessionAttendance(models.Model):
     _name = "education.session.attendance"
     _inherit = ["mail.thread"]
 
-    session_id = fields.Many2one(comodel_name="education.session", string="Session")
+    session_id = fields.Many2one(
+        comodel_name="education.session",
+        string="Lezione",
+        required=True,
+        index=True,
+        ondelete="cascade",
+    )
 
-    student_id = fields.Many2one(comodel_name="res.partner", string="Student")
+    student_id = fields.Many2one(comodel_name="res.partner", string="Studente")
 
-    notes = fields.Char(string="Notes")
+    notes = fields.Char(string="Note")
 
     supporting_document = fields.Boolean(string="Supporting Document")

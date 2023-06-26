@@ -5,6 +5,7 @@
 
 from datetime import timedelta
 
+import pytz
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 from odoo.osv import expression
@@ -43,7 +44,9 @@ class EducationTimetableLine(models.Model):
         string="Days",
     )
 
-    date_from = fields.Date(string="Start Date", required=True)
+    date_from = fields.Date(
+        string="Start Date", required=True, default=fields.Date.context_today
+    )
 
     date_to = fields.Date(string="End Date", required=True)
 
@@ -88,32 +91,35 @@ class EducationTimetableLine(models.Model):
     def get_hours(self, hours):
         return "{0:02.0f}:{1:02.0f}:00".format(*divmod(float(hours) * 60, 60))
 
-    def _prepare_meeting_vals(self, day):
-        resource_partners = self.course_id.students
-        res_model_id = self.env.ref("education_timetable.model_education_timetable_line").id
-        res_id = self.id
+    def _prepare_session_vals(self, day):
+        students = self.course_id.students
         start = day.strftime("%Y-%m-%d") + " " + self.get_hours(self.start_time)
         stop = day.strftime("%Y-%m-%d") + " " + self.get_hours(self.end_time)
         duration = self.end_time - self.start_time
-        return dict(
-            # alarm_ids=[(6, 0, self.type_id.alarm_ids.ids)],
-            # categ_ids=[(6, 0, self.categ_ids.ids)],
-            # description=self.type_id.requester_advice,
-            duration=duration,
-            # location=self.location,
-            name="Test",
-            partner_ids=[
-                (4, partner.id, 0) for partner in self.teacher_id | resource_partners
-            ],
-            # resource_booking_ids=[(6, 0, self.ids)],
-            start=start,
-            stop=stop,
-            user_id=self.env.user.id,
-            show_as="busy",
-            # These 2 avoid creating event as activity
-            res_model_id=False,
-            res_id=False,
+        tz_name = self._context.get("tz") or self.env.user.tz
+        tz = pytz.timezone(tz_name)
+        start = (
+            tz.normalize(tz.localize(fields.Datetime.from_string(start)))
+            .astimezone(pytz.utc)
+            .replace(tzinfo=None)
         )
+
+        stop = (
+            tz.normalize(tz.localize(fields.Datetime.from_string(stop)))
+            .astimezone(pytz.utc)
+            .replace(tzinfo=None)
+        )
+
+        return {
+            "start": start,
+            "stop": stop,
+            "teacher_id": self.teacher_id.id,
+            "attendance_ids": [
+                (0, 0, {"student_id": student.id}) for student in students
+            ],
+            "duration": duration,
+            "timetable_id": self.id,
+        }
 
     def generate_new_sessions(self):
         self.ensure_one()
@@ -132,16 +138,7 @@ class EducationTimetableLine(models.Model):
 
         for record in self:
             for day in days:
-                # session_obj.create(
-                #     {
-                #         "timetable_id": record.id,
-                #         "timerange_id": record.timerange_id.id,
-                #         "date": day,
-                #         "teacher_id": record.teacher_id.id,
-                #     }
-                # )
-
-                event_obj.create(self._prepare_meeting_vals(day))
+                session_obj.create(record._prepare_session_vals(day))
 
     @api.model
     def create(self, vals):

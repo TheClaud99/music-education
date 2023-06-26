@@ -5,6 +5,7 @@
 
 # from . import education_vacation
 from . import (
+    calendar_event,
     course,
     day,
     group,
