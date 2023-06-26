@@ -116,7 +116,4 @@
     <field eval="1" name="company_id" />
   </record>
 
-  <menuitem id="education_group" parent="education_course_root" action="education_group_action"
-    sequence="20" />
-
 </odoo>
