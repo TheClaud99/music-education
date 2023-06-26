@@ -6,15 +6,11 @@
 from odoo import fields, models
 
 
-class EducationSessionAusence(models.Model):
-    _name = "education.session.ausence"
+class EducationSessionAttendance(models.Model):
+    _name = "education.session.attendance"
     _inherit = ["mail.thread"]
 
     session_id = fields.Many2one(comodel_name="education.session", string="Session")
-
-    record_subject_group_id = fields.Many2one(
-        comodel_name="education.record.subject.group", string="Subject Record"
-    )
 
     student_id = fields.Many2one(comodel_name="res.partner", string="Student")
 

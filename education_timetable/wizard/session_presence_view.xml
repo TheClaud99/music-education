@@ -18,7 +18,7 @@
             </field>
           </group>
         <footer>
-          <button name="create_ausences" class="oe_highlight" type="object" string="Save"/>
+          <button name="create_attendances" class="oe_highlight" type="object" string="Save"/>
           or
           <button class="oe_link" special="cancel" string="Cancel"/>
         </footer>

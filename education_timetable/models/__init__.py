@@ -11,7 +11,7 @@ from . import (
     partner,
     record,
     session,
-    session_ausence,
+    session_attendance,
     timerange,
     timetable,
 )

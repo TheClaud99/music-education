@@ -6,9 +6,9 @@
     <field name='inherit_id' ref='education.view_record_subject_group_form' />
     <field name="arch" type="xml">
       <group name="main" position="after">
-        <group string="Ausences">
+        <group string="attendances">
           <field name="faults" />
-          <field name="ausence_ids" nolabel="1" colspan="2">
+          <field name="attendance_ids" nolabel="1" colspan="2">
             <tree>
               <field name="session_id" />
               <field name="notes" />

@@ -26,11 +26,11 @@ class EducationSessionPresence(models.TransientModel):
         self.session_presence_ids = lines
 
     
-    def create_ausences(self):
+    def create_attendances(self):
         values = []
         self.ensure_one()
         record_subject_group_obj = self.env["education.record.subject.group"]
-        students = self.session_id.ausence_ids.mapped("student_id")
+        students = self.session_id.attendance_ids.mapped("student_id")
         for line in self.session_presence_ids.filtered(lambda l: l.lack):
             if line.student_id not in students:
                 timetable_id = line.presence_id.session_id.timetable_id
@@ -46,17 +46,17 @@ class EducationSessionPresence(models.TransientModel):
                         ("group_id", "=", group_id),
                     ]
                 )
-                ausence_values = {
+                attendance_values = {
                     "session_id": self.env.context.get("active_id"),
                     "student_id": line.student_id.id,
                     "record_subject_group_id": record_subject_group
                     and record_subject_group.id,
                     "notes": line.notes,
                 }
-                values.append((0, 0, ausence_values))
+                values.append((0, 0, attendance_values))
             else:
-                self.session_id.ausence_ids.filtered(
+                self.session_id.attendance_ids.filtered(
                     lambda l: l.student_id == line.student_id
                 ).write({"notes": line.notes})
-        self.session_id.ausence_ids = values
+        self.session_id.attendance_ids = values
         self.session_id.state = "done"

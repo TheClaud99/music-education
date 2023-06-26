@@ -15,10 +15,10 @@ class EducationRecordSubject(models.Model):
 class EducationRecordSubjectGroup(models.Model):
     _inherit = "education.record.subject.group"
 
-    ausence_ids = fields.One2many(
-        comodel_name="education.session.ausence",
+    attendance_ids = fields.One2many(
+        comodel_name="education.session.attendance",
         inverse_name="record_subject_group_id",
-        string="Ausence",
+        string="attendance",
     )
 
     faults = fields.Integer(string="Faults", compute="_compute_faults")
@@ -29,7 +29,7 @@ class EducationRecordSubjectGroup(models.Model):
     
     def _compute_faults(self):
         for subject in self:
-            subject.faults = len(subject.ausence_ids)
+            subject.faults = len(subject.attendance_ids)
 
     # TODO:
     
@@ -51,7 +51,7 @@ class EducationRecordSubjectGroup(models.Model):
             consecutive_faults = 0
             max_consecutive_faults = 0
             for session in sessions:
-                if session.ausence_ids.filtered(
+                if session.attendance_ids.filtered(
                     lambda a: a.student_id
                     == record_subject_group.enrollment_id.student_id
                 ):

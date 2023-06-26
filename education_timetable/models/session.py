@@ -28,18 +28,12 @@ class EducationSession(models.Model):
     state = fields.Selection(
         [("draft", "Draft"), ("done", "Done")], string="Status", default="draft"
     )
-    ausence_ids = fields.One2many(
-        comodel_name="education.session.ausence",
+    attendance_ids = fields.One2many(
+        comodel_name="education.session.attendance",
         inverse_name="session_id",
-        string="Ausences",
+        string="Presenze",
     )
-    user_id = fields.Many2one(
-        comodel_name="res.users",
-        string="Salesperson",
-        index=True,
-        track_visibility="onchange",
-        default=lambda self: self.env.user,
-    )
+
     teacher_id = fields.Many2one(
         comodel_name="res.partner",
         # related='timetable_id.teacher_id',

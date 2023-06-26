@@ -9,10 +9,10 @@ from odoo import fields, models
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    ausence_ids = fields.One2many(
-        comodel_name="education.session.ausence",
+    attendance_ids = fields.One2many(
+        comodel_name="education.session.attendance",
         inverse_name="student_id",
-        string="Ausences",
+        string="Presenze",
     )
 
     session_ids = fields.One2many(
