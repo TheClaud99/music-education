@@ -91,7 +91,7 @@
               <field string="Meetings" name="meeting_count" widget="statinfo" />
             </button>
             <button type="object" class="oe_stat_button" icon="fa-solid fa-file"
-              name="open_student_enrollments" attrs="{'invisible': [('student', '=', False)]}">
+              name="open_student_attendances" attrs="{'invisible': [('student', '=', False)]}">
               <div class="o_form_field o_stat_info">
                 <span class="o_stat_value">
                   <!-- <field name="invoices_count" modifiers="{'readonly': true}"/> -->
