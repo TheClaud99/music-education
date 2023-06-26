@@ -22,21 +22,9 @@
             </h1>
           </div>
           <group name="Information" col="4">
-            <field name="student_id" />
-            <field name="course_id" />
-            <field name="group_id"
-              domain="[('course_id', '=', course_id), ('state', 'in', ['active'])]" />
-            <field name="record_id" attrs="{'invisible':[('state','!=', 'done')]}" readonly="1" />
+            <field name="student_id" domain="[('student','=',1)]" options="{'no_create': True}" />
             <field name="company_id" widget="selection" groups="base.group_multi_company" />
           </group>
-          <notebook colspan="4">
-            <page string="Academic Information">
-              <group name="subjects" col="4">
-                <separator string="Subjects" colspan="4" />
-                <field name="subject_ids" nolabel="1" colspan="4" />
-              </group>
-            </page>
-          </notebook>
         </sheet>
         <div class="oe_chatter">
           <field name="message_follower_ids" widget="mail_followers" />

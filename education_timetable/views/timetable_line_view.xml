@@ -8,21 +8,18 @@
         <form string="Education Timetable">
           <header>
             <button name="generate_new_sessions" type="object"
-              attrs="{'invisible': [('state','!=','draft')]}" string="Generate New Sessions"
+              attrs="{'invisible': [('state','!=','draft')]}" string="Genera lezioni"
               class="oe_highlight" />
             <field name="state" widget="statusbar" />
           </header>
           <sheet>
             <group>
               <group>
+                <field name="name" />
                 <field name="course_id" />
-                <field name="group_id"
-                  domain="[('course_id', '=', course_id), '|', ('state', '=', 'active'), ('date_from', '&gt;', context_today().strftime('%Y-%m-%d'))]" />
-                <field name="subject_id" domain="[('course_ids.course_id', '=', course_id)]" />
                 <field name="teacher_id" domain="[('teacher', '=', True)]" />
               </group>
               <group>
-                <field name="timerange_id" />
                 <field name="date_from" />
                 <field name="date_to" />
                 <field name="start_time" widget="timesheet_uom_timer" />
@@ -32,8 +29,10 @@
             <group>
               <field name="day_ids" widget="many2many_checkboxes" style="display: inline-flex" />
             </group>
-            <group name="name" attrs="{'invisible': [('state', '!=', 'done')]}">
-              <field name="session_ids" nolabel="1" />
+            <group name="sesions" string="Lezioni" attrs="{'invisible': [('state', '!=', 'done')]}">
+              <group>
+                <field name="session_ids" colspan="4" nolabel="1" />
+              </group>
             </group>
           </sheet>
           <div class="oe_chatter">
@@ -50,10 +49,7 @@
       <field name="arch" type="xml">
         <tree string="Education Timetable">
           <field name="course_id" />
-          <field name="group_id" />
-          <field name="subject_id" />
           <field name="teacher_id" />
-          <field name="timerange_id" />
           <field name="day_ids" widget="many2many_tags" />
           <field name="date_from" />
           <field name="date_to" />
@@ -72,7 +68,7 @@
           <field name="subject_id" />
           <field name="teacher_id" />
           <field name="timerange_id" />
-          <!-- <field name="day_ids"/> -->
+          <field name="day_ids" />
           <field name="date_from" />
           <field name="date_to" />
           <group string="Group By" name="groupby">
@@ -80,8 +76,7 @@
             <filter string="Group" name="group_id" context="{'group_by': 'group_id'}" />
             <filter string="Subject" name="subject_id" context="{'group_by': 'subject_id'}" />
             <filter string="teacher_id" name="teacher_id" context="{'group_by': 'teacher_id'}" />
-            <!-- <filter string="Day" context="{'group_by': 'day_ids'}"/> -->
-            <filter string="timetable_id" name="timerange_id" context="{'group_by': 'timerange_id'}" />
+            <filter string="Day" name="day_ids" context="{'group_by': 'day_ids'}" />
           </group>
         </search>
       </field>
@@ -121,7 +116,7 @@
     <menuitem id="education_assistance_root" parent="education.education_base_menu" name="Timetable"
       sequence="60" />
     <menuitem id="education_timetable_menu" parent="education_assistance_root"
-      action="education_timetable_action" sequence="20" />
+      action="education_timetable_action" sequence="20" name="Timetables" />
 
   </data>
 </odoo>

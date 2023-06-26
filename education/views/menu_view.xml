@@ -8,7 +8,7 @@
       sequence="10" />
     <menuitem id="education_record_root" parent="education.education_base_menu" name="Records"
       sequence="20" />
-    <menuitem id="education_course_root" parent="education.education_base_menu" name="Courses"
+    <menuitem id="education_course_root" parent="education.education_base_menu" name="Corsi"
       sequence="30" />
     <menuitem id="education_teacher_root" parent="education.education_base_menu" name="Teachers"
       sequence="40" />

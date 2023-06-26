@@ -18,24 +18,18 @@
           </h1>
           <group name="general" col="4">
             <field name="code" />
-            <field name="category_id" />
-            <field name="teacher_id" />
+            <field name="category_id" options="{'no_quick_create': True}" />
+            <field name="teacher_id" options="{'no_create': True}" domain="[('teacher','=',1)]"/>
             <!-- <field name="duration" widget="float_time" /> -->
             <field name="company_id" widget="selection" groups="base.group_multi_company" />
           </group>
-          <notebook name="enrollments">
-            <page name="enrollment" string="Iscrizioni">
+          <notebook>
+            <page name="enrollments" string="Iscrizioni">
               <field name="enrollment_ids" nolabel='1'>
                 <tree editable="bottom">
-                  <field name="student_id" />
+                  <field name="student_id" options="{'no_create': True}"
+                    domain="[('student','=',1)]" />
                   <field name="state" invisible="1" />
-                </tree>
-              </field>
-            </page>
-            <page name="students" string="Studenti">
-              <field name="students" nolabel='1'>
-                <tree editable="bottom">
-                  <field name="name" />
                 </tree>
               </field>
             </page>
@@ -95,6 +89,6 @@
   </record>
 
   <menuitem id="education_course" parent="education_course_root" action="education_course_action"
-    sequence="20" />
+    sequence="20" name="Corsi" />
 
 </odoo>

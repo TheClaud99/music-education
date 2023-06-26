@@ -5,13 +5,13 @@
         <field name="model">education.course</field>
         <field name="inherit_id" ref="education.view_education_course_form" />
         <field name="arch" type="xml">
-            <xpath expr="//page[@name='students']" position="after">
+            <xpath expr="//page[@name='enrollments']" position="after">
                 <page name="timetables" string="Timetables">
                     <field name="timetable_ids" nolabel='1'
                         context="{'default_teacher_id': teacher_id}">
                         <tree>
                             <field name="name" />
-                            <field name="teacher_id" />
+                            <field name="teacher_id" options="{'no_create': True}" domain="[('teacher','=',1)]" />
                             <field name="date_from" />
                             <field name="date_to" />
                             <field name="start_time" widget="timesheet_uom_timer" />
