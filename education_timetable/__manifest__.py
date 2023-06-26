@@ -16,7 +16,7 @@
     "data": [
         "views/timetable_line_view.xml",
         "views/session_view.xml",
-        "views/timerange_view.xml",
+        "views/session_attendance_view.xml",
         "views/student_view.xml",
         "views/teacher_view.xml",
         "views/course_view.xml",
