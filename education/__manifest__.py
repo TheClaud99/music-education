@@ -10,7 +10,13 @@
     "license": "AGPL-3",
     "application": True,
     "installable": True,
-    "depends": ["base", "mail", "account", "partner_contact_birthdate"],
+    "depends": [
+        "base",
+        "mail",
+        "account",
+        "partner_contact_birthdate",
+        "partner_firstname",
+    ],
     "data": [
         "security/education_security.xml",
         "security/ir.model.access.csv",

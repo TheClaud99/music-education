@@ -119,14 +119,22 @@
             <field name="country_code" invisible="1" />
             <field name="parent_id" invisible="1" />
 
-            <h1>
+            <h1 invisible="1">
               <field id="individual" class="text-break" name="name" default_focus="1"
-                placeholder="e.g. Brandom Freeman" required="1" />
+                placeholder="e.g. Brandom Freeman" />
             </h1>
           </div>
 
           <group>
             <group>
+              <field
+                name="lastname"
+                attrs="{'required': [('firstname', '=', False)]}"
+              />
+              <field
+                name="firstname"
+                attrs="{'required': [('lastname', '=', False)]}"
+              />
               <field name="phone" widget="phone" />
               <field name="user_ids" invisible="1" />
               <field name="email" widget="email" context="{'gravatar_image': True}"
@@ -197,7 +205,7 @@
                       <group>
                         <field name="email" widget="email" />
                         <field name="phone" widget="phone" />
-                        <field name="student" invisible="1"/>
+                        <field name="student" invisible="1" />
                         <field name="company_id" invisible="1" />
                       </group>
                     </group>
