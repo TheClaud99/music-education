@@ -12,6 +12,7 @@
     "installable": True,
     "depends": [
         "base",
+        "calendar",
         "mail",
         "account",
         "partner_contact_birthdate",
