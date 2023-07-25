@@ -14,11 +14,7 @@ MODELS = (
     ("education", "education.course.subject", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
     ("education", "education.course", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
     ("education", "education.enrollment", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
-    ("education", "education.group", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
     ("education", "education.instrument", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
-    ("education", "education.record.subject.group", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
-    ("education", "education.record.subject", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
-    ("education", "education.record", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
     ("education", "education.subject", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
 )
 

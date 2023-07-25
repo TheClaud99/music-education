@@ -86,11 +86,6 @@ class EducationCourse(models.Model):
         comodel_name="education.course.category", string="Category"
     )
     company_id = fields.Many2one(comodel_name="res.company", string="Company")
-    subject_ids = fields.One2many(
-        comodel_name="education.course.subject",
-        inverse_name="course_id",
-        string="Subjects",
-    )
     duration = fields.Float(string="Duration", company_dependent=True)
     active = fields.Boolean(string="Active", default=True)
     instrument_id = fields.Many2one("education.instrument", "Strumento")

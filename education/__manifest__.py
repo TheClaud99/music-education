@@ -26,7 +26,6 @@
         "views/course_category_view.xml",
         "views/subject_view.xml",
         "views/enrollment_view.xml",
-        "views/group_view.xml",
         "views/partner_view.xml",
         "views/res_config_settings_views.xml",
     ],

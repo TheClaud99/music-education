@@ -6,11 +6,6 @@ class ResPartner(models.Model):
 
     teacher = fields.Boolean(string="Teacher")
     student = fields.Boolean(string="Student")
-    record_ids = fields.One2many(
-        comodel_name="education.record",
-        inverse_name="student_id",
-        string="Academic Records",
-    )
 
     enrollment_ids = fields.One2many("education.enrollment", "student_id", "Iscrizioni")
     courses = fields.Many2many(

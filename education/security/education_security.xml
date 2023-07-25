@@ -30,13 +30,6 @@
           <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
       </record>
 
-      <record model="ir.rule" id="education_group_comp_rule">
-          <field name="name">Education Group multi-company</field>
-          <field name="model_id" ref="model_education_group"/>
-          <field name="global" eval="True"/>
-          <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
-      </record>
-
       <record model="ir.rule" id="education_enrollment_comp_rule">
         <field name="name">Enrollment company rule</field>
         <field name="model_id" ref="model_education_enrollment"/>

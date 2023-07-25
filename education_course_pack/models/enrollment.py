@@ -23,7 +23,6 @@ class EducationEnrollment(models.Model):
 
     state = fields.Selection(selection_add=[("in_process", "In Process")])
 
-    
     def action_done(self):
         if self.pack:
             super(EducationEnrollment, self).action_done()
@@ -32,7 +31,6 @@ class EducationEnrollment(models.Model):
         else:
             super(EducationEnrollment, self).action_done()
 
-    
     def create_pack_lines(self):
         self.ensure_one()
         if not self.pack:
@@ -49,23 +47,6 @@ class EducationEnrollment(models.Model):
             line_values.append((0, 0, data))
         self.write({"pack_enrollment_ids": line_values})
 
-    
-    def get_record_values(self):
-        if self.pack:
-            return {
-                # 'partner_id': self.partner_id.id,
-                "student_id": self.student_id.id,
-                "course_id": self.course_id.id,
-            }
-        else:
-            values = super(EducationEnrollment, self).get_record_values()
-            if self.parent_enrollment_id:
-                values.update(
-                    {"parent_record_id": self.parent_enrollment_id.record_id.id}
-                )
-            return values
-
-    
     def set_done(self):
         if not self.pack:
             super(EducationEnrollment, self).set_done()
