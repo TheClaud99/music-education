@@ -138,7 +138,8 @@
                 name="age"
                 attrs="{'invisible': [('birthdate_date', '=', False)]}"
               />
-              <field name="color" widget="color_picker"/>
+              <field name="color" widget="color_picker"
+                attrs="{'invisible': [('teacher', '=', False)]}" />
               <field name="teacher" invisible="1" />
               <field name="student" invisible="1" />
             </group>

@@ -11,7 +11,6 @@ class ResPartner(models.Model):
     courses = fields.Many2many(
         "education.course", "education_enrollment", "student_id", "course_id", "Corsi"
     )
-    color = fields.Integer('Color Index')
 
     def open_student_enrolled_groups(self):
         return {
@@ -45,13 +44,12 @@ class ResPartner(models.Model):
             "domain": '[("student_id", "=", active_id)]',
         }
 
-    
     def open_student_attendances(self):
         return {
-            'name': _("Presenze"),
-            'view_mode': 'tree,form',
-            'res_model': 'education.session.attendance',
-            'src_model': 'res.partner',
-            'type': 'ir.actions.act_window',
-            'domain': '[("student_id", "=", active_id)]'
+            "name": _("Presenze"),
+            "view_mode": "tree,form",
+            "res_model": "education.session.attendance",
+            "src_model": "res.partner",
+            "type": "ir.actions.act_window",
+            "domain": '[("student_id", "=", active_id)]',
         }
