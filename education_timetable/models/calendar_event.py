@@ -16,6 +16,9 @@ class CalendarEvent(models.Model):
         string="Lezioni",
     )
 
+    teacher_id = fields.Many2one(related="session_ids.teacher_id")
+    teacher_color = fields.Integer(related="teacher_id.color")
+
     @api.constrains("resource_booking_ids", "start", "stop")
     def _check_bookings_scheduling(self):
         """Scheduled bookings must have no conflicts."""

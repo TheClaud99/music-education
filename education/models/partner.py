@@ -11,6 +11,7 @@ class ResPartner(models.Model):
     courses = fields.Many2many(
         "education.course", "education_enrollment", "student_id", "course_id", "Corsi"
     )
+    color = fields.Integer('Color Index')
 
     def open_student_enrolled_groups(self):
         return {
