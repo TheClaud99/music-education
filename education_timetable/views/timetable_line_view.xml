@@ -18,6 +18,8 @@
                 <field name="name" />
                 <field name="course_id" />
                 <field name="teacher_id" domain="[('teacher', '=', True)]" />
+                <field name="students" domain="[('courses', 'in', [course_id])]"
+                  widget="many2many_tags" />
               </group>
               <group>
                 <field name="date_from" />

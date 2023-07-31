@@ -29,6 +29,14 @@ class EducationTimetableLine(models.Model):
         comodel_name="res.partner", string="Teacher", required=True
     )
 
+    students = fields.Many2many(
+        "res.partner",
+        "students_timetable_rel",
+        "timetable_id",
+        "student_id",
+        "Students",
+    )
+
     timerange_id = fields.Many2one(
         comodel_name="education.timerange", string="Time Range"
     )
@@ -92,7 +100,7 @@ class EducationTimetableLine(models.Model):
         return "{0:02.0f}:{1:02.0f}:00".format(*divmod(float(hours) * 60, 60))
 
     def _prepare_session_vals(self, day):
-        students = self.course_id.students
+        students = self.students
         start = day.strftime("%Y-%m-%d") + " " + self.get_hours(self.start_time)
         stop = day.strftime("%Y-%m-%d") + " " + self.get_hours(self.end_time)
         duration = self.end_time - self.start_time
