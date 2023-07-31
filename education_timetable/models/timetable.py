@@ -15,7 +15,7 @@ class EducationTimetableLine(models.Model):
     _name = "education.timetable.line"
     _inherit = ["mail.thread"]
 
-    name = fields.Char(string="Name", required=True, default=lambda self: _("New"))
+    name = fields.Char(string="Name", required=False, default=lambda self: _("New"))
 
     course_id = fields.Many2one(
         comodel_name="education.course", string="Course", required=True
