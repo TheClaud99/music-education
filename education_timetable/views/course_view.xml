@@ -10,7 +10,9 @@
                     <field name="timetable_ids" nolabel='1'
                         context="{'default_teacher_id': teacher_id}">
                         <tree>
-                            <field name="teacher_id" options="{'no_create': True}" domain="[('teacher','=',1)]" />
+                            <field name="teacher_id" options="{'no_create': True}"
+                                domain="[('teacher','=',1)]" />
+                            <field name="students" widget="many2many_tags" />
                             <field name="date_from" />
                             <field name="date_to" />
                             <field name="start_time" widget="timesheet_uom_timer" />
