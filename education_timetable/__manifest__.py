@@ -33,4 +33,9 @@
         "demo/timetable_demo.xml",
     ],
     "installable": True,
+    "assets": {
+        "web.assets_backend": [
+            "education_timetable/static/src/views/**/*",
+        ],
+    },
 }
