@@ -9,34 +9,36 @@
 
   <record id="education_user" model="res.groups">
     <field name="name">User</field>
-    <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="implied_ids" eval="[(4, ref('base.group_user'))]" />
     <!-- <field name="users" eval="[(4, ref('base.user_admin'))]"/> -->
-    <field name="category_id" ref="education.education_category"/>
+    <field name="category_id" ref="education.education_category" />
   </record>
 
   <record id="education_manager" model="res.groups">
     <field name="name">Manager</field>
-    <field name="category_id" ref="education.education_category"/>
-    <field name="users" eval="[(4, ref('base.user_admin'))]"/>
-    <field name="implied_ids" eval="[(4, ref('education.education_user'))]"/>
+    <field name="category_id" ref="education.education_category" />
+    <field name="users" eval="[(4, ref('base.user_admin'))]" />
+    <field name="implied_ids" eval="[(4, ref('education.education_user'))]" />
   </record>
   <data noupdate="1">
-      <!-- Multi - Company Rules -->
+    <!-- Multi - Company Rules -->
 
-      <record model="ir.rule" id="education_course_comp_rule">
-          <field name="name">Education Course multi-company</field>
-          <field name="model_id" ref="model_education_course"/>
-          <field name="global" eval="True"/>
-          <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
-      </record>
+    <record model="ir.rule" id="education_course_comp_rule">
+      <field name="name">Education Course multi-company</field>
+      <field name="model_id" ref="model_education_course" />
+      <field name="global" eval="True" />
+      <field name="domain_force">
+        ['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+    </record>
 
-      <record model="ir.rule" id="education_enrollment_comp_rule">
-        <field name="name">Enrollment company rule</field>
-        <field name="model_id" ref="model_education_enrollment"/>
-        <field name="global" eval="True"/>
-        <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
-      </record>
+    <record model="ir.rule" id="education_enrollment_comp_rule">
+      <field name="name">Enrollment company rule</field>
+      <field name="model_id" ref="model_education_enrollment" />
+      <field name="global" eval="True" />
+      <field name="domain_force">
+        ['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+    </record>
 
-</data>
+  </data>
 
 </odoo>
