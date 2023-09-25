@@ -7,6 +7,13 @@
     <field name="name">Music Education</field>
   </record>
 
+  <record id="education_tacher" model="res.groups">
+    <field name="name">Teacher</field>
+    <field name="implied_ids" eval="[(4, ref('base.group_user'))]" />
+    <!-- <field name="users" eval="[(4, ref('base.user_admin'))]"/> -->
+    <field name="category_id" ref="education.education_category" />
+  </record>
+
   <record id="education_user" model="res.groups">
     <field name="name">User</field>
     <field name="implied_ids" eval="[(4, ref('base.group_user'))]" />
