@@ -7,7 +7,7 @@ from datetime import timedelta
 
 import pytz
 from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
+from odoo.exceptions import UserError, ValidationError
 from odoo.osv import expression
 
 
@@ -134,19 +134,30 @@ class EducationTimetableLine(models.Model):
         self.state = "done"
         session_obj = self.env["education.session"]
         event_obj = self.env["calendar.event"]
-        end = fields.Date.from_string(self.date_from)
-        start = fields.Date.from_string(self.date_to)
+        start = fields.Date.from_string(self.date_from)
+        end = fields.Date.from_string(self.date_to)
+
+        if end < start:
+            raise UserError(
+                _("La data di fine non può essere minore della data di inizio")
+            )
+
+        if not self.students:
+            raise UserError(_("Devi selezionare almeno uno studente"))
+
         days = []
         day_ids_codes = []
         for code in self.day_ids:
             day_ids_codes.append(code.code)
-        for day in self.get_days(end, start):
+        for day in self.get_days(start, end):
             if day.weekday() in day_ids_codes:
                 days.append(day)
 
-        for record in self:
-            for day in days:
-                session_obj.create(record._prepare_session_vals(day))
+        if not days:
+            raise UserError(_("Nessuna lezione generabile per i giorni selezionati"))
+
+        for day in days:
+            session_obj.create(self._prepare_session_vals(day))
 
     @api.model
     def create(self, vals):
