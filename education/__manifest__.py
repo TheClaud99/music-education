@@ -38,4 +38,9 @@
         "demo/education_group_demo.xml",
         "demo/education_enrollment_demo.xml",
     ],
+    "assets": {
+        "web.assets_backend": [
+            "education/static/src/scss/**/*",
+        ],
+    },
 }
