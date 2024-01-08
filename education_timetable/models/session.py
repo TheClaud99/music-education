@@ -27,6 +27,8 @@ class EducationSession(models.Model):
         comodel_name="education.timetable.line",
         string="Timetable Lines",
         ondelete="cascade",
+        index=True,
+        copy=False,
     )
     state = fields.Selection(
         [("draft", "Draft"), ("done", "Done")], string="Status", default="draft"
@@ -65,7 +67,7 @@ class EducationSession(models.Model):
         context={"default_res_id": False, "default_res_model": False},
         copy=False,
         index=True,
-        ondelete="set null",
+        ondelete="cascade",
         help="Meeting confirmed for this booking.",
     )
     categ_ids = fields.Many2many(string="Tags", comodel_name="calendar.event.type")

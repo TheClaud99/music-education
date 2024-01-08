@@ -66,7 +66,10 @@ class EducationTimetableLine(models.Model):
     )
 
     session_ids = fields.One2many(
-        comodel_name="education.session", inverse_name="timetable_id", string="Sessions"
+        "education.session",
+        "timetable_id",
+        "Sessions",
+        copy=True,
     )
 
     user_id = fields.Many2one(
