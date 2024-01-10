@@ -57,7 +57,7 @@ class EducationSession(models.Model):
     company_id = fields.Many2one(
         comodel_name="res.company",
         string="Company",
-        default=lambda self: self.env.user.company_id,
+        default=lambda self: self.env.company_id,
     )
 
     active = fields.Boolean(default=True)
@@ -370,7 +370,7 @@ class EducationSession(models.Model):
                         # attendee.state='accepted'
                         attendees_to_confirm |= attendee
             attendees_to_confirm.write({"state": "accepted"})
-        self.recompute()
+        self.flush_recordset()
 
     def action_unschedule(self):
         """Remove associated meetings."""

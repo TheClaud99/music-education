@@ -18,7 +18,7 @@ class InvoicingMethod(models.Model):
 
     company_id = fields.Many2one(
         comodel_name="res.company",
-        default=lambda self: self.env.user.company_id.id,
+        default=lambda self: self.env.company_id.id,
         string="Company",
     )
 

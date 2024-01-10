@@ -4,6 +4,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
 from dateutil.relativedelta import relativedelta
+
 from odoo import _, api, fields, models
 
 
@@ -19,7 +20,6 @@ class AccountInvoice(models.Model):
         comodel_name="education.enrollment.invoicing.line", string="Invoicing Lines"
     )
 
-    
     def action_invoice_paid(self):
         res = super(AccountInvoice, self).action_invoice_paid()
         for record in self:
@@ -40,7 +40,6 @@ class AccountInvoice(models.Model):
                             )
         return res
 
-    
     def action_invoice_open(self):
         super(AccountInvoice, self).action_invoice_open()
         invoicing_method_line_obj = self.env["education.enrollment.invoicing.line"]
@@ -70,7 +69,6 @@ class AccountInvoice(models.Model):
         else:
             line.write({"invoiced": True, "state": "invoiced"})
 
-    
     def paid_and_validate(self):
         self.action_invoice_open()
         journal_id = (
@@ -78,7 +76,7 @@ class AccountInvoice(models.Model):
             .search([])
             .filtered(
                 lambda t: t.type == "sale"
-                and t.company_id.id == self.env.user.company_id.id
+                and t.company_id.id == self.env.company_id.id
             )
         )
         self.pay_and_reconcile(journal_id.id)
