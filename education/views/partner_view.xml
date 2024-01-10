@@ -10,7 +10,7 @@
     <field name="arch" type="xml">
       <xpath expr="//div[@name='button_box']" position="inside">
         <button type="object" class="oe_stat_button" icon="fa-solid fa-users"
-          name="open_student_enrolled_groups" attrs="{'invisible': [('student', '=', False)]}">
+          name="open_student_enrolled_groups" invisible="not student">
           <div class="o_form_field o_stat_info">
             <span class="o_stat_value">
               <!-- <field name="invoices_count" modifiers="{'readonly': true}"/> -->
@@ -21,7 +21,7 @@
           </div>
         </button>
         <button type="object" class="oe_stat_button" icon="fa-solid fa-users"
-          name="open_teacher_active_groups" attrs="{'invisible': [('teacher', '=', False)]}">
+          name="open_teacher_active_groups" invisible="not teacher">
           <div class="o_form_field o_stat_info">
             <span class="o_stat_value">
               <!-- <field name="invoices_count" modifiers="{'readonly': true}"/> -->
@@ -32,7 +32,7 @@
           </div>
         </button>
         <button type="object" class="oe_stat_button" icon="fa-solid fa-file"
-          name="open_student_enrollments" attrs="{'invisible': [('student', '=', False)]}">
+          name="open_student_enrollments" invisible="not student">
           <div class="o_form_field o_stat_info">
             <span class="o_stat_value">
               <!-- <field name="invoices_count" modifiers="{'readonly': true}"/> -->
@@ -50,9 +50,9 @@
         </group>
       </group>
       <page name='internal_notes' position="before">
-        <page name="educational" string="Educational" attrs="{'invisible':[('student','=', False)]}">
+        <page name="educational" string="Educational" invisible="not student">
         </page>
-        <page name="coruses" string="Corsi" attrs="{'invisible':[('student','=', False)]}">
+        <page name="coruses" string="Corsi" invisible="not student">
           <field name="courses" nolabel="1">
             <tree>
               <field name="name" />
@@ -60,10 +60,10 @@
             </tree>
           </field>
         </page>
-        <page name="enrollments" string="Iscrizioni" attrs="{'invisible':[('student','=', False)]}">
+        <page name="enrollments" string="Iscrizioni" invisible="not student">
           <field name="enrollment_ids" nolabel="1">
             <tree>
-              <field name="course_id" />
+              <field name="course_id"  readonly="state != 'draft'"/>
               <field name="teacher_id" />
             </tree>
           </field>
@@ -85,7 +85,7 @@
               <field string="Meetings" name="meeting_count" widget="statinfo" />
             </button>
             <button type="object" class="oe_stat_button" icon="fa-solid fa-file"
-              name="open_student_attendances" attrs="{'invisible': [('student', '=', False)]}">
+              name="open_student_attendances" invisible="not student">
               <div class="o_form_field o_stat_info">
                 <span class="o_stat_value">
                   <!-- <field name="invoices_count" modifiers="{'readonly': true}"/> -->
@@ -99,7 +99,7 @@
 
           <!-- Immagine -->
           <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
-            attrs="{'invisible': [('active', '=', True)]}" />
+            invisible="active" />
           <field name="avatar_128" invisible="1" />
           <field name="image_1920" widget="image" class="student_image float-end"
             options="{'zoom': true, 'preview_image':'image_512'}" />
@@ -123,30 +123,27 @@
             <group>
               <field
                 name="lastname"
-                attrs="{'required': [('firstname', '=', False)]}"
-              />
+                required="not firstname"/>
               <field
                 name="firstname"
-                attrs="{'required': [('lastname', '=', False)]}"
-              />
+                required="not lastname"/>
               <field name="phone" widget="phone" />
               <field name="user_ids" invisible="1" />
               <field name="email" widget="email" context="{'gravatar_image': True}"
-                attrs="{'required': [('user_ids','!=', [])]}" />
+                required="user_ids" />
               <field name='birthdate_date' />
               <field
                 name="age"
-                attrs="{'invisible': [('birthdate_date', '=', False)]}"
-              />
+                invisible="not birthdate_date"/>
               <field name="color" widget="color_picker"
-                attrs="{'invisible': [('teacher', '=', False)]}" />
+                invisible="not teacher" />
               <field name="teacher" invisible="1" />
               <field name="student" invisible="1" />
             </group>
           </group>
 
           <notebook colspan="4">
-            <page string="Genitori/Parenti" attrs="{'invisible':[('student','=', False)]}"
+            <page string="Genitori/Parenti" invisible="not student"
               name="contact_addresses" autofocus="autofocus">
               <field name="child_ids" mode="kanban"
                 context="{'default_parent_id': active_id, 'default_user_id': user_id, 'default_type': 'contact', 'default_student': False}">
@@ -215,10 +212,10 @@
               </field>
             </page>
             <page name="enrollments" string="Iscrizioni"
-              attrs="{'invisible':[('student','=', False)]}">
+              invisible="not student">
               <field name="enrollment_ids" nolabel="1">
                 <tree>
-                  <field name="course_id" options="{'no_create': True}" />
+                  <field name="course_id" options="{'no_create': True}"  readonly="state != 'draft'"/>
                   <field name="teacher_id" options="{'no_create': True}"
                     domain="[('teacher','=',1)]" />
                 </tree>
@@ -231,8 +228,8 @@
                     <div class="oe_button_box" name="button_box"></div>
                     <group name="Information" col="4">
                       <field name="student_id" invisible="1" />
-                      <field name="course_id" options="{'no_create': True}" />
-                      <field name="company_id" widget="selection" groups="base.group_multi_company" />
+                      <field name="course_id" options="{'no_create': True}"  readonly="state != 'draft'"/>
+                      <field name="company_id" widget="selection" groups="base.group_multi_company"  readonly="state != 'draft'"/>
                     </group>
                   </sheet>
                 </form>

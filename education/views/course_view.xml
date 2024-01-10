@@ -35,7 +35,7 @@
                 <tree editable="bottom">
                   <field name="student_id" options="{'no_create': True}"
                     domain="[('student','=',1)]" />
-                  <field name="state" invisible="1" />
+                  <field name="state" column_invisible="True" />
                 </tree>
               </field>
             </page>

@@ -8,7 +8,7 @@
         <form string="Education Timetable">
           <header>
             <button name="generate_new_sessions" type="object"
-              attrs="{'invisible': [('state','!=','draft')]}" string="Genera lezioni"
+              invisible="state != 'draft'" string="Genera lezioni"
               class="oe_highlight" />
             <field name="state" widget="statusbar" />
           </header>
@@ -30,7 +30,7 @@
             <group>
               <field name="day_ids" widget="many2many_checkboxes" style="display: inline-flex" />
             </group>
-            <group name="sesions" string="Lezioni" attrs="{'invisible': [('state', '!=', 'done')]}">
+            <group name="sesions" string="Lezioni" invisible="state != 'done'">
               <group>
                 <field name="session_ids" colspan="4" nolabel="1" />
               </group>

@@ -3,7 +3,7 @@
 {
     "name": "Education",
     "summary": "Education Management for Odoo",
-    "version": "16.0.1.0.0",
+    "version": "17.0.1.0.0",
     "category": "Education",
     "website": "https://pesol.es",
     "author": "PESOL",

@@ -30,16 +30,16 @@
                     filter_field="partner_checked" avatar_field="avatar_128" />
                 <field name="videocall_location" widget="url" text="Join Video Call"
                     options="{'icon': 'fa fa-lg fa-video-camera'}"
-                    attrs="{'invisible': [('videocall_location', '=', False)]}" />
+                    invisible="not videocall_location" />
                 <field name="is_highlighted" invisible="1" />
                 <field name="is_organizer_alone" invisible="1" />
                 <field name="display_description" invisible="1" />
-                <field name="location" attrs="{'invisible': [('location', '=', False)]}" />
+                <field name="location" invisible="not location" />
                 <field name="description"
-                    attrs="{'invisible': [('display_description', '=', False)]}" />
+                    invisible="not display_description" />
                 <field name="privacy" />
-                <field name="alarm_ids" attrs="{'invisible': [('alarm_ids', '=', [])]}" />
-                <field name="categ_ids" attrs="{'invisible': [('categ_ids', '=', [])]}" />
+                <field name="alarm_ids" invisible="not alarm_ids" />
+                <field name="categ_ids" invisible="not categ_ids" />
                 <!-- For recurrence update Dialog -->
                 <field name="recurrency" invisible="1" />
                 <field name="recurrence_update" invisible="1" />

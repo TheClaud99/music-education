@@ -6,7 +6,7 @@
     <field name="inherit_id" ref="education.view_partner_education_form" />
     <field name="arch" type="xml">
       <page name="enrollments" position="after">
-        <page name="attendances" string="Presenze" attrs="{'invisible':[('student','=', False)]}">
+        <page name="attendances" string="Presenze" invisible="not student">
           <field name="attendance_ids" nolabel="1">
             <tree>
               <field name="session_id" />

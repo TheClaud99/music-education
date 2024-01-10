@@ -6,7 +6,7 @@
 
 {
     "name": "Education Timetable",
-    "version": "16.0.1.0.0",
+    "version": "17.0.1.1.1",
     "license": "AGPL-3",
     "category": "Education",
     "sequence": 1,
