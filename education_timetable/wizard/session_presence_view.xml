@@ -48,7 +48,7 @@
             <field name="student_id"/>
             <field name="lack"/>
           </group>
-          <field name="notes" attrs="{'invisible': [('lack', '=', False)]}"/>
+          <field name="notes" invisible="not lack"/>
         </sheet>
       </form>
     </field>
@@ -68,7 +68,7 @@
     <field name="inherit_id" ref="education_timetable.view_education_session_form"/>
     <field name="arch" type="xml">
       <xpath expr="//header" position="inside">
-        <button name="%(wizard_education_session_presence_action)d" type="action" attrs="{'invisible': [('state','!=','draft')]}" string="Set Presence" class="oe_highlight" context="{'default_session_id': active_id}"/>
+        <button name="%(wizard_education_session_presence_action)d" type="action" invisible="state != 'draft'" string="Set Presence" class="oe_highlight" context="{'default_session_id': active_id}"/>
       </xpath>
     </field>
   </record>
