@@ -5,7 +5,6 @@ import { patch } from "@web/core/utils/patch";
 
 patch(
     AttendeeCalendarModel.prototype,
-    "attendee_calendar_model_everybody_by_default_patch",
     {
         /**
          * @protected
@@ -15,9 +14,9 @@ patch(
                 ? previousSection.filters
                 : [];
             if (previousFilters.length != 0) {
-                return this._super.apply(this, arguments);
+                return super.loadFilterSection(...arguments);
             }
-            const ret = await this._super.apply(this, arguments);
+            const ret = await super.loadFilterSection(...arguments);
             const filters = ret.filters;
             const previousActiveFilter = filters.find((f) => f.active);
             const allFilter = filters.find((f) => f.type === "all");

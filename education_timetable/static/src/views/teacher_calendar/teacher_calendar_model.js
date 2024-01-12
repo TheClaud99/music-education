@@ -1,7 +1,6 @@
 /** @odoo-module **/
 
 import { CalendarModel } from "@web/views/calendar/calendar_model";
-import session from "web.session";
 
 export class TeacherCalendarModel extends CalendarModel {
     /**
@@ -9,8 +8,10 @@ export class TeacherCalendarModel extends CalendarModel {
      */
     async loadFilterSection(fieldName, filterInfo, previousSection) {
         const previousFilters = previousSection ? previousSection.filters : [];
-        const is_teacher = await session.user_has_group(
-            "education.education_teacher"
+        const is_teacher = await this.env.services.orm.call(
+            "res.users",
+            "user_has_group",
+            [[this.env.user.id], "education.education_teacher"]
         );
         if (previousFilters.length != 0 || is_teacher) {
             return super.loadFilterSection(

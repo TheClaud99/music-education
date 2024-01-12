@@ -5,7 +5,6 @@ import { patch } from "@web/core/utils/patch";
 
 patch(
     AttendeeCalendarCommonPopover.prototype,
-    "attendee_calendar_model_everybody_by_default_patch",
     {
         get isEventArchivable() {
             return true;
