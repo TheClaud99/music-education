@@ -134,7 +134,7 @@ class EducationEnrollment(models.Model):
         self.ensure_one()
         # TODO: generate invoices on planned date
         product_obj = self.env["product.product"].search(
-            [("name", "=", "Pagos"), ("company_id", "=", self.env.company_id.id)]
+            [("name", "=", "Pagos"), ("company_id", "=", self.env.company.id)]
         )
         if not product_obj:
             product_obj = self.env["product.product"].create(
@@ -143,7 +143,7 @@ class EducationEnrollment(models.Model):
                     "taxes_id": False,
                     "supplier_taxes_id": False,
                     "type": "service",
-                    "company_id": self.env.company_id.id,
+                    "company_id": self.env.company.id,
                 }
             )
         product_id = product_obj and product_obj[0]
@@ -152,7 +152,7 @@ class EducationEnrollment(models.Model):
         account_journal_id = account_journal_obj.search(
             [
                 ("type", "in", ["sale"]),
-                ("company_id", "=", self.env.company_id.id),
+                ("company_id", "=", self.env.company.id),
             ],
             limit=1,
         )

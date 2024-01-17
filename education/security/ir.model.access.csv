@@ -1,13 +1,9 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_education_course_category_manager,education.course.category,education.model_education_course_category,education.education_manager,1,1,1,1
 access_education_course_category_user,education.course.category,education.model_education_course_category,education.education_user,1,0,0,0
-access_education_course_subject_manager,education.course.subject,education.model_education_course_subject,education.education_manager,1,1,1,1
-access_education_course_subject_user,education.course.subject,education.model_education_course_subject,education.education_user,1,0,0,0
 access_education_course_manager,education.course,education.model_education_course,education.education_manager,1,1,1,1
 access_education_course_user,education.course,education.model_education_course,education.education_user,1,0,0,0
 access_education_enrollment_manager,education.enrollment,education.model_education_enrollment,education.education_manager,1,1,1,1
 access_education_enrollment_user,education.enrollment,education.model_education_enrollment,education.education_user,1,0,0,0
 access_education_instrument_manager,education.instrument,education.model_education_instrument,education.education_manager,1,1,1,1
 access_education_instrument_user,education.instrument,education.model_education_instrument,education.education_user,1,0,0,0
-access_education_subject_manager,education.subject,education.model_education_subject,education.education_manager,1,1,1,1
-access_education_subject_user,education.subject,education.model_education_subject,education.education_user,1,0,0,0

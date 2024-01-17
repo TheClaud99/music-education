@@ -42,7 +42,6 @@ class EducationEnrollment(models.Model):
                 "student_id": self.student_id.id,
                 # 'partner_id': self.partner_id.id,
                 "course_id": course.id,
-                "subject_ids": [(6, 0, course.subject_ids.ids)],
             }
             line_values.append((0, 0, data))
         self.write({"pack_enrollment_ids": line_values})

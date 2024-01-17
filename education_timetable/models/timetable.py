@@ -23,8 +23,6 @@ class EducationTimetableLine(models.Model):
 
     group_id = fields.Many2one(comodel_name="education.group", string="Group")
 
-    subject_id = fields.Many2one(comodel_name="education.subject", string="Subject")
-
     teacher_id = fields.Many2one(
         comodel_name="res.partner", string="Teacher", required=True
     )
@@ -82,17 +80,8 @@ class EducationTimetableLine(models.Model):
     company_id = fields.Many2one(
         comodel_name="res.company",
         string="Company",
-        default=lambda self: self.env.company_id,
+        default=lambda self: self.env.company,
     )
-
-    @api.onchange("group_id")
-    def _change_group_id(self):
-        if not self.group_id:
-            return {"domain": {"subject_id": expression.FALSE_DOMAIN}}
-        subject_fields_domain = [
-            ("id", "in", self.course_id.subject_ids.mapped("subject_id").ids)
-        ]
-        return {"domain": {"subject_id": subject_fields_domain}}
 
     def get_days(self, start, end):
         step = timedelta(days=1)

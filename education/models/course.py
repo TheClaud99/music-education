@@ -15,7 +15,7 @@ class EducationEnrollment(models.Model):
     )
     company_id = fields.Many2one(
         comodel_name="res.company",
-        default=lambda self: self.env.company_id.id,
+        default=lambda self: self.env.company.id,
         string="Company",
         readonly=True,
         states={"draft": [("readonly", False)]},
@@ -107,27 +107,6 @@ class EducationCourseCategory(models.Model):
                 )
             else:
                 category.complete_name = category.name
-
-
-class EducationSubject(models.Model):
-    _name = "education.subject"
-    _inherit = ["mail.thread"]
-
-    name = fields.Char(string="Name", required=True)
-
-    course_ids = fields.One2many(
-        comodel_name="education.course.subject",
-        inverse_name="subject_id",
-        string="Courses",
-    )
-
-
-class EducationCourseSubject(models.Model):
-    _name = "education.course.subject"
-    _rec_name = "subject_id"
-
-    course_id = fields.Many2one(comodel_name="education.course", string="Course")
-    subject_id = fields.Many2one(comodel_name="education.subject", string="Subject")
 
 
 class EducationInstrument(models.Model):

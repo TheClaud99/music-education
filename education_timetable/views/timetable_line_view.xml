@@ -66,7 +66,6 @@
         <search string="Education Timetable">
           <field name="course_id" />
           <field name="group_id" />
-          <field name="subject_id" />
           <field name="teacher_id" />
           <field name="timerange_id" />
           <field name="day_ids" />
@@ -75,7 +74,6 @@
           <group string="Group By" name="groupby">
             <filter string="Course" name="course_id" context="{'group_by': 'course_id'}" />
             <filter string="Group" name="group_id" context="{'group_by': 'group_id'}" />
-            <filter string="Subject" name="subject_id" context="{'group_by': 'subject_id'}" />
             <filter string="teacher_id" name="teacher_id" context="{'group_by': 'teacher_id'}" />
             <filter string="Day" name="day_ids" context="{'group_by': 'day_ids'}" />
           </group>
@@ -101,7 +99,6 @@
       <field name="arch" type="xml">
         <calendar string="Timetable" date_start="date_from" date_stop="date_to" color="user_id"
           mode="month">
-          <field name="subject_id" />
           <field name="teacher_id" />
         </calendar>
       </field>

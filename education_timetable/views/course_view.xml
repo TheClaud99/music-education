@@ -15,8 +15,8 @@
                             <field name="students" widget="many2many_tags" />
                             <field name="date_from" />
                             <field name="date_to" />
-                            <field name="start_time" widget="timesheet_uom_timer" />
-                            <field name="end_time" widget="timesheet_uom_timer" />
+                            <field name="start_time" widget="float_time" />
+                            <field name="end_time" widget="float_time" />
                             <field name="state" invisible="1" />
                         </tree>
                     </field>

@@ -22,7 +22,6 @@ class TestEducationTimetableLine(TransactionCase):
         education_timetable_obj = self.env["education.timetable.line"]
         course_id = self.env.ref("education.education_course_1")
         group_id = self.env.ref("education.education_group_1")
-        subject_id = self.env.ref("education.education_subject_1")
         teacher_id = self.env.ref("education.education_teacher_1")
         days = ("0", "Monday")
         date_from = fields.Date.today()
@@ -34,7 +33,6 @@ class TestEducationTimetableLine(TransactionCase):
             {
                 "course_id": course_id.id,
                 "group_id": group_id.id,
-                "subject_id": subject_id.id,
                 "teacher_id": teacher_id.id,
                 "timerange_id": timerange_id.id,
                 "days": days,

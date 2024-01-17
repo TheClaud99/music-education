@@ -19,16 +19,16 @@
         </header>
         <sheet>
           <div class="oe_button_box" name="button_box" modifiers="{}">
-            
-            <field name="active" invisible="1" />
-            <widget
-                name="web_ribbon"
-                title="Archived"
-                bg_color="bg-danger"
-                attrs="{'invisible': [('active', '=', True)]}"
-            />
-            
           </div>
+
+          <field name="active" invisible="1" />
+          <widget
+            name="web_ribbon"
+            title="Archived"
+            bg_color="bg-danger"
+            attrs="{'invisible': [('active', '=', True)]}"
+          />
+
           <div class="oe_title">
             <h1>
               <field name="code" readonly="1" />

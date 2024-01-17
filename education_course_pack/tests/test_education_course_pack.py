@@ -23,13 +23,7 @@ class TestEducationCoursePack(TransactionCase):
         self.group_a = self.env.ref("education.education_group_1")
         self.group_b = self.env.ref("education.education_group_2")
 
-        # Create Subjects
-
-        self.subject_1 = self.env.ref("education.education_subject_1")
-        self.subject_2 = self.env.ref("education.education_subject_2")
-        self.course_a.write({"subject_ids": self.subject_1})
-        self.course_b.write({"subject_ids": self.subject_2})
-        # Create Subject Registration
+        # Create Registration
         self.education_enrollment = self.env["education.enrollment"]
         self.education_enrollment.create(
             {

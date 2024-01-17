@@ -20,7 +20,6 @@
         "views/student_view.xml",
         "views/teacher_view.xml",
         "views/course_view.xml",
-        # "views/group_view.xml",
         "views/calendar_event_views.xml",
         "data/day_data.xml",
         "data/timetable_multicompany.xml",

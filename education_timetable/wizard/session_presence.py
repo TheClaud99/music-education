@@ -1,8 +1,3 @@
-# Copyright 2017 Pesol (<http://pesol.es>)
-#                Angel Moya <angel.moya@pesol.es>
-#                Luis Adan Jimenez Hernandez <luis.jimenez@pesol.es>
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
-
 from odoo import api, fields, models
 
 
@@ -25,32 +20,15 @@ class EducationSessionPresence(models.TransientModel):
             lines.append((0, 0, {"student_id": enroll.student_id.id}))
         self.session_presence_ids = lines
 
-    
     def create_attendances(self):
         values = []
         self.ensure_one()
-        record_subject_group_obj = self.env["education.record.subject.group"]
         students = self.session_id.attendance_ids.mapped("student_id")
         for line in self.session_presence_ids.filtered(lambda l: l.lack):
             if line.student_id not in students:
-                timetable_id = line.presence_id.session_id.timetable_id
-                course_id = timetable_id.group_id.course_id.id
-                subject_id = timetable_id.subject_id.id
-                student_id = line.student_id.id
-                group_id = timetable_id.group_id.id
-                record_subject_group = record_subject_group_obj.search(
-                    [
-                        ("course_id", "=", course_id),
-                        ("student_id", "=", student_id),
-                        ("subject_id", "=", subject_id),
-                        ("group_id", "=", group_id),
-                    ]
-                )
                 attendance_values = {
                     "session_id": self.env.context.get("active_id"),
                     "student_id": line.student_id.id,
-                    "record_subject_group_id": record_subject_group
-                    and record_subject_group.id,
                     "notes": line.notes,
                 }
                 values.append((0, 0, attendance_values))

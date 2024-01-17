@@ -75,8 +75,7 @@ class AccountInvoice(models.Model):
             self.env["account.journal"]
             .search([])
             .filtered(
-                lambda t: t.type == "sale"
-                and t.company_id.id == self.env.company_id.id
+                lambda t: t.type == "sale" and t.company_id.id == self.env.company.id
             )
         )
         self.pay_and_reconcile(journal_id.id)

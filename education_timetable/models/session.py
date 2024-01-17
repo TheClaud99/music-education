@@ -48,16 +48,11 @@ class EducationSession(models.Model):
         tracking=True,
         help="Who requested this booking?",
     )
-    subject_id = fields.Many2one(
-        comodel_name="education.subject",
-        related="timetable_id.subject_id",
-        string="Subject",
-    )
 
     company_id = fields.Many2one(
         comodel_name="res.company",
         string="Company",
-        default=lambda self: self.env.company_id,
+        default=lambda self: self.env.company,
     )
 
     active = fields.Boolean(default=True)
