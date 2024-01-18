@@ -12,12 +12,6 @@ class TestEducationTimetableLine(TransactionCase):
     def setUp(self):
         super(TestEducationTimetableLine, self).setUp()
 
-        # TimeRange data
-        timerange_obj = self.env["education.timerange"]
-        timerange_id = timerange_obj.create(
-            {"name": "08:15-09:10", "start_time": 08.15, "end_time": 09.10}
-        )
-
         # Timetable Line data
         education_timetable_obj = self.env["education.timetable.line"]
         course_id = self.env.ref("education.education_course_1")
@@ -34,7 +28,6 @@ class TestEducationTimetableLine(TransactionCase):
                 "course_id": course_id.id,
                 "group_id": group_id.id,
                 "teacher_id": teacher_id.id,
-                "timerange_id": timerange_id.id,
                 "days": days,
                 "date_from": date_from,
                 "date_to": date_to,

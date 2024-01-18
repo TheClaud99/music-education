@@ -67,7 +67,6 @@
           <field name="course_id" />
           <field name="group_id" />
           <field name="teacher_id" />
-          <field name="timerange_id" />
           <field name="day_ids" />
           <field name="date_from" />
           <field name="date_to" />

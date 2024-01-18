@@ -35,10 +35,6 @@ class EducationTimetableLine(models.Model):
         "Students",
     )
 
-    timerange_id = fields.Many2one(
-        comodel_name="education.timerange", string="Time Range"
-    )
-
     start_time = fields.Float(string="Start time")
     end_time = fields.Float(string="End time")
 
