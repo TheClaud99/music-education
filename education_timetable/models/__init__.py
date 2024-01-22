@@ -11,6 +11,5 @@ from . import (
     partner,
     session,
     session_attendance,
-    timerange,
     timetable,
 )

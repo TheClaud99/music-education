@@ -28,7 +28,6 @@
         "security/ir.model.access.csv",
     ],
     "demo": [
-        "demo/timerange_demo.xml",
         "demo/timetable_demo.xml",
     ],
     "installable": True,

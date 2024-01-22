@@ -1,4 +1,3 @@
-
 import csv
 import os
 
@@ -8,15 +7,16 @@ import os
 # 3 posto => dict con la seguente struttura:
 #   - chiave ruolo (la stessa del dict ROLES)
 #   - lista di permessi con il seguente ordine: (read, write, create, unlink)
+# fmt: off
 MODELS = (
     ("education_timetable", "education.day", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
     ("education_timetable", "education.session.attendance", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
     ("education_timetable", "education.session.presence.line", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
     ("education_timetable", "education.session.presence", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
     ("education_timetable", "education.session", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
-    ("education_timetable", "education.timerange", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
     ("education_timetable", "education.timetable.line", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
 )
+# fmt: on
 
 # Lista di ruoli
 # 1 livello => chiave ruolo
@@ -29,9 +29,13 @@ ROLES = {
 
 
 def main(models, roles):
-    file_csv = os.path.abspath(os.path.join(os.path.dirname(__file__), "../security/ir.model.access.csv"))
+    file_csv = os.path.abspath(
+        os.path.join(os.path.dirname(__file__), "../security/ir.model.access.csv")
+    )
     with open(file_csv, "w") as csvfile:
-        writer = csv.writer(csvfile, delimiter=",", quotechar='"', quoting=csv.QUOTE_MINIMAL)
+        writer = csv.writer(
+            csvfile, delimiter=",", quotechar='"', quoting=csv.QUOTE_MINIMAL
+        )
         writer.writerow(
             [
                 "id",
