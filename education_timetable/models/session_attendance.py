@@ -19,6 +19,7 @@ class EducationSessionAttendance(models.Model):
     )
 
     student_id = fields.Many2one(comodel_name="res.partner", string="Studente")
+    is_paid = fields.Boolean("Is Paid", copy=False)
 
     notes = fields.Char(string="Note")
 
