@@ -18,7 +18,6 @@
     "data": [
         "views/education_invoicing_method_view.xml",
         "views/education_enrollment_view.xml",
-        "views/education_group_view.xml",
         "views/education_course_view.xml",
         "views/account_invoice_view.xml",
         "security/education_invoicing_security.xml",

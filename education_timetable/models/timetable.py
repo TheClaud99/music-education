@@ -21,8 +21,6 @@ class EducationTimetableLine(models.Model):
         comodel_name="education.course", string="Course", required=True
     )
 
-    group_id = fields.Many2one(comodel_name="education.group", string="Group")
-
     teacher_id = fields.Many2one(
         comodel_name="res.partner", string="Teacher", required=True
     )
@@ -163,9 +161,3 @@ class EducationTimetableLine(models.Model):
                     _("You can not remove timetable with done sessions")
                 )
         return super(EducationTimetableLine, self).unlink()
-
-    @api.onchange("group_id")
-    def _onchange_group_id(self):
-        for record in self:
-            record.date_from = record.group_id.date_from
-            record.date_to = record.group_id.date_to

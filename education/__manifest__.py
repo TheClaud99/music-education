@@ -33,7 +33,6 @@
         "demo/education_teacher_demo.xml",
         "demo/education_student_demo.xml",
         "demo/education_course_demo.xml",
-        "demo/education_group_demo.xml",
         "demo/education_enrollment_demo.xml",
     ],
     "assets": {

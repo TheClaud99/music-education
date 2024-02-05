@@ -6,6 +6,5 @@ from . import (
     account_invoice,
     education_course,
     education_enrollment,
-    education_group,
     education_invoicing_method,
 )

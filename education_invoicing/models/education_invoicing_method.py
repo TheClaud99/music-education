@@ -1,9 +1,4 @@
-# Copyright 2017 Pesol (<http://pesol.es>)
-#                Angel Moya <angel.moya@pesol.es>
-#                Luis Adan Jimenez Hernandez <luis.jimenez@pesol.es>
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
-
-from odoo import _, api, fields, models
+from odoo import _, fields, models
 
 
 class EducationInvoicingMethod(models.Model):
@@ -13,7 +8,6 @@ class EducationInvoicingMethod(models.Model):
     course_id = fields.Many2one(
         comodel_name="education.course", company_dependent=True, string="Course"
     )
-    group_id = fields.Many2one(comodel_name="education.group", string="Group")
     amount = fields.Float(string="Amount")
     enrollment_amount = fields.Float(string="Enrollment Amount")
     quantity = fields.Integer(string="Quantity", default=1)
@@ -36,7 +30,6 @@ class EducationInvoicingMethod(models.Model):
         help="Repeat every (Days/Week/Month/Year)",
     )
 
-    
     def _compute_name(self):
         for record in self:
             name = ""
@@ -54,7 +47,6 @@ class EducationInvoicingMethod(models.Model):
                 name += " x %s" % (record.quantity)
             record.name = name
 
-    
     def compute_invoicing_method(self):
         self.ensure_one()
         amount = self.amount

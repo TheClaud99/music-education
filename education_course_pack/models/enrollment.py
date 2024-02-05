@@ -17,9 +17,6 @@ class EducationEnrollment(models.Model):
         inverse_name="parent_enrollment_id",
         string="Pack enrollment",
     )
-    group_id = fields.Many2one(
-        comodel_name="education.group", string="Group", required=False
-    )
 
     state = fields.Selection(selection_add=[("in_process", "In Process")])
 

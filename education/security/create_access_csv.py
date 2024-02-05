@@ -20,7 +20,7 @@ MODELS = (
 # 1 livello => chiave ruolo
 # 2 livello => lista con la seguente struttura: (modulo, nome gruppo)
 ROLES = {
-    # "admin": ("sofidel_activities", "group_sofidel_activities_admin"),
+    # "admin": ("education", "education_admin"),
     "manager": ("education", "education_manager"),
     "user": ("education", "education_user"),
 }
