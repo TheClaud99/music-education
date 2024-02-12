@@ -21,13 +21,3 @@ class ResPartner(models.Model):
             "type": "ir.actions.act_window",
             "domain": '[("student_id", "=", active_id)]',
         }
-
-    def open_student_attendances(self):
-        return {
-            "name": _("Presenze"),
-            "view_mode": "tree,form",
-            "res_model": "education.session.attendance",
-            "src_model": "res.partner",
-            "type": "ir.actions.act_window",
-            "domain": '[("student_id", "=", active_id)]',
-        }
