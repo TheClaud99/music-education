@@ -10,9 +10,24 @@ class ResPartner(models.Model):
         string="Presenze",
     )
 
+    attendances_to_pay_ids = fields.One2many(
+        "education.session.attendance",
+        "student_id",
+        "Attendances to pay",
+        domain=[("is_paid", "=", False)],
+    )
+
     session_ids = fields.One2many(
         comodel_name="education.session", inverse_name="teacher_id", string="Sessions"
     )
+
+    attendances_to_pay_count = fields.Integer(
+        "Attendances to pay", compute="_compute_attendances_to_pay_count"
+    )
+
+    def _compute_attendances_to_pay_count(self):
+        for partner in self:
+            partner.attendances_to_pay_count = len(self.attendances_to_pay_ids)
 
     def open_student_attendances(self):
         return {
