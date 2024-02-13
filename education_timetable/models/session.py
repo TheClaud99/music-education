@@ -1,10 +1,9 @@
 import calendar
 from datetime import datetime, timedelta
 
-import pytz
 from dateutil.relativedelta import relativedelta
+
 from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
 
 
 class EducationSession(models.Model):
@@ -29,6 +28,7 @@ class EducationSession(models.Model):
         ondelete="cascade",
         index=True,
         copy=False,
+        required=True,
     )
     state = fields.Selection(
         [("draft", "Draft"), ("done", "Done")], string="Status", default="draft"
@@ -110,12 +110,6 @@ class EducationSession(models.Model):
     @api.model
     def _default_user_id(self):
         return self.env.user
-
-    def _compute_access_url(self):
-        result = super()._compute_access_url()
-        for one in self:
-            one.access_url = "/my/bookings/%d" % one.id
-        return result
 
     @api.depends("name", "teacher_id", "meeting_id")
     @api.depends_context("uid", "using_portal")
@@ -287,8 +281,12 @@ class EducationSession(models.Model):
 
     def unlink(self):
         """Unlink meeting if needed."""
-        self.meeting_id.unlink()
-        return super().unlink()
+        meeting = self.meeting_id
+        ret = super().unlink()
+        # elimino il meeting dopo la session perché
+        # altrimenti avverrebbe l'ondelete cascade su meeting_id
+        meeting.unlink()
+        return ret
 
     def name_get(self):
         """Autogenerate booking name if none is provided."""
