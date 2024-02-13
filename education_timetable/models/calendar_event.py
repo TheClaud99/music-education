@@ -1,9 +1,4 @@
-# Copyright 2021 Tecnativa - Jairo Llopis
-# Copyright 2022 Tecnativa - Pedro M. Baeza
-# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-
-from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
+from odoo import api, fields, models
 
 
 class CalendarEvent(models.Model):

@@ -22,7 +22,7 @@ class ResPartner(models.Model):
     )
 
     attendances_to_pay_count = fields.Integer(
-        "Attendances to pay", compute="_compute_attendances_to_pay_count"
+        "# Attendances to pay", compute="_compute_attendances_to_pay_count"
     )
 
     def _compute_attendances_to_pay_count(self):

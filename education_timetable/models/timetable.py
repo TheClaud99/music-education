@@ -1,14 +1,9 @@
-# Copyright 2017 Pesol (<http://pesol.es>)
-#                Angel Moya <angel.moya@pesol.es>
-#                Luis Adan Jimenez Hernandez <luis.jimenez@pesol.es>
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
-
 from datetime import timedelta
 
 import pytz
+
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError, ValidationError
-from odoo.osv import expression
 
 
 class EducationTimetableLine(models.Model):
@@ -119,7 +114,6 @@ class EducationTimetableLine(models.Model):
         self.ensure_one()
         self.state = "done"
         session_obj = self.env["education.session"]
-        event_obj = self.env["calendar.event"]
         start = fields.Date.from_string(self.date_from)
         end = fields.Date.from_string(self.date_to)
 
