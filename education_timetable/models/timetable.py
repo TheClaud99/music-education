@@ -110,6 +110,11 @@ class EducationTimetableLine(models.Model):
             "timetable_id": self.id,
         }
 
+    def action_cancel(self):
+        for timetable in self:
+            timetable.session_ids.unlink()
+            timetable.state = "draft"
+
     def generate_new_sessions(self):
         self.ensure_one()
         self.state = "done"

@@ -10,6 +10,8 @@
                         <button name="generate_new_sessions" type="object"
                             attrs="{'invisible': [('state','!=','draft')]}" string="Genera lezioni"
                             class="oe_highlight" />
+                        <button name="action_cancel" type="object"
+                            attrs="{'invisible': [('state','!=','done')]}" string="Annulla lezioni" />
                         <field name="state" widget="statusbar" />
                     </header>
                     <sheet>
