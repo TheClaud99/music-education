@@ -10,8 +10,8 @@
                     </header>
                     <sheet>
                         <group name="main">
-                            <field name="session_id" redonly="1" />
-                            <field name="student_id" redonly="1" />
+                            <field name="session_id" readonly="1" />
+                            <field name="student_id" readonly="1" />
                             <field name="is_paid" />
                         </group>
                         <group col="4">
@@ -34,7 +34,7 @@
                     decoration-danger="not is_paid"
                     decoration-success="is_paid"
                     create="false">
-                    <field name="session_id" />
+                    <field name="start" />
                     <field name="student_id" />
                     <field name="notes" />
                     <field name="is_paid" invisible="1" />
