@@ -34,6 +34,9 @@
                     decoration-danger="not is_paid"
                     decoration-success="is_paid"
                     create="false">
+                    <header>
+                        <button name="set_paid" class="oe_highlight" type="object" string="Set paid" />
+                    </header>
                     <field name="start" />
                     <field name="student_id" />
                     <field name="notes" />
