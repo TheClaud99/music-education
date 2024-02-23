@@ -10,9 +10,43 @@ class CalendarEvent(models.Model):
         inverse_name="meeting_id",
         string="Lezioni",
     )
+    attendance_ids = fields.One2many(
+        related="session_ids.attendance_ids", string="Presenze"
+    )
 
     teacher_id = fields.Many2one(related="session_ids.teacher_id")
     teacher_color = fields.Integer(related="teacher_id.color")
+
+    payment_state = fields.Selection(
+        [("not_paid", "Not Paid"), ("paid", "Paid"), ("partial", "Partially Paid")],
+        "Payment Status",
+        compute="_compute_payment_state",
+        store=True,
+        readonly=True,
+        copy=False,
+        tracking=True,
+    )
+
+    @api.depends("session_ids.attendance_ids.is_paid")
+    def _compute_payment_state(self):
+        for event in self:
+            payment_exists = False
+            paid = True
+            for attendance in event.session_ids.attendance_ids:
+                if attendance.is_paid:
+                    payment_exists = True
+                else:
+                    paid = False
+
+            if paid:
+                event.payment_state = "paid"
+                continue
+
+            if payment_exists:
+                event.payment_state = "partial"
+                continue
+
+            event.payment_state = "not_paid"
 
     @api.constrains("resource_booking_ids", "start", "stop")
     def _check_bookings_scheduling(self):

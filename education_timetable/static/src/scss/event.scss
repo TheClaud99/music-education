@@ -1,0 +1,15 @@
+.circle-container {
+    display: inline-block;
+    // margin-right: 10px; text distance
+
+    .circle-green-red {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+        background: linear-gradient(to right, green 50%, red 50%);
+    }
+}

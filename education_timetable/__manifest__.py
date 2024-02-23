@@ -21,6 +21,7 @@
         "views/teacher_view.xml",
         "views/course_view.xml",
         "views/calendar_event_views.xml",
+        "views/teacher_calendar_views.xml",
         "data/day_data.xml",
         "data/timetable_multicompany.xml",
         "wizard/session_presence_view.xml",
@@ -34,6 +35,7 @@
     "assets": {
         "web.assets_backend": [
             "education_timetable/static/src/views/**/*",
+            "education_timetable/static/src/scss/**/*",
         ],
     },
 }
