@@ -216,7 +216,7 @@ class EducationSession(models.Model):
         to_delete.unlink()
         _self.env["calendar.event"].create(to_create)
 
-    @api.constrains("combination_id", "meeting_id", "type_id")
+    @api.constrains("combination_id", "meeting_id")
     def _check_scheduling(self):
         """Scheduled bookings must have no conflicts."""
         # Nothing to do if no bookings are scheduled
