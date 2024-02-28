@@ -20,7 +20,7 @@
                                 <field name="course_id" />
                                 <field name="teacher_id" domain="[('teacher', '=', True)]" />
                                 <field name="students" domain="[('courses', 'in', [course_id])]"
-                                    widget="many2many_tags" />
+                                    widget="many2many_tags" options="{'no_create': True}" />
                             </group>
                             <group>
                                 <field name="date_from" />
