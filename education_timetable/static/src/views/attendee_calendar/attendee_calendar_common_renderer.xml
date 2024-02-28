@@ -2,9 +2,9 @@
 <templates>
     <t t-inherit="calendar.AttendeeCalendarCommonRenderer.event" t-inherit-mode="extension" owl="1">
         <xpath expr="//*[hasclass('fa', 'fa-exclamation-circle')]" position="after">
-            <span t-if="rawRecord.payment_state == 'paid'" class="fa fa-circle text-success" />
-            <span t-if="rawRecord.payment_state == 'not_paid'" class="fa fa-circle text-danger" />
-            <div t-if="rawRecord.payment_state == 'partial'" class="circle-container">
+            <span t-if="rawRecord.payment_state == 'paid'" class="me-1 fa fa-circle text-success" />
+            <span t-if="rawRecord.payment_state == 'not_paid'" class="me-1 fa fa-circle text-danger" />
+            <div t-if="rawRecord.payment_state == 'partial'" class="me-1 circle-container">
                 <span class="circle-green-red" />
             </div>
         </xpath>
