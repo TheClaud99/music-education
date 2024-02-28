@@ -263,8 +263,8 @@ class EducationSession(models.Model):
         }
         if meeting:
             values["time"] = meeting.display_time
-            return _("%(teacher)s - %(students)s - %(time)s") % values
-        return _("%(teacher)s - %(students)s") % values
+            return _("%(students)s - %(teacher)s - %(time)s") % values
+        return _("%(students)s - %(teacher)s") % values
 
     @api.model_create_multi
     def create(self, vals_list):
