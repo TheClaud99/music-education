@@ -11,6 +11,7 @@
                     <sheet>
                         <group name="main">
                             <field name="session_id" readonly="1" />
+                            <field name="course_id" readonly="1" />
                             <field name="student_id" readonly="1" />
                             <field name="is_paid" />
                         </group>
@@ -39,6 +40,7 @@
                     </header>
                     <field name="start" />
                     <field name="student_id" />
+                    <field name="course_id" optional="show" />
                     <field name="notes" />
                     <field name="is_paid" invisible="1" />
                 </tree>
@@ -52,6 +54,7 @@
                 <search string="Presenza">
                     <field name="session_id" />
                     <field name="student_id" />
+                    <field name="course_id" />
                     <field name="notes" />
                     <filter
                         name="paid"

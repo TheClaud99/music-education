@@ -21,6 +21,7 @@ class EducationSessionAttendance(models.Model):
         ondelete="cascade",
     )
 
+    course_id = fields.Many2one(related="session_id.timetable_id.course_id")
     student_id = fields.Many2one("res.partner", "Studente", required=True)
     is_paid = fields.Boolean("Is Paid", copy=False, tracking=True)
 
