@@ -69,7 +69,7 @@
                     <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
                         attrs="{'invisible': [('active', '=', True)]}" />
                     <field name="avatar_128" invisible="1" />
-                    <field name="image_1920" widget="image" class="student_image float-end"
+                    <field name="image_1920" widget="image" class="student_image float-end ms-5"
                         options="{'zoom': true, 'preview_image':'image_512'}" />
 
                     <div class="oe_title mb24">
@@ -88,29 +88,27 @@
                     </div>
 
                     <group>
-                        <group>
-                            <field
-                                name="lastname"
-                                attrs="{'required': [('firstname', '=', False)]}"
-                            />
-                            <field
-                                name="firstname"
-                                attrs="{'required': [('lastname', '=', False)]}"
-                            />
-                            <field name="phone" widget="phone" />
-                            <field name="user_ids" invisible="1" />
-                            <field name="email" widget="email" context="{'gravatar_image': True}"
-                                attrs="{'required': [('user_ids','!=', [])]}" />
-                            <field name='birthdate_date' />
-                            <field
-                                name="age"
-                                attrs="{'invisible': [('birthdate_date', '=', False)]}"
-                            />
-                            <field name="color" widget="color_picker"
-                                attrs="{'invisible': [('teacher', '=', False)]}" />
-                            <field name="teacher" invisible="1" />
-                            <field name="student" invisible="1" />
-                        </group>
+                        <field
+                            name="lastname"
+                            attrs="{'required': [('firstname', '=', False)]}"
+                        />
+                        <field
+                            name="firstname"
+                            attrs="{'required': [('lastname', '=', False)]}"
+                        />
+                        <field name="phone" widget="phone" />
+                        <field name="user_ids" invisible="1" />
+                        <field name="email" widget="email" context="{'gravatar_image': True}"
+                            attrs="{'required': [('user_ids','!=', [])]}" />
+                        <field name='birthdate_date' />
+                        <field
+                            name="age"
+                            attrs="{'invisible': [('birthdate_date', '=', False)]}"
+                        />
+                        <field name="color" widget="color_picker"
+                            attrs="{'invisible': [('teacher', '=', False)]}" />
+                        <field name="teacher" invisible="1" />
+                        <field name="student" invisible="1" />
                     </group>
 
                     <notebook colspan="4">
