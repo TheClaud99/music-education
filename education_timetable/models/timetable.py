@@ -144,19 +144,21 @@ class EducationTimetableLine(models.Model):
         for day in days:
             session_obj.create(self._prepare_session_vals(day))
 
-    @api.model
-    def create(self, vals):
-        if vals.get("name", "New") == "New":
-            vals["name"] = (
-                self.env["ir.sequence"].next_by_code("education.timetable.line")
-                or "New"
-            )
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if vals.get("name", "New") == "New":
+                vals["name"] = (
+                    self.env["ir.sequence"].next_by_code("education.timetable.line")
+                    or "New"
+                )
         return super(EducationTimetableLine, self).create(vals)
 
     def unlink(self):
         for record in self:
-            if record.mapped("session_ids").filtered(lambda s: s.state in ["done"]):
+            if record.session_ids.filtered(lambda s: s.state in ["done"]):
                 raise ValidationError(
                     _("You can not remove timetable with done sessions")
                 )
+        self.session_ids.unlink()
         return super(EducationTimetableLine, self).unlink()
