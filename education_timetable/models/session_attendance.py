@@ -35,6 +35,9 @@ class EducationSessionAttendance(models.Model):
         self.write({"is_paid": True})
         return {}
 
+    def set_unpaid(self):
+        return self.write({"is_paid": False})
+
     @api.depends("student_id", "session_id.start")
     def _compute_name(self):
         for attendance in self:

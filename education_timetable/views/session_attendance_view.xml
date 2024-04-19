@@ -37,6 +37,7 @@
                     create="false">
                     <header>
                         <button name="set_paid" class="oe_highlight" type="object" string="Set paid" />
+                        <button name="set_unpaid" type="object" string="Set unpaid" />
                     </header>
                     <field name="start" />
                     <field name="student_id" />

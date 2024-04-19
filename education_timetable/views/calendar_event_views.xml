@@ -36,6 +36,9 @@
                                     <button name="set_paid" class="oe_highlight"
                                         attrs="{'invisible': [('is_paid', '=', True)]}"
                                         type="object" string="Set paid" />
+                                    <button name="set_unpaid" class="oe_highlight"
+                                        attrs="{'invisible': [('is_paid', '=', False)]}"
+                                        type="object" string="Set unpaid" />
                                 </tree>
                             </field>
                         </group>
