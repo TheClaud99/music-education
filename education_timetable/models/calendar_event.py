@@ -54,30 +54,6 @@ class CalendarEvent(models.Model):
         sessions = self.sudo().session_ids
         return sessions._check_scheduling()
 
-    @api.model_create_multi
-    def create(self, vals_list):
-        """Transfer resource booking to _attendees_values by context.
-
-        We need to serialize the creation in that case.
-        mail_notify_author key from context is necessary to force the notification
-        to be sent to author.
-        """
-        vals_list2 = []
-        records = self.env["calendar.event"]
-        for vals in vals_list:
-            if "session_ids" in vals:
-                records += super(
-                    CalendarEvent,
-                    self.with_context(
-                        session_ids=vals["session_ids"],
-                        mail_notify_author=True,
-                    ),
-                ).create(vals)
-            else:
-                vals_list2.append(vals)
-        records += super().create(vals_list2)
-        return records
-
     def _attendees_values(self, partner_commands):
         """Autoconfirm resource attendees."""
         attendee_commands = super()._attendees_values(partner_commands)
