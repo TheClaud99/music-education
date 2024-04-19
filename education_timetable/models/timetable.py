@@ -4,6 +4,9 @@ import pytz
 
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError, ValidationError
+from odoo.fields import Command
+
+LOCKED_FIELD_STATES = {state: [("readonly", True)] for state in ["done"]}
 
 
 class EducationTimetableLine(models.Model):
@@ -13,11 +16,17 @@ class EducationTimetableLine(models.Model):
     name = fields.Char(string="Name", required=False, default=lambda self: _("New"))
 
     course_id = fields.Many2one(
-        comodel_name="education.course", string="Course", required=True
+        comodel_name="education.course",
+        string="Course",
+        required=True,
+        states=LOCKED_FIELD_STATES,
     )
 
     teacher_id = fields.Many2one(
-        comodel_name="res.partner", string="Teacher", required=True
+        comodel_name="res.partner",
+        string="Teacher",
+        required=True,
+        states=LOCKED_FIELD_STATES,
     )
 
     students = fields.Many2many(
@@ -26,10 +35,17 @@ class EducationTimetableLine(models.Model):
         "timetable_id",
         "student_id",
         "Students",
+        states=LOCKED_FIELD_STATES,
     )
 
-    start_time = fields.Float(string="Start time")
-    end_time = fields.Float(string="End time")
+    start_time = fields.Float(
+        string="Start time",
+        states=LOCKED_FIELD_STATES,
+    )
+    end_time = fields.Float(
+        string="End time",
+        states=LOCKED_FIELD_STATES,
+    )
 
     day_ids = fields.Many2many(
         comodel_name="education.day",
@@ -37,13 +53,21 @@ class EducationTimetableLine(models.Model):
         column1="timetable_id",
         column2="day_id",
         string="Days",
+        states=LOCKED_FIELD_STATES,
     )
 
     date_from = fields.Date(
-        string="Start Date", required=True, default=fields.Date.context_today
+        string="Start Date",
+        required=True,
+        default=fields.Date.context_today,
+        states=LOCKED_FIELD_STATES,
     )
 
-    date_to = fields.Date(string="End Date", required=True)
+    date_to = fields.Date(
+        string="End Date",
+        required=True,
+        states=LOCKED_FIELD_STATES,
+    )
 
     state = fields.Selection(
         [("draft", "Draft"), ("done", "Done")],
@@ -57,6 +81,7 @@ class EducationTimetableLine(models.Model):
         "timetable_id",
         "Sessions",
         copy=True,
+        states=LOCKED_FIELD_STATES,
     )
 
     user_id = fields.Many2one(
