@@ -80,8 +80,9 @@ class EducationTimetableLine(models.Model):
     def get_hours(self, hours):
         return "{0:02.0f}:{1:02.0f}:00".format(*divmod(float(hours) * 60, 60))
 
-    def _prepare_session_vals(self, day):
+    def _prepare_meeting_vals(self, day):
         students = self.students
+        teacher = self.teacher_id
         start = day.strftime("%Y-%m-%d") + " " + self.get_hours(self.start_time)
         stop = day.strftime("%Y-%m-%d") + " " + self.get_hours(self.end_time)
         duration = self.end_time - self.start_time
@@ -100,13 +101,27 @@ class EducationTimetableLine(models.Model):
         )
 
         return {
+            "duration": duration,
+            "name": self.env["education.session"]._get_name_formatted(
+                teacher, students
+            ),
+            "partner_ids": [Command.link(partner.id) for partner in teacher | students],
             "start": start,
             "stop": stop,
+            "user_id": self.env.user.id,
+            "show_as": "busy",
+            "res_model_id": False,
+            "res_id": False,
+        }
+
+    def _prepare_session_vals(self, meeting):
+        students = self.students
+        return {
             "teacher_id": self.teacher_id.id,
             "attendance_ids": [
-                (0, 0, {"student_id": student.id}) for student in students
+                Command.create({"student_id": student.id}) for student in students
             ],
-            "duration": duration,
+            "meeting_id": meeting.id,
             "timetable_id": self.id,
         }
 
@@ -119,6 +134,7 @@ class EducationTimetableLine(models.Model):
         self.ensure_one()
         self.state = "done"
         session_obj = self.env["education.session"]
+        meeting_obj = self.env["calendar.event"]
         start = fields.Date.from_string(self.date_from)
         end = fields.Date.from_string(self.date_to)
 
@@ -142,7 +158,8 @@ class EducationTimetableLine(models.Model):
             raise UserError(_("Nessuna lezione generabile per i giorni selezionati"))
 
         for day in days:
-            session_obj.create(self._prepare_session_vals(day))
+            meeting = meeting_obj.create(self._prepare_meeting_vals(day))
+            session_obj.create(self._prepare_session_vals(meeting))
 
     @api.model_create_multi
     def create(self, vals_list):

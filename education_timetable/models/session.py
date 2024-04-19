@@ -1,5 +1,5 @@
 import calendar
-from datetime import datetime, timedelta
+from datetime import datetime
 
 from dateutil.relativedelta import relativedelta
 
@@ -19,7 +19,7 @@ class EducationSession(models.Model):
         ),
     ]
 
-    _rec_name = "code"
+    _rec_name = "name"
 
     code = fields.Char(string="Code")
     timetable_id = fields.Many2one(
@@ -62,159 +62,26 @@ class EducationSession(models.Model):
         context={"default_res_id": False, "default_res_model": False},
         copy=False,
         index=True,
+        required=True,
         ondelete="cascade",
         help="Meeting confirmed for this booking.",
     )
-    categ_ids = fields.Many2many(string="Tags", comodel_name="calendar.event.type")
     name = fields.Char(index=True, help="Leave empty to autogenerate a booking name.")
-    description = fields.Html()
-    user_id = fields.Many2one(
-        comodel_name="res.users",
-        default=lambda self: self._default_user_id(),
-        store=True,
-        readonly=False,
-        compute="_compute_user_id",
-        string="Organizer",
-        index=True,
-        tracking=True,
-        help=(
-            "Who organized this booking? Usually whoever created the record. "
-            "It will appear as the calendar event organizer, when scheduled, "
-            "and calendar notifications will be sent in his/her name."
-        ),
-    )
 
-    start = fields.Datetime(
-        compute="_compute_start",
-        copy=False,
-        index=True,
-        readonly=False,
-        store=True,
-        tracking=True,
-    )
-    duration = fields.Float(
-        compute="_compute_duration",
-        readonly=False,
-        store=True,
-        tracking=True,
-        help="Amount of time that the resources will be booked and unavailable for others.",
-    )
-    stop = fields.Datetime(
-        compute="_compute_stop",
-        copy=False,
-        index=True,
-        store=True,
-        tracking=True,
-    )
+    # meeting related
+    categ_ids = fields.Many2many(related="meeting_id.categ_ids")
+    description = fields.Html(related="meeting_id.description")
+    user_id = fields.Many2one(related="meeting_id.user_id")
 
-    @api.model
-    def _default_user_id(self):
-        return self.env.user
+    start = fields.Datetime(related="meeting_id.start")
+    duration = fields.Float(related="meeting_id.duration")
+    stop = fields.Datetime(related="meeting_id.stop")
 
     @api.depends("name", "teacher_id", "meeting_id")
     @api.depends_context("uid", "using_portal")
     def _compute_display_name(self):
         """Overridden just for dependencies; see `name_get()` for implementation."""
         return super()._compute_display_name()
-
-    @api.depends("meeting_id.start")
-    def _compute_start(self):
-        """Get start date from related meeting, if available."""
-        for record in self:
-            if record.id:
-                record.start = record.meeting_id.start
-
-    @api.depends("meeting_id.duration")
-    def _compute_duration(self):
-        """Compute duration for each booking."""
-        for record in self:
-            # Special case when creating record from UI
-            if not record.id:
-                if record.timetable_id:
-                    duration = (
-                        record.timetable_id.end_time - record.timetable_id.start_time
-                    )
-                else:
-                    duration = 0.0
-                record.duration = self.default_get(["duration"]).get(
-                    "duration", duration
-                )
-            # Get duration from type only when changing type or when creating from ORM
-            elif (
-                not record.duration
-                or record._origin.timetable_id != record.timetable_id
-            ):
-                duration = record.timetable_id.end_time - record.timetable_id.start_time
-                record.duration = duration
-            # Get it from meeting only when available
-            elif record.meeting_id:
-                record.duration = record.meeting_id.duration
-
-    @api.depends("start", "duration")
-    def _compute_stop(self):
-        """Get stop date from start date and duration."""
-        for record in self:
-            try:
-                record.stop = record.start + timedelta(hours=record.duration)
-            except TypeError:
-                # Either value is False: no stop date
-                record.stop = False
-
-    @api.depends("meeting_id.user_id")
-    def _compute_user_id(self):
-        """Get user from related meeting, if available."""
-        for record in self.filtered(lambda x: x.meeting_id.user_id):
-            record.user_id = record.meeting_id.user_id
-
-    def _prepare_meeting_vals(self):
-        students = self.attendance_ids.mapped("student_id")
-
-        return dict(
-            # alarm_ids=[(6, 0, self.type_id.alarm_ids.ids)],
-            # categ_ids=[(6, 0, self.categ_ids.ids)],
-            # description=self.type_id.requester_advice,
-            duration=self.duration,
-            # location=self.location,
-            name=self.name or self._get_name_formatted(self.teacher_id, students),
-            partner_ids=[(4, partner.id, 0) for partner in self.teacher_id | students],
-            session_ids=[(6, 0, self.ids)],
-            start=self.start,
-            stop=self.stop,
-            user_id=self.env.user.id,
-            show_as="busy",
-            # These 2 avoid creating event as activity
-            res_model_id=False,
-            res_id=False,
-        )
-
-    def _sync_meeting(self):
-        """Lazy-create or destroy calendar.event."""
-        # Notify changed dates to attendees
-        _self = self.with_context(syncing_booking_ids=self.ids)
-        # Avoid sync recursion
-        _self -= self.browse(self.env.context.get("syncing_booking_ids"))
-        to_create, to_delete = [], _self.env["calendar.event"]
-        for one in _self:
-            if one.start:
-                meeting_vals = one._prepare_meeting_vals()
-                if one.meeting_id:
-                    meeting = one.meeting_id
-                    if not all(
-                        (
-                            one.meeting_id.start == one.start,
-                            one.meeting_id.stop == one.stop,
-                            one.meeting_id.duration == one.duration,
-                        )
-                    ):
-                        # Context to notify scheduling change
-                        meeting = meeting.with_context(from_ui=True)
-                    meeting.write(meeting_vals)
-                else:
-                    to_create.append(meeting_vals)
-            else:
-                to_delete |= one.meeting_id
-        to_delete.unlink()
-        _self.env["calendar.event"].create(to_create)
 
     @api.constrains("combination_id", "meeting_id")
     def _check_scheduling(self):
@@ -265,19 +132,6 @@ class EducationSession(models.Model):
             values["time"] = meeting.display_time
             return _("%(students)s - %(teacher)s - %(time)s") % values
         return _("%(students)s - %(teacher)s") % values
-
-    @api.model_create_multi
-    def create(self, vals_list):
-        """Sync booking with meeting if needed."""
-        result = super().create(vals_list)
-        result._sync_meeting()
-        return result
-
-    def write(self, vals):
-        """Sync booking with meeting if needed."""
-        result = super().write(vals)
-        self._sync_meeting()
-        return result
 
     def unlink(self):
         """Unlink meeting if needed."""
