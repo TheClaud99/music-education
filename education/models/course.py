@@ -59,7 +59,7 @@ class EducationCourse(models.Model):
     _name = "education.course"
     _inherit = ["mail.thread"]
 
-    name = fields.Char(string="Name", required=True)
+    name = fields.Char(string="Name", required=True, tracking=True)
     code = fields.Char(string="Code")
     category_id = fields.Many2one(
         comodel_name="education.course.category", string="Category"
@@ -68,9 +68,14 @@ class EducationCourse(models.Model):
     duration = fields.Float(string="Duration", company_dependent=True)
     active = fields.Boolean(string="Active", default=True)
     instrument_id = fields.Many2one("education.instrument", "Strumento")
-    teacher_id = fields.Many2one("res.partner", "Insegnante")
+    teacher_id = fields.Many2one("res.partner", "Insegnante", tracking=True)
 
     enrollment_ids = fields.One2many("education.enrollment", "course_id", "Iscrizioni")
     students = fields.Many2many(
-        "res.partner", "education_enrollment", "course_id", "student_id", "Studenti"
+        "res.partner",
+        "education_enrollment",
+        "course_id",
+        "student_id",
+        "Studenti",
+        tracking=True,
     )
