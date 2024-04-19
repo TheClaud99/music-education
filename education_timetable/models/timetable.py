@@ -159,7 +159,7 @@ class EducationTimetableLine(models.Model):
         self.ensure_one()
         self.state = "done"
         session_obj = self.env["education.session"]
-        meeting_obj = self.env["calendar.event"]
+        meeting_obj = self.env["calendar.event"].with_context(no_mail_to_attendees=True)
         start = fields.Date.from_string(self.date_from)
         end = fields.Date.from_string(self.date_to)
 
