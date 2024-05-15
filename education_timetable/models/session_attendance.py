@@ -6,7 +6,6 @@ class EducationSessionAttendance(models.Model):
     _inherit = ["mail.thread"]
 
     name = fields.Char(
-        "Name",
         compute="_compute_name",
         store=False,
         readonly=True,
@@ -23,11 +22,11 @@ class EducationSessionAttendance(models.Model):
 
     course_id = fields.Many2one(related="session_id.timetable_id.course_id")
     student_id = fields.Many2one("res.partner", "Studente", required=True)
-    is_paid = fields.Boolean("Is Paid", copy=False, tracking=True)
+    is_paid = fields.Boolean(copy=False, tracking=True)
 
     notes = fields.Char(string="Note")
 
-    supporting_document = fields.Boolean(string="Supporting Document")
+    supporting_document = fields.Boolean()
 
     start = fields.Datetime("Start time", related="session_id.start")
 
@@ -41,6 +40,6 @@ class EducationSessionAttendance(models.Model):
     @api.depends("student_id", "session_id.start")
     def _compute_name(self):
         for attendance in self:
-            attendance.name = _(
-                "{} - {}".format(attendance.start, attendance.student_id.name)
+            attendance.name = _("{} - {}").format(
+                attendance.start, attendance.student_id.name
             )

@@ -42,18 +42,18 @@ class TestEducationEnrollment(TransactionCase):
         )
         course_subject_ids = self.enrollment_1.subject_ids
 
-        self.assertEquals(record_subject_ids, course_subject_ids)
+        self.assertEqual(record_subject_ids, course_subject_ids)
 
         self.enrollment_2.action_done()
         record = self.enrollment_2.record_id
 
-        self.assertEquals(record, self.enrollment_1.record_id)
+        self.assertEqual(record, self.enrollment_1.record_id)
 
         subjects_enrolled = self.enrollment_2.subject_ids
         record_subject = record.record_subject_ids.filtered(
             lambda s: s.subject_id in subjects_enrolled
         )
-        self.assertEquals(
+        self.assertEqual(
             record_subject.record_subject_group_ids.mapped("enrollment_id"),
             self.enrollment_1 + self.enrollment_2,
         )

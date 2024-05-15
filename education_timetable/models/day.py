@@ -9,6 +9,5 @@ from odoo import fields, models
 class EducationDay(models.Model):
     _name = "education.day"
 
-    name = fields.Char(string="Name")
-
-    code = fields.Integer(string="Code")
+    name = fields.Char()
+    code = fields.Integer()

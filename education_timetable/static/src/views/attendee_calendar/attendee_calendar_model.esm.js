@@ -1,7 +1,7 @@
 /** @odoo-module **/
 
-import { AttendeeCalendarModel } from "@calendar/views/attendee_calendar/attendee_calendar_model";
-import { patch } from "@web/core/utils/patch";
+import {AttendeeCalendarModel} from "@calendar/views/attendee_calendar/attendee_calendar_model";
+import {patch} from "@web/core/utils/patch";
 
 patch(
     AttendeeCalendarModel.prototype,
@@ -11,9 +11,7 @@ patch(
          * @protected
          */
         async loadFilterSection(fieldName, filterInfo, previousSection) {
-            const previousFilters = previousSection
-                ? previousSection.filters
-                : [];
+            const previousFilters = previousSection ? previousSection.filters : [];
             if (previousFilters.length != 0) {
                 return this._super.apply(this, arguments);
             }

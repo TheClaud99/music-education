@@ -1,9 +1,8 @@
 /** @odoo-module **/
 
-import { CalendarCommonPopover } from "@web/views/calendar/calendar_common/calendar_common_popover";
+import {CalendarCommonPopover} from "@web/views/calendar/calendar_common/calendar_common_popover";
 
 export class TeacherCalendarCommonPopover extends CalendarCommonPopover {
-
     get isCurrentUserAttendee() {
         return this.props.record.rawRecord.partner_ids.includes(this.user.partnerId);
     }
@@ -18,8 +17,9 @@ export class TeacherCalendarCommonPopover extends CalendarCommonPopover {
 
     get displayAttendeeAnswerChoice() {
         return (
-            this.props.record.rawRecord.partner_ids.some((partner) => partner !== this.user.partnerId) &&
-            this.props.record.isCurrentPartner
+            this.props.record.rawRecord.partner_ids.some(
+                (partner) => partner !== this.user.partnerId
+            ) && this.props.record.isCurrentPartner
         );
     }
 
@@ -35,7 +35,11 @@ export class TeacherCalendarCommonPopover extends CalendarCommonPopover {
      * @override
      */
     get isEventDeletable() {
-        return super.isEventDeletable && this.isCurrentUserAttendee && !this.isEventArchivable;
+        return (
+            super.isEventDeletable &&
+            this.isCurrentUserAttendee &&
+            !this.isEventArchivable
+        );
     }
 
     /**

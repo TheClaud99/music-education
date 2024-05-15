@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <record id="view_timetable_course_form" model="ir.ui.view">
         <field name="name">timetable.course.form</field>
@@ -7,11 +7,17 @@
         <field name="arch" type="xml">
             <xpath expr="//page[@name='enrollments']" position="after">
                 <page name="timetables" string="Timetables">
-                    <field name="timetable_ids" nolabel='1'
-                        context="{'default_teacher_id': teacher_id}">
+                    <field
+                        name="timetable_ids"
+                        nolabel='1'
+                        context="{'default_teacher_id': teacher_id}"
+                    >
                         <tree>
-                            <field name="teacher_id" options="{'no_create': True}"
-                                domain="[('teacher','=',1)]" />
+                            <field
+                                name="teacher_id"
+                                options="{'no_create': True}"
+                                domain="[('teacher','=',1)]"
+                            />
                             <field name="students" widget="many2many_tags" />
                             <field name="date_from" />
                             <field name="date_to" />

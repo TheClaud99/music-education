@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <data>
         <record id="view_education_session_attendance_form" model="ir.ui.view">
             <field name="name">view.education.session.attendance.form</field>
             <field name="model">education.session.attendance</field>
@@ -31,12 +30,18 @@
             <field name="name">view.education.session.attendance.tree</field>
             <field name="model">education.session.attendance</field>
             <field name="arch" type="xml">
-                <tree string="Presenze"
-                    decoration-danger="not is_paid"
-                    decoration-success="is_paid"
-                    create="false">
+                <tree
+                decoration-danger="not is_paid"
+                decoration-success="is_paid"
+                create="false"
+            >
                     <header>
-                        <button name="set_paid" class="oe_highlight" type="object" string="Set paid" />
+                        <button
+                        name="set_paid"
+                        class="oe_highlight"
+                        type="object"
+                        string="Set paid"
+                    />
                         <button name="set_unpaid" type="object" string="Set unpaid" />
                     </header>
                     <field name="start" />
@@ -58,20 +63,26 @@
                     <field name="course_id" />
                     <field name="notes" />
                     <filter
-                        name="paid"
-                        domain="[('is_paid','=', True)]"
-                        string="Paid"
-                    />
+                    name="paid"
+                    domain="[('is_paid','=', True)]"
+                    string="Paid"
+                />
                     <filter
-                        name="not_paid"
-                        domain="[('is_paid','=', False)]"
-                        string="Not Paid"
-                    />
+                    name="not_paid"
+                    domain="[('is_paid','=', False)]"
+                    string="Not Paid"
+                />
                     <group string="Group By" name="groupby">
-                        <filter string="Studente" name="student_id"
-                            context="{'group_by': 'student_id'}" />
-                        <filter string="Sessione" name="session_id"
-                            context="{'group_by': 'session_id'}" />
+                        <filter
+                        string="Studente"
+                        name="student_id"
+                        context="{'group_by': 'student_id'}"
+                    />
+                        <filter
+                        string="Sessione"
+                        name="session_id"
+                        context="{'group_by': 'session_id'}"
+                    />
                     </group>
                 </search>
             </field>
@@ -97,9 +108,12 @@
             </field>
         </record>
 
-        <menuitem id="education_session_attendance_menu"
-            parent="education_timetable.education_assistance_root"
-            action="education_session_attendance_action" sequence="40" name="Presenze" />
+        <menuitem
+        id="education_session_attendance_menu"
+        parent="education_timetable.education_assistance_root"
+        action="education_session_attendance_action"
+        sequence="40"
+        name="Presenze"
+    />
 
-    </data>
 </odoo>

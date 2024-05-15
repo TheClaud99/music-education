@@ -1,26 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <data>
         <record id="view_education_timetable_line_form" model="ir.ui.view">
             <field name="name">view.education.timetable.line.form</field>
             <field name="model">education.timetable.line</field>
             <field name="arch" type="xml">
                 <form string="Education Timetable">
                     <header>
-                        <button name="generate_new_sessions" type="object"
-                            attrs="{'invisible': [('state','!=','draft')]}" string="Genera lezioni"
-                            class="oe_highlight" />
-                        <button name="action_cancel" type="object"
-                            attrs="{'invisible': [('state','!=','done')]}" string="Annulla lezioni" />
+                        <button
+                        name="generate_new_sessions"
+                        type="object"
+                        attrs="{'invisible': [('state','!=','draft')]}"
+                        string="Genera lezioni"
+                        class="oe_highlight"
+                    />
+                        <button
+                        name="action_cancel"
+                        type="object"
+                        attrs="{'invisible': [('state','!=','done')]}"
+                        string="Annulla lezioni"
+                    />
                         <field name="state" widget="statusbar" />
                     </header>
                     <sheet>
                         <group>
                             <group>
                                 <field name="course_id" />
-                                <field name="teacher_id" domain="[('teacher', '=', True)]" />
-                                <field name="students" domain="[('courses', 'in', [course_id])]"
-                                    widget="many2many_tags" options="{'no_create': True}" />
+                                <field
+                                name="teacher_id"
+                                domain="[('teacher', '=', True)]"
+                            />
+                                <field
+                                name="students"
+                                domain="[('courses', 'in', [course_id])]"
+                                widget="many2many_tags"
+                                options="{'no_create': True}"
+                            />
                             </group>
                             <group>
                                 <field name="date_from" />
@@ -30,11 +44,17 @@
                             </group>
                         </group>
                         <group>
-                            <field name="day_ids" widget="many2many_checkboxes"
-                                style="display: inline-flex" />
+                            <field
+                            name="day_ids"
+                            widget="many2many_checkboxes"
+                            style="display: inline-flex"
+                        />
                         </group>
-                        <group name="sesions" string="Lezioni"
-                            attrs="{'invisible': [('state', '!=', 'done')]}">
+                        <group
+                        name="sesions"
+                        string="Lezioni"
+                        attrs="{'invisible': [('state', '!=', 'done')]}"
+                    >
                             <group>
                                 <field name="session_ids" colspan="4" nolabel="1" />
                             </group>
@@ -52,7 +72,7 @@
             <field name="name">view.education.timetable.tree</field>
             <field name="model">education.timetable.line</field>
             <field name="arch" type="xml">
-                <tree string="Education Timetable">
+                <tree>
                     <field name="course_id" />
                     <field name="teacher_id" />
                     <field name="day_ids" widget="many2many_tags" />
@@ -74,10 +94,21 @@
                     <field name="date_from" />
                     <field name="date_to" />
                     <group string="Group By" name="groupby">
-                        <filter string="Course" name="course_id" context="{'group_by': 'course_id'}" />
-                        <filter string="teacher_id" name="teacher_id"
-                            context="{'group_by': 'teacher_id'}" />
-                        <filter string="Day" name="day_ids" context="{'group_by': 'day_ids'}" />
+                        <filter
+                        string="Course"
+                        name="course_id"
+                        context="{'group_by': 'course_id'}"
+                    />
+                        <filter
+                        string="teacher_id"
+                        name="teacher_id"
+                        context="{'group_by': 'teacher_id'}"
+                    />
+                        <filter
+                        string="Day"
+                        name="day_ids"
+                        context="{'group_by': 'day_ids'}"
+                    />
                     </group>
                 </search>
             </field>
@@ -99,9 +130,13 @@
             <field name="model">education.timetable.line</field>
             <field name="priority" eval="1" />
             <field name="arch" type="xml">
-                <calendar string="Timetable" date_start="date_from" date_stop="date_to"
-                    color="user_id"
-                    mode="month">
+                <calendar
+                string="Timetable"
+                date_start="date_from"
+                date_stop="date_to"
+                color="user_id"
+                mode="month"
+            >
                     <field name="teacher_id" />
                 </calendar>
             </field>
@@ -114,11 +149,18 @@
             <field name="padding">3</field>
         </record>
 
-        <menuitem id="education_assistance_root" parent="education.education_base_menu"
-            name="Timetable"
-            sequence="60" />
-        <menuitem id="education_timetable_menu" parent="education_assistance_root"
-            action="education_timetable_action" sequence="20" name="Timetables" />
+        <menuitem
+        id="education_assistance_root"
+        parent="education.education_base_menu"
+        name="Timetable"
+        sequence="60"
+    />
+        <menuitem
+        id="education_timetable_menu"
+        parent="education_assistance_root"
+        action="education_timetable_action"
+        sequence="20"
+        name="Timetables"
+    />
 
-    </data>
 </odoo>

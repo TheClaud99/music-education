@@ -13,7 +13,7 @@ class EducationTimetableLine(models.Model):
     _name = "education.timetable.line"
     _inherit = ["mail.thread"]
 
-    name = fields.Char(string="Name", required=False, default=lambda self: _("New"))
+    name = fields.Char(required=False, default=lambda self: _("New"))
 
     course_id = fields.Many2one(
         comodel_name="education.course",
@@ -34,7 +34,6 @@ class EducationTimetableLine(models.Model):
         "students_timetable_rel",
         "timetable_id",
         "student_id",
-        "Students",
         states=LOCKED_FIELD_STATES,
     )
 
@@ -103,7 +102,7 @@ class EducationTimetableLine(models.Model):
             yield start + i * step
 
     def get_hours(self, hours):
-        return "{0:02.0f}:{1:02.0f}:00".format(*divmod(float(hours) * 60, 60))
+        return "{:02.0f}:{:02.0f}:00".format(*divmod(float(hours) * 60, 60))
 
     def _prepare_meeting_vals(self, day):
         students = self.students

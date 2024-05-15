@@ -15,10 +15,6 @@ class EducationSessionPresenceLine(models.TransientModel):
 
     student_id = fields.Many2one(comodel_name="res.partner", string="Student")
 
-    lack = fields.Boolean(
-        string="Lack",
-    )
+    lack = fields.Boolean()
 
-    notes = fields.Char(
-        string="Notes",
-    )
+    notes = fields.Char()

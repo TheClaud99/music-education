@@ -1,7 +1,7 @@
 addons:
   apt:
     packages:
-      - expect-dev  # provides unbuffer utility
+      - expect-dev # provides unbuffer utility
       - python-lxml # because pip installation is slow
 
 language: python
@@ -14,10 +14,9 @@ env:
   - VERSION="11.0" ODOO_REPO="OCA/OCB" LINT_CHECK="0" EXCLUDE="openeducat_erp"
   - VERSION="11.0" ODOO_REPO="odoo/odoo" LINT_CHECK="0" EXCLUDE="openeducat_erp"
 
-
-
 install:
-  - git clone https://github.com/OCA/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
+  - git clone https://github.com/OCA/maintainer-quality-tools.git
+    ${HOME}/maintainer-quality-tools
   - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
   - travis_install_nightly
 

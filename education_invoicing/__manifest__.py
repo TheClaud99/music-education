@@ -11,6 +11,7 @@
     "sequence": 1,
     "complexity": "easy",
     "author": "PESOL, Odoo Community Association (OCA)",
+    "website": "https://github.com/TheClaud99/music-education",
     "depends": [
         "education",
         "account",

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!-- Copyright <YEAR(S)>
 <AUTHOR(S)>     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
@@ -6,9 +6,13 @@
         <field name="course_id" ref="education.education_course_1" />
         <field name="teacher_id" ref="education.education_teacher_1" />
         <field name="day" eval="0" />
-        <field name="date_from"
-            eval="(DateTime.today() - relativedelta(months=1)).strftime('%Y-%m-%d')" />
-        <field name="date_to"
-            eval="(DateTime.today() + relativedelta(months=1)).strftime('%Y-%m-%d')" />
+        <field
+            name="date_from"
+            eval="(DateTime.today() - relativedelta(months=1)).strftime('%Y-%m-%d')"
+        />
+        <field
+            name="date_to"
+            eval="(DateTime.today() + relativedelta(months=1)).strftime('%Y-%m-%d')"
+        />
     </record>
 </odoo>

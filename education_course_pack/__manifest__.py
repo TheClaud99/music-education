@@ -10,6 +10,7 @@
     "category": "education",
     "sequence": 1,
     "complexity": "easy",
+    "website": "https://github.com/TheClaud99/music-education",
     "author": "PESOL, Odoo Community Association (OCA)",
     "depends": ["education"],
     "data": [

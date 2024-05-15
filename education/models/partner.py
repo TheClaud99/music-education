@@ -4,8 +4,8 @@ from odoo import _, fields, models
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    teacher = fields.Boolean(string="Teacher")
-    student = fields.Boolean(string="Student")
+    teacher = fields.Boolean()
+    student = fields.Boolean()
 
     enrollment_ids = fields.One2many("education.enrollment", "student_id", "Iscrizioni")
     courses = fields.Many2many(

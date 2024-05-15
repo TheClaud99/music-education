@@ -21,7 +21,7 @@ class EducationSession(models.Model):
 
     _rec_name = "name"
 
-    code = fields.Char(string="Code")
+    code = fields.Char()
     timetable_id = fields.Many2one(
         comodel_name="education.timetable.line",
         string="Timetable Lines",
@@ -88,7 +88,6 @@ class EducationSession(models.Model):
         """Scheduled bookings must have no conflicts."""
         # Nothing to do if no bookings are scheduled
         # todo: to implement
-        pass
 
     def _get_calendar_context(self, year=None, month=None, now=None):
         """Get the required context for the calendar view in the portal.

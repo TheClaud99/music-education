@@ -1,140 +1,135 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright <YEAR(S)> <AUTHOR(S)>
-     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
-
-<odoo>
-  <data noupdate="1">
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
     <record id="education_teacher_1" model="res.partner">
-      <field name="title" ref="base.res_partner_title_mister"/>
+      <field name="title" ref="base.res_partner_title_mister" />
       <field name="name">Rain</field>
       <field name="email">rain@demo.com</field>
       <field name="city">New York</field>
-      <field name="country_id" ref="base.us"/>
+      <field name="country_id" ref="base.us" />
       <field name="company_type">person</field>
       <field name="teacher">True</field>
       <field name="active">True</field>
     </record>
 
     <record id="education_teacher_2" model="res.partner">
-      <field name="title" ref="base.res_partner_title_miss"/>
+      <field name="title" ref="base.res_partner_title_miss" />
       <field name="name">Sindel</field>
       <field name="email">sindelm@demo.com</field>
       <field name="city">New York</field>
-      <field name="country_id" ref="base.us"/>
+      <field name="country_id" ref="base.us" />
       <field name="company_type">person</field>
       <field name="teacher">True</field>
       <field name="active">True</field>
     </record>
 
     <record id="education_teacher_3" model="res.partner">
-      <field name="title" ref="base.res_partner_title_miss"/>
+      <field name="title" ref="base.res_partner_title_miss" />
       <field name="name">Jade</field>
       <field name="email">jade@demo.com</field>
       <field name="city">New York</field>
-      <field name="country_id" ref="base.us"/>
+      <field name="country_id" ref="base.us" />
       <field name="company_type">person</field>
       <field name="teacher">True</field>
       <field name="active">True</field>
     </record>
 
     <record id="education_teacher_4" model="res.partner">
-      <field name="title" ref="base.res_partner_title_mister"/>
+      <field name="title" ref="base.res_partner_title_mister" />
       <field name="name">Kabal</field>
       <field name="email">kabal@demo.com</field>
       <field name="city">New York</field>
-      <field name="country_id" ref="base.us"/>
+      <field name="country_id" ref="base.us" />
       <field name="company_type">person</field>
       <field name="teacher">True</field>
       <field name="active">True</field>
     </record>
 
     <record id="education_teacher_5" model="res.partner">
-      <field name="title" ref="base.res_partner_title_mister"/>
+      <field name="title" ref="base.res_partner_title_mister" />
       <field name="name">Nightwolf</field>
       <field name="email">nightwolf@demo.com</field>
       <field name="city">New York</field>
-      <field name="country_id" ref="base.us"/>
+      <field name="country_id" ref="base.us" />
       <field name="company_type">person</field>
       <field name="teacher">True</field>
       <field name="active">True</field>
     </record>
 
     <record id="education_teacher_6" model="res.partner">
-      <field name="title" ref="base.res_partner_title_mister"/>
+      <field name="title" ref="base.res_partner_title_mister" />
       <field name="name">Shang Tsung</field>
       <field name="email">shangtsung@demo.com</field>
       <field name="city">New York</field>
-      <field name="country_id" ref="base.us"/>
+      <field name="country_id" ref="base.us" />
       <field name="company_type">person</field>
       <field name="teacher">True</field>
       <field name="active">True</field>
     </record>
 
     <record id="education_teacher_7" model="res.partner">
-      <field name="title" ref="base.res_partner_title_mister"/>
+      <field name="title" ref="base.res_partner_title_mister" />
       <field name="name">Kotal Kahn</field>
       <field name="email">kotalkahn@demo.com</field>
       <field name="city">New York</field>
-      <field name="country_id" ref="base.us"/>
+      <field name="country_id" ref="base.us" />
       <field name="company_type">person</field>
       <field name="teacher">True</field>
       <field name="active">True</field>
     </record>
 
     <record id="education_teacher_8" model="res.partner">
-      <field name="title" ref="base.res_partner_title_mister"/>
+      <field name="title" ref="base.res_partner_title_mister" />
       <field name="name">Takahashi Takeda</field>
       <field name="email">takahashitakeda@demo.com</field>
       <field name="city">New York</field>
-      <field name="country_id" ref="base.us"/>
+      <field name="country_id" ref="base.us" />
       <field name="company_type">person</field>
       <field name="teacher">True</field>
       <field name="active">True</field>
     </record>
 
     <record id="education_teacher_9" model="res.partner">
-      <field name="title" ref="base.res_partner_title_mister"/>
+      <field name="title" ref="base.res_partner_title_mister" />
       <field name="name">Kenshi</field>
       <field name="email">Kenshi@demo.com</field>
       <field name="city">New York</field>
-      <field name="country_id" ref="base.us"/>
+      <field name="country_id" ref="base.us" />
       <field name="company_type">person</field>
       <field name="teacher">True</field>
       <field name="active">True</field>
     </record>
 
     <record id="education_teacher_10" model="res.partner">
-      <field name="title" ref="base.res_partner_title_mister"/>
+      <field name="title" ref="base.res_partner_title_mister" />
       <field name="name">Bo' Rai Cho</field>
       <field name="email">boraicho@demo.com</field>
       <field name="city">New York</field>
-      <field name="country_id" ref="base.us"/>
+      <field name="country_id" ref="base.us" />
       <field name="company_type">person</field>
       <field name="teacher">True</field>
       <field name="active">True</field>
     </record>
 
     <record id="education_teacher_11" model="res.partner">
-      <field name="title" ref="base.res_partner_title_mister"/>
+      <field name="title" ref="base.res_partner_title_mister" />
       <field name="name">Jason Voorhees</field>
       <field name="email">jasonvoorhees@demo.com</field>
       <field name="city">New York</field>
-      <field name="country_id" ref="base.us"/>
+      <field name="country_id" ref="base.us" />
       <field name="company_type">person</field>
       <field name="teacher">True</field>
       <field name="active">True</field>
     </record>
 
     <record id="education_teacher_12" model="res.partner">
-      <field name="title" ref="base.res_partner_title_miss"/>
+      <field name="title" ref="base.res_partner_title_miss" />
       <field name="name">Tanya</field>
       <field name="email">tanya@demo.com</field>
       <field name="city">New York</field>
-      <field name="country_id" ref="base.us"/>
+      <field name="country_id" ref="base.us" />
       <field name="company_type">person</field>
       <field name="teacher">True</field>
       <field name="active">True</field>
     </record>
 
-  </data>
 </odoo>

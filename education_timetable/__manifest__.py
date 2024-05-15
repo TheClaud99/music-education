@@ -11,7 +11,8 @@
     "category": "Education",
     "sequence": 1,
     "complexity": "easy",
-    "author": "PESOL, Odoo Community Association (OCA)",
+    "website": "https://github.com/TheClaud99/music-education",
+    "author": "Claudio Mano",
     "depends": ["base", "education", "calendar", "mail"],
     "data": [
         "views/timetable_line_view.xml",

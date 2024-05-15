@@ -8,7 +8,6 @@ class EducationEnrollment(models.Model):
     _order = "enrollment_date desc"
 
     code = fields.Char(
-        string="Code",
         default=lambda self: _("New"),
         readonly=True,
         states={"draft": [("readonly", False)]},
@@ -34,7 +33,7 @@ class EducationEnrollment(models.Model):
     )
     teacher_id = fields.Many2one(related="course_id.teacher_id")
 
-    enrollment_date = fields.Date(string="Enrollment Date")
+    enrollment_date = fields.Date()
     state = fields.Selection(
         [("draft", "Draft"), ("done", "Done"), ("cancel", "Cancelled")],
         string="Status",

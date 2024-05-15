@@ -1,100 +1,129 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-  <record id="view_education_course_form" model="ir.ui.view">
-    <field name="name">view.education.course.form</field>
-    <field name="model">education.course</field>
-    <field name="arch" type="xml">
-      <form string="Education Course">
-        <sheet>
-          <div class="oe_button_box" name="button_box">
-          </div>
+    <record id="view_education_course_form" model="ir.ui.view">
+        <field name="name">view.education.course.form</field>
+        <field name="model">education.course</field>
+        <field name="arch" type="xml">
+            <form string="Education Course">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                    </div>
 
-          <field name="active" invisible="1" />
-          <widget
-            name="web_ribbon"
-            title="Archived"
-            bg_color="bg-danger"
-            attrs="{'invisible': [('active', '=', True)]}"
-          />
+                    <field name="active" invisible="1" />
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
 
-          <div class="oe_title">
-            <h1>
-              <field class="text-break" name="name" default_focus="1" required="1" />
-            </h1>
-          </div>
-          <group name="general" col="4">
-            <field name="code" />
-            <field name="category_id" options="{'no_quick_create': True}" />
-            <field name="teacher_id" options="{'no_create': True}" domain="[('teacher','=',1)]" />
-            <!-- <field name="duration" widget="float_time" /> -->
-            <field name="company_id" widget="selection" groups="base.group_multi_company" />
-          </group>
-          <notebook>
-            <page name="enrollments" string="Iscrizioni">
-              <field name="enrollment_ids" nolabel='1'>
-                <tree editable="bottom">
-                  <field name="student_id" options="{'no_create': True}"
-                    domain="[('student','=',1)]" />
-                  <field name="state" invisible="1" />
-                </tree>
-              </field>
-            </page>
-          </notebook>
-        </sheet>
-        <div class="oe_chatter">
-          <field name="message_follower_ids" widget="mail_followers" />
-          <field name="message_ids" widget="mail_thread" />
-        </div>
-      </form>
-    </field>
-  </record>
+                    <div class="oe_title">
+                        <h1>
+                            <field
+                                class="text-break"
+                                name="name"
+                                default_focus="1"
+                                required="1"
+                            />
+                        </h1>
+                    </div>
+                    <group name="general" col="4">
+                        <field name="code" />
+                        <field name="category_id" options="{'no_quick_create': True}" />
+                        <field
+                            name="teacher_id"
+                            options="{'no_create': True}"
+                            domain="[('teacher','=',1)]"
+                        />
+                        <!-- <field name="duration" widget="float_time" /> -->
+                        <field
+                            name="company_id"
+                            widget="selection"
+                            groups="base.group_multi_company"
+                        />
+                    </group>
+                    <notebook>
+                        <page name="enrollments" string="Iscrizioni">
+                            <field name="enrollment_ids" nolabel='1'>
+                                <tree editable="bottom">
+                                    <field
+                                        name="student_id"
+                                        options="{'no_create': True}"
+                                        domain="[('student','=',1)]"
+                                    />
+                                    <field name="state" invisible="1" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" />
+                    <field name="message_ids" widget="mail_thread" />
+                </div>
+            </form>
+        </field>
+    </record>
 
-  <record id="view_education_course_tree" model="ir.ui.view">
-    <field name="name">view.education.course.tree</field>
-    <field name="model">education.course</field>
-    <field name="arch" type="xml">
-      <tree string="Education Course">
-        <field name="name" />
-        <field name="teacher_id" />
-        <field name="students" widget="many2many_tags" />
-        <field name="code" />
-        <field name="category_id" />
-        <field name="duration" widget="float_time" />
-      </tree>
-    </field>
-  </record>
+    <record id="view_education_course_tree" model="ir.ui.view">
+        <field name="name">view.education.course.tree</field>
+        <field name="model">education.course</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="teacher_id" />
+                <field name="students" widget="many2many_tags" />
+                <field name="code" />
+                <field name="category_id" />
+                <field name="duration" widget="float_time" />
+            </tree>
+        </field>
+    </record>
 
-  <record id="view_education_course_search" model="ir.ui.view">
-    <field name="name">view.education.course.search</field>
-    <field name="model">education.course</field>
-    <field name="arch" type="xml">
-      <search string="Courses">
-        <field name="name" />
-        <field name="code" />
-        <field name="category_id" />
-        <field name="duration" />
-        <filter name="active" string="Archived" domain="[('active', '=', False)]" />
-        <group string="Group By">
-          <filter string="Name" name="name" context="{'group_by': 'name'}" />
-          <filter string="Code" name="code" context="{'group_by': 'code'}" />
-          <filter string="Category" name="category_id" context="{'group_by': 'category_id'}" />
-        </group>
-      </search>
-    </field>
-  </record>
+    <record id="view_education_course_search" model="ir.ui.view">
+        <field name="name">view.education.course.search</field>
+        <field name="model">education.course</field>
+        <field name="arch" type="xml">
+            <search string="Courses">
+                <field name="name" />
+                <field name="code" />
+                <field name="category_id" />
+                <field name="duration" />
+                <filter
+                    name="active"
+                    string="Archived"
+                    domain="[('active', '=', False)]"
+                />
+                <group string="Group By">
+                    <filter string="Name" name="name" context="{'group_by': 'name'}" />
+                    <filter string="Code" name="code" context="{'group_by': 'code'}" />
+                    <filter
+                        string="Category"
+                        name="category_id"
+                        context="{'group_by': 'category_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
 
-  <record id="education_course_action" model="ir.actions.act_window">
-    <field name="name">Courses</field>
-    <field name="res_model">education.course</field>
-    <field name="view_mode">tree,form</field>
-    <field name="help" type="html">
-      <p class="oe_view_nocontent_create">
-        Click to create a new Course.
-      </p>
-    </field>
-  </record>
+    <record id="education_course_action" model="ir.actions.act_window">
+        <field name="name">Courses</field>
+        <field name="res_model">education.course</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new Course.
+            </p>
+        </field>
+    </record>
 
-  <menuitem id="education_course" parent="education_course_root" action="education_course_action"
-    sequence="20" name="Corsi" />
+    <menuitem
+        id="education_course"
+        parent="education_course_root"
+        action="education_course_action"
+        sequence="20"
+        name="Corsi"
+    />
 
 </odoo>

@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <data>
 
         <record id="res_config_settings_view_form" model="ir.ui.view">
             <field name="name">res.config.settings.view.form.inherit.education</field>
@@ -9,31 +8,46 @@
             <field name="inherit_id" ref="base.res_config_settings_view_form" />
             <field name="arch" type="xml">
                 <xpath expr="//div[hasclass('settings')]" position="inside">
-                    <div class="app_settings_block" data-string="Education" string="Education"
-                        data-key="education">
+                    <div
+                    class="app_settings_block"
+                    data-string="Education"
+                    string="Education"
+                    data-key="education"
+                >
                         <h2>Prodotti</h2>
-                        <div class="row mt16 o_settings_container"
-                            name="default_taxes_setting_container">
-                            <div class="col-12 col-lg-6 o_setting_box"
-                                id="default_taxes"
-                                title="These taxes are set in any new product created.">
+                        <div
+                        class="row mt16 o_settings_container"
+                        name="default_taxes_setting_container"
+                    >
+                            <div
+                            class="col-12 col-lg-6 o_setting_box"
+                            id="default_taxes"
+                            title="These taxes are set in any new product created."
+                        >
                                 <div class="o_setting_left_pane" />
                                 <div class="o_setting_right_pane">
                                     <span class="o_form_label">Prodotto</span>
-                                    <span class="fa fa-lg fa-building-o"
-                                        title="Values set here are company-specific."
-                                        aria-label="Values set here are company-specific."
-                                        groups="base.group_multi_company" role="img" />
+                                    <span
+                                    class="fa fa-lg fa-building-o"
+                                    title="Values set here are company-specific."
+                                    aria-label="Values set here are company-specific."
+                                    groups="base.group_multi_company"
+                                    role="img"
+                                />
                                     <div class="text-muted">
                                         Prodotto
                                     </div>
                                     <div class="content-group">
                                         <div class="row mt16">
-                                            <label string="Prodotto ecucation"
-                                                for="education_product_id"
-                                                class="col-lg-3 o_light_label" />
-                                            <field name="education_product_id"
-                                                domain="[('type', 'in', ['service']), ('company_id', '=', company_id)]" />
+                                            <label
+                                            string="Prodotto ecucation"
+                                            for="education_product_id"
+                                            class="col-lg-3 o_light_label"
+                                        />
+                                            <field
+                                            name="education_product_id"
+                                            domain="[('type', 'in', ['service']), ('company_id', '=', company_id)]"
+                                        />
                                         </div>
                                     </div>
                                 </div>
@@ -53,10 +67,13 @@
             <field name="context">{'module' : 'education', 'bin_size': False}</field>
         </record>
 
-        <menuitem id="menu_education_config" parent="education.education_config_root"
-            name="Settings"
-            action="action_education_config"
-            groups="base.group_system" sequence="0" />
+        <menuitem
+        id="menu_education_config"
+        parent="education.education_config_root"
+        name="Settings"
+        action="action_education_config"
+        groups="base.group_system"
+        sequence="0"
+    />
 
-    </data>
 </odoo>
