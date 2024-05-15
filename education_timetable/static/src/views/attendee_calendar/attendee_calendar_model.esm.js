@@ -8,11 +8,13 @@ patch(
     "attendee_calendar_model_everybody_by_default_patch",
     {
         /**
+         * Override of method loadFilterSection in web/static/src/views/calendar/calendar_model.js
+         * @override
          * @protected
          */
         async loadFilterSection(fieldName, filterInfo, previousSection) {
             const previousFilters = previousSection ? previousSection.filters : [];
-            if (previousFilters.length != 0) {
+            if (previousFilters.length !== 0) {
                 return this._super.apply(this, arguments);
             }
             const ret = await this._super.apply(this, arguments);
