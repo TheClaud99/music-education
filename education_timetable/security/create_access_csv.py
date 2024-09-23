@@ -1,6 +1,9 @@
 import csv
 import os
 
+FULL_ACCESS = (1, 1, 1, 1)
+READONLY = (1, 0, 0, 0)
+
 # Lista dei permessi per i modelli
 # 1 posto => module
 # 2 posto => model
@@ -9,12 +12,12 @@ import os
 #   - lista di permessi con il seguente ordine: (read, write, create, unlink)
 # fmt: off
 MODELS = (
-    ("education_timetable", "education.day", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
-    ("education_timetable", "education.session.attendance", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
-    ("education_timetable", "education.session.presence.line", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
-    ("education_timetable", "education.session.presence", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
-    ("education_timetable", "education.session", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
-    ("education_timetable", "education.timetable.line", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
+    ("education_timetable", "education.day", {"manager": FULL_ACCESS, "user": READONLY}),
+    ("education_timetable", "education.session.attendance", {"manager": FULL_ACCESS, "user": READONLY}),
+    ("education_timetable", "education.session.presence.line", {"manager": FULL_ACCESS, "user": READONLY}),
+    ("education_timetable", "education.session.presence", {"manager": FULL_ACCESS, "user": READONLY}),
+    ("education_timetable", "education.session", {"manager": FULL_ACCESS, "user": READONLY}),
+    ("education_timetable", "education.timetable.line", {"manager": FULL_ACCESS, "user": READONLY}),
 )
 # fmt: on
 

@@ -35,11 +35,7 @@ export class TeacherCalendarCommonPopover extends CalendarCommonPopover {
      * @override
      */
     get isEventDeletable() {
-        return (
-            super.isEventDeletable &&
-            this.isCurrentUserAttendee &&
-            !this.isEventArchivable
-        );
+        return false;
     }
 
     /**
