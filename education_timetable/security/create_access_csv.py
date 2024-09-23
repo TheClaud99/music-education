@@ -9,7 +9,7 @@ READONLY = (1, 0, 0, 0)
 # 2 posto => model
 # 3 posto => dict con la seguente struttura:
 #   - chiave ruolo (la stessa del dict ROLES)
-#   - lista di permessi con il seguente ordine: (read, write, create, unlink)
+#   - lista di permessi con il seguente ordine: (read, write, create, unlink, options)
 # fmt: off
 MODELS = (
     ("education_timetable", "education.day", {"manager": FULL_ACCESS, "user": READONLY}),
@@ -18,6 +18,7 @@ MODELS = (
     ("education_timetable", "education.session.presence", {"manager": FULL_ACCESS, "user": READONLY}),
     ("education_timetable", "education.session", {"manager": FULL_ACCESS, "user": READONLY}),
     ("education_timetable", "education.timetable.line", {"manager": FULL_ACCESS, "user": READONLY}),
+    ("calendar", "calendar.event", {"manager": FULL_ACCESS, "user": READONLY, "all_employee": (1, 0, 0, 0, {"override": True})}),
 )
 # fmt: on
 
@@ -28,6 +29,7 @@ ROLES = {
     # "admin": ("sofidel_activities", "group_sofidel_activities_admin"),
     "manager": ("education", "education_manager"),
     "user": ("education", "education_user"),
+    "all_employee": ("base", "group_user"),
 }
 
 
@@ -59,9 +61,21 @@ def main(models, roles):
             for role_key, perms in model[2].items():
                 role_module = roles[role_key][0]
                 role_name = roles[role_key][1]
+                options = {}
+                if len(perms) > 4:
+                    options = perms[4]
+
+                if options.get("override"):
+                    row_id = "%s.access_%s_%s" % (
+                        module_name,
+                        model_name_underscored,
+                        role_key,
+                    )
+                else:
+                    row_id = "access_%s_%s" % (model_name_underscored, role_key)
                 writer.writerow(
                     [
-                        "access_%s_%s" % (model_name_underscored, role_key),
+                        row_id,
                         model_name,
                         "%s.model_%s" % (module_name, model_name_underscored),
                         "%s.%s" % (role_module, role_name),

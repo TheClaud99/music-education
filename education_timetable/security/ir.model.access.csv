@@ -11,3 +11,6 @@ access_education_session_manager,education.session,education_timetable.model_edu
 access_education_session_user,education.session,education_timetable.model_education_session,education.education_user,1,0,0,0
 access_education_timetable_line_manager,education.timetable.line,education_timetable.model_education_timetable_line,education.education_manager,1,1,1,1
 access_education_timetable_line_user,education.timetable.line,education_timetable.model_education_timetable_line,education.education_user,1,0,0,0
+access_calendar_event_manager,calendar.event,calendar.model_calendar_event,education.education_manager,1,1,1,1
+access_calendar_event_user,calendar.event,calendar.model_calendar_event,education.education_user,1,0,0,0
+calendar.access_calendar_event_all_employee,calendar.event,calendar.model_calendar_event,base.group_user,1,0,0,0
