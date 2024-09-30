@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-        <record id="view_calendar_event_calendar" model="ir.ui.view">
-            <field name="name">calendar.event.view.calendar.inherit</field>
-            <field name="model">calendar.event</field>
-            <field name="inherit_id" ref="calendar.view_calendar_event_calendar" />
-            <field name="arch" type="xml">
-                <calendar position="attributes">
-                    <attribute name="color">teacher_color</attribute>
-                </calendar>
+    <record id="view_calendar_event_calendar" model="ir.ui.view">
+        <field name="name">calendar.event.view.calendar.inherit</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_calendar" />
+        <field name="arch" type="xml">
+            <calendar position="attributes">
+                <attribute name="color">teacher_color</attribute>
+            </calendar>
 
-                <calendar position="inside">
-                    <field name="payment_state" invisible="1" />
-                </calendar>
-            </field>
-        </record>
+            <calendar position="inside">
+                <field name="payment_state" invisible="1" />
+            </calendar>
+        </field>
+    </record>
 
-        <record id="view_calendar_event_form" model="ir.ui.view">
-            <field name="name">calendar.event.view.calendar.inherit</field>
-            <field name="model">calendar.event</field>
-            <field name="inherit_id" ref="calendar.view_calendar_event_form" />
-            <field name="arch" type="xml">
-                <page name="page_invitations" position="after">
-                    <page name="session_attendances" string="Pagamenti">
-                        <group>
-                            <field
+    <record id="view_calendar_event_form" model="ir.ui.view">
+        <field name="name">calendar.event.view.calendar.inherit</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_form" />
+        <field name="arch" type="xml">
+            <page name="page_invitations" position="after">
+                <page name="session_attendances" string="Pagamenti">
+                    <group>
+                        <field
                             name="attendance_ids"
                             nolabel="1"
                             colspan="2"
                             readonly="0"
                         >
-                                <tree
+                            <tree
                                 decoration-danger="not is_paid"
                                 decoration-success="is_paid"
                                 create="false"
                                 delete="false"
                             >
-                                    <field name="student_id" />
-                                    <field name="notes" />
-                                    <field name="is_paid" invisible="1" />
-                                    <button
+                                <field name="student_id" />
+                                <field name="notes" />
+                                <field name="is_paid" invisible="1" />
+                                <button
                                     name="set_paid"
                                     class="oe_highlight"
                                     attrs="{'invisible': [('is_paid', '=', True)]}"
                                     type="object"
                                     string="Set paid"
                                 />
-                                    <button
+                                <button
                                     name="set_unpaid"
                                     class="oe_highlight"
                                     attrs="{'invisible': [('is_paid', '=', False)]}"
                                     type="object"
                                     string="Set unpaid"
                                 />
-                                </tree>
-                            </field>
-                        </group>
-                    </page>
+                            </tree>
+                        </field>
+                    </group>
                 </page>
-            </field>
-        </record>
+            </page>
+        </field>
+    </record>
 </odoo>

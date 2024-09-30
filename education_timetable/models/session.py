@@ -76,6 +76,7 @@ class EducationSession(models.Model):
     start = fields.Datetime(related="meeting_id.start")
     duration = fields.Float(related="meeting_id.duration")
     stop = fields.Datetime(related="meeting_id.stop")
+    payment_state = fields.Selection(related="meeting_id.payment_state")
 
     @api.depends("name", "teacher_id", "meeting_id")
     @api.depends_context("uid", "using_portal")
@@ -237,3 +238,14 @@ class EducationSession(models.Model):
             "type": "ir.actions.act_url",
             "url": self.get_portal_url(),
         }
+
+    def action_view_on_calendar(self):
+        action = self.env["ir.actions.actions"]._for_xml_id(
+            "calendar.action_calendar_event"
+        )
+        action["context"] = {
+            "default_mode": "week",
+            "initial_date": self.start,
+            "search_default_partner_ids": self.meeting_id.partner_ids.ids,
+        }
+        return action

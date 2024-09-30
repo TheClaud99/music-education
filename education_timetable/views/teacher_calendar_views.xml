@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-        <record id="view_teacher_event_calendar" model="ir.ui.view">
-            <field name="name">calendar.event.calendar</field>
-            <field name="model">calendar.event</field>
-            <field name="priority" eval="2" />
-            <field name="arch" type="xml">
-                <calendar
+    <record id="view_teacher_event_calendar" model="ir.ui.view">
+        <field name="name">calendar.event.calendar</field>
+        <field name="model">calendar.event</field>
+        <field name="priority" eval="2" />
+        <field name="arch" type="xml">
+            <calendar
                 string="Calendario"
                 date_start="start"
                 date_stop="stop"
@@ -18,8 +18,8 @@
                 create="0"
                 delete="0"
             >
-                    <field name="attendee_status" invisible="1" />
-                    <field
+                <field name="attendee_status" invisible="1" />
+                <field
                     name="partner_ids"
                     options="{'block': True, 'icon': 'fa fa-users'}"
                     filters="1"
@@ -29,72 +29,69 @@
                     filter_field="partner_checked"
                     avatar_field="avatar_128"
                 />
-                    <field
+                <field
                     name="videocall_location"
                     widget="url"
                     text="Join Video Call"
                     options="{'icon': 'fa fa-lg fa-video-camera'}"
                     attrs="{'invisible': [('videocall_location', '=', False)]}"
                 />
-                    <field name="is_highlighted" invisible="1" />
-                    <field name="is_organizer_alone" invisible="1" />
-                    <field name="display_description" invisible="1" />
-                    <field
+                <field name="is_highlighted" invisible="1" />
+                <field name="is_organizer_alone" invisible="1" />
+                <field name="display_description" invisible="1" />
+                <field
                     name="location"
                     attrs="{'invisible': [('location', '=', False)]}"
                 />
-                    <field
+                <field
                     name="description"
                     attrs="{'invisible': [('display_description', '=', False)]}"
                 />
-                    <field name="privacy" />
-                    <field
+                <field name="privacy" />
+                <field
                     name="alarm_ids"
                     attrs="{'invisible': [('alarm_ids', '=', [])]}"
                 />
-                    <field
+                <field
                     name="categ_ids"
                     attrs="{'invisible': [('categ_ids', '=', [])]}"
                 />
-                    <!-- For recurrence update Dialog -->
-                    <field name="recurrency" invisible="1" />
-                    <field name="recurrence_update" invisible="1" />
-                    <field name="partner_id" string="Organizer" />
-                </calendar>
-            </field>
-        </record>
+                <!-- For recurrence update Dialog -->
+                <field name="recurrency" invisible="1" />
+                <field name="recurrence_update" invisible="1" />
+                <field name="partner_id" string="Organizer" />
+            </calendar>
+        </field>
+    </record>
 
-        <record id="action_calendar_event" model="ir.actions.act_window">
-            <field name="name">Lezioni</field>
-            <field name="res_model">calendar.event</field>
-            <field name="view_mode">calendar</field>
-            <field name="view_id" ref="view_teacher_event_calendar" />
-            <field name="search_view_id" ref="calendar.view_calendar_event_search" />
-            <field name="help" type="html">
-                <p class="o_view_nocontent_smiling_face">
-                    No meetings found. Let's schedule one!
-                </p>
-                <p>
-                    The calendar is shared between employees and fully integrated with
-                    other applications such as the employee leaves or the business
-                    opportunities.
-                </p>
-            </field>
-        </record>
+    <record id="action_calendar_event" model="ir.actions.act_window">
+        <field name="name">Lezioni</field>
+        <field name="res_model">calendar.event</field>
+        <field name="view_mode">calendar</field>
+        <field name="view_id" ref="view_teacher_event_calendar" />
+        <field name="search_view_id" ref="calendar.view_calendar_event_search" />
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No meetings found. Let's schedule one!
+            </p>
+            <p>
+                The calendar is shared between employees and fully integrated with
+                other applications such as the employee leaves or the business
+                opportunities.
+            </p>
+        </field>
+    </record>
 
-        <record
-        id="action_view_teacher_event_calendar"
-        model="ir.actions.act_window.view"
-    >
-            <field name="act_window_id" ref="action_calendar_event" />
-            <field name="sequence" eval="1" />
-            <field name="view_mode">calendar</field>
-            <field name="view_id" ref="view_teacher_event_calendar" />
-        </record>
+    <record id="action_view_teacher_event_calendar" model="ir.actions.act_window.view">
+        <field name="act_window_id" ref="action_calendar_event" />
+        <field name="sequence" eval="1" />
+        <field name="view_mode">calendar</field>
+        <field name="view_id" ref="view_teacher_event_calendar" />
+    </record>
 
 
-        <!-- Menus -->
-        <menuitem
+    <!-- Menus -->
+    <menuitem
         id="teacher_menu_calendar"
         name="Calendario Insegnanti"
         sequence="10"

@@ -55,6 +55,11 @@ class EducationTimetableLine(models.Model):
         states=LOCKED_FIELD_STATES,
     )
 
+    alternate = fields.Boolean(
+        "Alternato",
+        states=LOCKED_FIELD_STATES,
+    )
+
     date_from = fields.Date(
         string="Start Date",
         required=True,
@@ -80,7 +85,6 @@ class EducationTimetableLine(models.Model):
         "timetable_id",
         "Sessions",
         copy=True,
-        states=LOCKED_FIELD_STATES,
     )
 
     user_id = fields.Many2one(
@@ -174,9 +178,30 @@ class EducationTimetableLine(models.Model):
         day_ids_codes = []
         for code in self.day_ids:
             day_ids_codes.append(code.code)
+
+        if len(day_ids_codes) != 1 and self.alternate:
+            raise UserError(
+                _(
+                    "Puoi usare l'opzione 'Alternato' solo con"
+                    "un giorno della settimana selezionato"
+                )
+            )
+
+        skip = False
         for day in self.get_days(start, end):
-            if day.weekday() in day_ids_codes:
-                days.append(day)
+            if day.weekday() not in day_ids_codes:
+                continue
+
+            # Se il flag alternato è vero allora
+            # genero la lezione una volta si e una no
+            if self.alternate:
+                if skip:
+                    skip = False
+                    continue
+                else:
+                    skip = True
+
+            days.append(day)
 
         if not days:
             raise UserError(_("Nessuna lezione generabile per i giorni selezionati"))
