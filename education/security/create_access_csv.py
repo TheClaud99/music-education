@@ -1,20 +1,34 @@
 import csv
 import os
 
+FULL_ACCESS = (1, 1, 1, 1)
+READONLY = (1, 0, 0, 0)
+
+
 # Lista dei permessi per i modelli
 # 1 posto => module
 # 2 posto => model
 # 3 posto => dict con la seguente struttura:
 #   - chiave ruolo (la stessa del dict ROLES)
 #   - lista di permessi con il seguente ordine: (read, write, create, unlink)
-# fmt: off
 MODELS = (
-    ("education", "education.course.category", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
-    ("education", "education.course", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
-    ("education", "education.enrollment", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
-    ("education", "education.instrument", {"manager": (1, 1, 1, 1), "user": (1, 0, 0, 0)}),
+    (
+        "education",
+        "education.course.category",
+        {"manager": FULL_ACCESS, "user": READONLY},
+    ),
+    ("education", "education.course", {"manager": FULL_ACCESS, "user": READONLY}),
+    (
+        "education",
+        "education.enrollment",
+        {"manager": FULL_ACCESS, "user": READONLY},
+    ),
+    (
+        "education",
+        "education.instrument",
+        {"manager": FULL_ACCESS, "user": READONLY},
+    ),
 )
-# fmt: on
 
 # Lista di ruoli
 # 1 livello => chiave ruolo
@@ -56,10 +70,10 @@ def main(models, roles):
                 role_name = roles[role_key][1]
                 writer.writerow(
                     [
-                        "access_%s_%s" % (model_name_underscored, role_key),
+                        f"access_{model_name_underscored}_{role_key}",
                         model_name,
-                        "%s.model_%s" % (module_name, model_name_underscored),
-                        "%s.%s" % (role_module, role_name),
+                        f"{module_name}.model_{model_name_underscored}",
+                        f"{role_module}.{role_name}",
                         perms[0],
                         perms[1],
                         perms[2],

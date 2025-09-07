@@ -8,7 +8,7 @@ from odoo.tests.common import TransactionCase
 
 class TestEducationEnrollment(TransactionCase):
     def setUp(self):
-        super(TestEducationEnrollment, self).setUp()
+        super().setUp()
 
         # Group data
         self.group_1 = self.env.ref("education.education_group_1")

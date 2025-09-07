@@ -40,6 +40,6 @@ class EducationSessionAttendance(models.Model):
     @api.depends("student_id", "session_id.start")
     def _compute_name(self):
         for attendance in self:
-            attendance.name = _("{} - {}").format(
-                attendance.start, attendance.student_id.name
+            attendance.name = _("{start} - {student_name}").format(
+                start=attendance.start, student_name=attendance.student_id.name
             )

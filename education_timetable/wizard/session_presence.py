@@ -24,7 +24,7 @@ class EducationSessionPresence(models.TransientModel):
         values = []
         self.ensure_one()
         students = self.session_id.attendance_ids.mapped("student_id")
-        for line in self.session_presence_ids.filtered(lambda l: l.lack):
+        for line in self.session_presence_ids.filtered(lambda x: x.lack):
             if line.student_id not in students:
                 attendance_values = {
                     "session_id": self.env.context.get("active_id"),
@@ -34,7 +34,7 @@ class EducationSessionPresence(models.TransientModel):
                 values.append((0, 0, attendance_values))
             else:
                 self.session_id.attendance_ids.filtered(
-                    lambda l: l.student_id == line.student_id
+                    lambda x, line=line: x.student_id == line.student_id
                 ).write({"notes": line.notes})
         self.session_id.attendance_ids = values
         self.session_id.state = "done"

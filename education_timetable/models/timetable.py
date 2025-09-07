@@ -218,7 +218,7 @@ class EducationTimetableLine(models.Model):
                     self.env["ir.sequence"].next_by_code("education.timetable.line")
                     or "New"
                 )
-        return super(EducationTimetableLine, self).create(vals)
+        return super().create(vals)
 
     def unlink(self):
         for record in self:
@@ -227,4 +227,4 @@ class EducationTimetableLine(models.Model):
                     _("You can not remove timetable with done sessions")
                 )
         self.session_ids.unlink()
-        return super(EducationTimetableLine, self).unlink()
+        return super().unlink()

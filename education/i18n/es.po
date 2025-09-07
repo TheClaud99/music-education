@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* education
+# 	* education
 #
 msgid ""
 msgstr ""
@@ -10,208 +10,114 @@ msgstr ""
 "PO-Revision-Date: 2017-10-10 06:57+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
 #. module: education
-#: model_terms:ir.ui.view,arch_db:education.view_partner_education_form
-msgid "<span class=\"o_stat_text\">\n"
-"              Enrollments\n"
-"            </span>"
-msgstr "<span class=\"o_stat_text\">\n"
-"              Matrículas\n"
-"            </span>"
+#: model_terms:ir.ui.view,arch_db:education.res_config_settings_view_form
+msgid ""
+"<span class=\"o_form_label\">Prodotto</span>\n"
+"                                    <span class=\"fa fa-lg fa-building-o\" "
+"title=\"Values set here are company-specific.\" aria-label=\"Values set here "
+"are company-specific.\" groups=\"base.group_multi_company\" role=\"img\"/>"
+msgstr ""
 
 #. module: education
 #: model_terms:ir.ui.view,arch_db:education.view_partner_education_form
-msgid "<span class=\"o_stat_text\">\n"
-"              Groups\n"
-"            </span>"
-msgstr "<span class=\"o_stat_text\">\n"
-"              Grupos Académicos\n"
-"            </span>"
+msgid ""
+"<span class=\"o_stat_value\">\n"
+"                        </span>\n"
+"                        <span class=\"o_stat_text\">\n"
+"                            Iscrizioni\n"
+"                        </span>"
+msgstr ""
 
 #. module: education
-#: code:addons/education/models/partner.py:18
-#: code:addons/education/models/partner.py:29
-#, python-format
-msgid "Academic Groups"
-msgstr "Grupos Académicos"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_enrollment__enrollment_date
-msgid "Enrollment Date"
-msgstr "Fecha de Matriculación"
-
-#. module: education
-#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
-#: model_terms:ir.ui.view,arch_db:education.view_education_group_form
-msgid "To draft"
-msgstr "Borrador"
-
-#. module: education
-#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
-msgid "Academic Information"
-msgstr "Información Académica"
-
-#. module: education
-#: model:ir.actions.act_window,name:education.education_course_category_action
-#: model:ir.model,name:education.model_education_course_category
-#: model:ir.ui.menu,name:education.education_course_category_menu
-#: model_terms:ir.ui.view,arch_db:education.view_education_course_category_form
-#: model_terms:ir.ui.view,arch_db:education.view_education_course_category_search
-#: model_terms:ir.ui.view,arch_db:education.view_education_course_category_tree
-msgid "Course Category"
-msgstr "Categorías"
-
-#. module: education
-#: model:ir.actions.act_window,help:education.record_subject_action
-msgid "Click to create a new Subject Record."
-msgstr "Click para crear un nuevo Expediente de Asignatura."
-
-#. module: education
-#: model:ir.actions.act_window,name:education.record_subject_action
-#: model:ir.ui.menu,name:education.record_subject_menu
-msgid "Subject Records"
-msgstr "Expediente de Asignaturas"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_record_subject_group_record_subject_id
-#: model_terms:ir.ui.view,arch_db:education.view_record_subject_form
-#: model_terms:ir.ui.view,arch_db:education.view_record_subject_search
-#: model_terms:ir.ui.view,arch_db:education.view_record_subject_tree
-msgid "Subject Record"
-msgstr "Expediente de asignatura"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_record_subject_record_subject_group_ids
-msgid "Subjects by Group"
-msgstr "Asignaturas por grupo"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_record_record_subject_ids
-msgid "Subjects Records"
-msgstr "Expedientes de Asignaturas"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_course_category__parent_id
-msgid "Parent Category"
-msgstr "Categoría padre"
-
-#. module: education
-#: model:ir.actions.act_window,help:education.education_course_category_action
-msgid "Click to create a new Course Category."
-msgstr "Click para crear una nueva Categoría del Curso."
-
-#. module: education
-#: code:addons/education/models/group.py:60
-#, python-format
-msgid "You can not delete a group with registered students"
-msgstr "No puedes borrar un grupo académico con alumnos matriculados"
-
-#. module: education
-#: model_terms:ir.ui.view,arch_db:education.view_education_student_form
-msgid "Admission Details"
-msgstr "Expedientes Académicos"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_sale_order_count
-#: model:ir.model.fields,field_description:education.field_education_teacher_sale_order_count
-msgid "# of Sales Order"
-msgstr "# de Pedido de Venta"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_record_ids
-#: model_terms:ir.ui.view,arch_db:education.view_education_student_form
-msgid "Academic Records"
-msgstr "Expediente Académico"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_property_account_payable_id
-#: model:ir.model.fields,field_description:education.field_education_teacher_property_account_payable_id
-msgid "Account Payable"
-msgstr "Cuenta a pagar"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_property_account_receivable_id
-#: model:ir.model.fields,field_description:education.field_education_teacher_property_account_receivable_id
-msgid "Account Receivable"
-msgstr "Cuenta por Cobrar"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_message_needaction
-#: model:ir.model.fields,field_description:education.field_education_teacher_message_needaction
+#: model:ir.model.fields,field_description:education.field_education_course__message_needaction
+#: model:ir.model.fields,field_description:education.field_education_enrollment__message_needaction
+#: model:ir.model.fields,field_description:education.field_education_instrument__message_needaction
+#: model:ir.model.fields,field_description:education.field_res_company__message_needaction
 msgid "Action Needed"
 msgstr "Acción Necesaria"
 
 #. module: education
 #: model:ir.model.fields,field_description:education.field_education_course__active
-#: model:ir.model.fields,field_description:education.field_education_group__active
-#: model:ir.model.fields.selection,name:education.selection__education_group__state__active
-#: model_terms:ir.ui.view,arch_db:education.view_education_group_form
 msgid "Active"
 msgstr "Activo"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_type
-#: model:ir.model.fields,field_description:education.field_education_teacher_type
-msgid "Address Type"
-msgstr "Tipo de dirección"
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_search
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+msgid "Archived"
+msgstr ""
 
 #. module: education
-#: model:ir.ui.menu,name:education.education_assistance_root
-msgid "Assistance"
-msgstr "Asistencia"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_bank_account_count
-#: model:ir.model.fields,field_description:education.field_education_teacher_bank_account_count
-msgid "Bank"
-msgstr "Banco"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_bank_ids
-#: model:ir.model.fields,field_description:education.field_education_teacher_bank_ids
-msgid "Banks"
-msgstr "Bancos"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_barcode
-#: model:ir.model.fields,field_description:education.field_education_teacher_barcode
-msgid "Barcode"
-msgstr "Código de barras"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_message_bounce
-#: model:ir.model.fields,field_description:education.field_education_teacher_message_bounce
-msgid "Bounce"
-msgstr "Rebote"
+#: model:ir.model.fields,field_description:education.field_education_course__message_attachment_count
+#: model:ir.model.fields,field_description:education.field_education_enrollment__message_attachment_count
+#: model:ir.model.fields,field_description:education.field_education_instrument__message_attachment_count
+#: model:ir.model.fields,field_description:education.field_res_company__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
 
 #. module: education
 #: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
-msgid "Cancel Enroll"
-msgstr "Anular Matrícula"
-
-#. module: education
-#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
-#: model_terms:ir.ui.view,arch_db:education.view_education_group_form
 msgid "Cancel"
 msgstr "Cancelar"
 
 #. module: education
 #: model:ir.model.fields.selection,name:education.selection__education_enrollment__state__cancel
-#: model:ir.model.fields.selection,name:education.selection__education_group__state__cancel
 msgid "Cancelled"
 msgstr "Anulado"
 
 #. module: education
 #: model:ir.model.fields,field_description:education.field_education_course__category_id
 #: model_terms:ir.ui.view,arch_db:education.view_education_course_search
-#: model_terms:ir.ui.view,arch_db:education.view_education_course_tree
 msgid "Category"
 msgstr "Categoria"
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course_category__child_id
+msgid "Child Categories"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.actions.act_window,help:education.education_course_category_action
+msgid "Click to create a new Course Category."
+msgstr "Click para crear una nueva Categoría del Curso."
+
+#. module: education
+#: model_terms:ir.actions.act_window,help:education.education_course_action
+msgid "Click to create a new Course."
+msgstr "Click para crear un nuevo Curso."
+
+#. module: education
+#: model_terms:ir.actions.act_window,help:education.education_enrollment_action
+msgid "Click to create a new Enrollment."
+msgstr "Click para crear una nueva Matrícula."
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__code
+#: model:ir.model.fields,field_description:education.field_education_enrollment__code
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_search
+msgid "Code"
+msgstr "Código"
+
+#. module: education
+#: model:ir.model,name:education.model_res_company
+#, fuzzy
+msgid "Companies"
+msgstr "Compañía"
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__company_id
+#: model:ir.model.fields,field_description:education.field_education_enrollment__company_id
+msgid "Company"
+msgstr "Compañía"
 
 #. module: education
 #: model:ir.model.fields,field_description:education.field_education_course_category__complete_name
@@ -219,133 +125,10 @@ msgid "Complete Name"
 msgstr "Nombre completo"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_channel_ids
-#: model:ir.model.fields,field_description:education.field_education_teacher_channel_ids
-msgid "Channels"
-msgstr "Canales"
-
-#. module: education
-#: model:ir.model.fields,help:education.field_education_student_is_company
-#: model:ir.model.fields,help:education.field_education_teacher_is_company
-msgid "Check if the contact is a company, otherwise it is a person"
-msgstr "Marque esta casilla si el contacto es una compañía. En caso contrario, será una persona."
-
-#. module: education
-#: model:ir.model.fields,help:education.field_education_student_customer
-#: model:ir.model.fields,help:education.field_education_teacher_customer
-msgid "Check this box if this contact is a customer."
-msgstr "Click en esta casilla si el contacto es un cliente"
-
-#. module: education
-#: model:ir.model.fields,help:education.field_education_student_supplier
-#: model:ir.model.fields,help:education.field_education_teacher_supplier
-msgid "Check this box if this contact is a vendor. If it's not checked, purchase people will not see it when encoding a purchase order."
-msgstr "Marque esta casilla si el contacto es un proveedor. Si no está marcada, el equipo de compras no lo verá cuando esté haciendo una orden de compra."
-
-#. module: education
-#: model:ir.model.fields,help:education.field_education_student_employee
-#: model:ir.model.fields,help:education.field_education_teacher_employee
-msgid "Check this box if this contact is an Employee."
-msgstr "Marque si el contacto es un empleado"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_city
-#: model:ir.model.fields,field_description:education.field_education_teacher_city
-msgid "City"
-msgstr "Ciudad"
-
-#. module: education
-#: model:ir.actions.act_window,help:education.education_course_action
-msgid "Click to create a new Course."
-msgstr "Click para crear un nuevo Curso."
-
-#. module: education
-#: model:ir.actions.act_window,help:education.education_enrollment_action
-msgid "Click to create a new Enrollment."
-msgstr "Click para crear una nueva Matrícula."
-
-#. module: education
-#: model:ir.actions.act_window,help:education.education_group_action
-msgid "Click to create a new Group."
-msgstr "Click para crear un nuevo Grupo Académico."
-
-#. module: education
-#: model:ir.actions.act_window,help:education.education_record_action
-msgid "Click to create a new Record."
-msgstr "Click para crear un nuevo Expediente Académico."
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_course__code
-#: model:ir.model.fields,field_description:education.field_education_enrollment__code
-#: model:ir.model.fields,field_description:education.field_education_group__code
-#: model:ir.model.fields,field_description:education.field_education_record__code
-#: model_terms:ir.ui.view,arch_db:education.view_education_course_search
-#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_search
-#: model_terms:ir.ui.view,arch_db:education.view_education_group_search
-#: model_terms:ir.ui.view,arch_db:education.view_education_record_search
-msgid "Code"
-msgstr "Código"
-
-#. module: education
-#: code:addons/education/models/enrollment.py:104
-#, python-format
-msgid "The student has already been enrolled in "
-msgstr "El alumno ya ha sido matriculado en "
-
-#. module: education
-#: code:addons/education/models/enrollment.py:107
-#, python-format
-msgid "The student has already been enrolled in this pack"
-msgstr "El alumno ya ha sido matriculado en este pack"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_color
-#: model:ir.model.fields,field_description:education.field_education_teacher_color
-msgid "Color Index"
-msgstr "Índice de Colores"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_commercial_partner_id
-#: model:ir.model.fields,field_description:education.field_education_teacher_commercial_partner_id
-msgid "Commercial Entity"
-msgstr "Entidad comercial"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_ref_company_ids
-#: model:ir.model.fields,field_description:education.field_education_teacher_ref_company_ids
-msgid "Companies that refers to partner"
-msgstr "Compañías que se refieren a la empresa"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_course__company_id
-#: model:ir.model.fields,field_description:education.field_education_enrollment__company_id
-#: model:ir.model.fields,field_description:education.field_education_group__company_id
-msgid "Company"
-msgstr "Compañía"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_company_name
-#: model:ir.model.fields,field_description:education.field_education_teacher_company_name
-msgid "Company Name"
-msgstr "Nombre de la compañía"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_commercial_company_name
-#: model:ir.model.fields,field_description:education.field_education_teacher_commercial_company_name
-msgid "Company Name Entity"
-msgstr "Entidad del nombre de la compañía"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_company_type
-#: model:ir.model.fields,field_description:education.field_education_teacher_company_type
-msgid "Company Type"
-msgstr "Tipo de Compañía"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_contact_address
-#: model:ir.model.fields,field_description:education.field_education_teacher_contact_address
-msgid "Complete Address"
-msgstr "Dirección completa"
+#: model:ir.model,name:education.model_res_config_settings
+#, fuzzy
+msgid "Config Settings"
+msgstr "Configuración"
 
 #. module: education
 #: model:ir.ui.menu,name:education.education_config_root
@@ -353,178 +136,107 @@ msgid "Configuration"
 msgstr "Configuración"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_child_ids
-#: model:ir.model.fields,field_description:education.field_education_teacher_child_ids
-msgid "Contacts"
+#: model:ir.model,name:education.model_res_partner
+#, fuzzy
+msgid "Contact"
 msgstr "Contactos"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_contract_ids
-#: model:ir.model.fields,field_description:education.field_education_student_contracts_count
-#: model:ir.model.fields,field_description:education.field_education_teacher_contract_ids
-#: model:ir.model.fields,field_description:education.field_education_teacher_contracts_count
-msgid "Contracts"
-msgstr "Contratos"
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+#, fuzzy
+msgid "Contact / Address"
+msgstr "Dirección completa"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_payment_token_count
-#: model:ir.model.fields,field_description:education.field_education_teacher_payment_token_count
-msgid "Count Payment Token"
-msgstr "Cuenta Token de Pago"
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+#, fuzzy
+msgid "Contact image"
+msgstr "Contactos"
 
 #. module: education
-#: model:ir.model.fields,help:education.field_education_student_message_bounce
-#: model:ir.model.fields,help:education.field_education_teacher_message_bounce
-msgid "Counter of the number of bounced emails for this contact"
-msgstr "Contador del número de correos electrónicos rebotados de este contacto"
+#: model:ir.model.fields,field_description:education.field_res_partner__courses
+#: model:ir.model.fields,field_description:education.field_res_users__courses
+#: model:ir.ui.menu,name:education.education_course
+#: model:ir.ui.menu,name:education.education_course_root
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_form
+msgid "Corsi"
+msgstr ""
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_country_id
-#: model:ir.model.fields,field_description:education.field_education_teacher_country_id
-msgid "Country"
-msgstr "País"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_course_subject_course_id
-#: model:ir.model.fields,field_description:education.field_education_enrollment_course_id
-#: model:ir.model.fields,field_description:education.field_education_group_course_id
-#: model:ir.model.fields,field_description:education.field_education_record_course_id
-#: model:ir.model.fields,field_description:education.field_education_record_subject_course_id
-#: model:ir.model.fields,field_description:education.field_education_record_subject_group_course_id
+#: model:ir.model.fields,field_description:education.field_education_enrollment__course_id
 #: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_search
-#: model_terms:ir.ui.view,arch_db:education.view_education_group_search
-#: model_terms:ir.ui.view,arch_db:education.view_education_record_search
-#: model_terms:ir.ui.view,arch_db:education.view_record_subject_search
 msgid "Course"
 msgstr "Curso"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_record_subject_group__enrollment_id
-msgid "Enrollment"
-msgstr "Matrícula"
-
-
-
-#. module: education
-#: model_terms:ir.ui.view,arch_db:education.view_record_subject_form
-msgid "Last Group"
-msgstr "Último grupo"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_record_subject_last_record_subject_group_id
-msgid "Last Group Record"
-msgstr "Expediente último grupo"
+#: model:ir.actions.act_window,name:education.education_course_category_action
+#: model:ir.model,name:education.model_education_course_category
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_category_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_category_search
+msgid "Course Category"
+msgstr "Categorías"
 
 #. module: education
 #: model:ir.actions.act_window,name:education.education_course_action
-#: model:ir.ui.menu,name:education.education_course
-#: model:ir.ui.menu,name:education.education_course_root
+#: model:ir.model.fields,field_description:education.field_education_instrument__course_ids
 #: model_terms:ir.ui.view,arch_db:education.view_education_course_search
 msgid "Courses"
 msgstr "Cursos"
 
 #. module: education
-#: model:ir.ui.menu,name:education.education_invoicing_method_root
-msgid "Invoicing Method"
-msgstr "Método de Facturación"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_course_category_create_uid
-#: model:ir.model.fields,field_description:education.field_education_course_create_uid
-#: model:ir.model.fields,field_description:education.field_education_enrollment_create_uid
-#: model:ir.model.fields,field_description:education.field_education_group_create_uid
-#: model:ir.model.fields,field_description:education.field_education_record_subject_create_uid
-#: model:ir.model.fields,field_description:education.field_education_record_create_uid
-#: model:ir.model.fields,field_description:education.field_education_student_create_uid
-#: model:ir.model.fields,field_description:education.field_education_subject_create_uid
-#: model:ir.model.fields,field_description:education.field_education_teacher_create_uid
+#: model:ir.model.fields,field_description:education.field_education_course__create_uid
+#: model:ir.model.fields,field_description:education.field_education_course_category__create_uid
+#: model:ir.model.fields,field_description:education.field_education_enrollment__create_uid
+#: model:ir.model.fields,field_description:education.field_education_instrument__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_course_category_create_date
-#: model:ir.model.fields,field_description:education.field_education_course_create_date
-#: model:ir.model.fields,field_description:education.field_education_enrollment_create_date
-#: model:ir.model.fields,field_description:education.field_education_group_create_date
-#: model:ir.model.fields,field_description:education.field_education_record_subject_create_date
-#: model:ir.model.fields,field_description:education.field_education_record_create_date
-#: model:ir.model.fields,field_description:education.field_education_student_create_date
-#: model:ir.model.fields,field_description:education.field_education_subject_create_date
-#: model:ir.model.fields,field_description:education.field_education_teacher_create_date
+#: model:ir.model.fields,field_description:education.field_education_course__create_date
+#: model:ir.model.fields,field_description:education.field_education_course_category__create_date
+#: model:ir.model.fields,field_description:education.field_education_enrollment__create_date
+#: model:ir.model.fields,field_description:education.field_education_instrument__create_date
 msgid "Created on"
 msgstr "Creado el"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_credit_limit
-#: model:ir.model.fields,field_description:education.field_education_teacher_credit_limit
-msgid "Credit Limit"
-msgstr "Crédito concedido"
+#: model:ir.model.fields,field_description:education.field_res_config_settings__education_product_id
+#, fuzzy
+msgid "Default Education Product"
+msgstr "Education group"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_currency_id
-#: model:ir.model.fields,field_description:education.field_education_teacher_currency_id
-msgid "Currency"
-msgstr "Moneda"
+#: model:ir.model.fields,field_description:education.field_res_company__education_product_id
+msgid "Default product for education"
+msgstr ""
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_property_payment_term_id
-#: model:ir.model.fields,field_description:education.field_education_teacher_property_payment_term_id
-msgid "Customer Payment Terms"
-msgstr "Plazo de pago de cliente"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_date
-#: model:ir.model.fields,field_description:education.field_education_teacher_date
-msgid "Date"
-msgstr "Fecha"
-
-#. module: education
-#: model:ir.model.fields,help:education.field_education_student_message_last_post
-#: model:ir.model.fields,help:education.field_education_teacher_message_last_post
-msgid "Date of the last message posted on the record."
-msgstr "Fecha del último mensaje publicado en el registro."
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_trust
-#: model:ir.model.fields,field_description:education.field_education_teacher_trust
-msgid "Degree of trust you have in this debtor"
-msgstr "Grado de confianza para este deudor"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_course_category_display_name
-#: model:ir.model.fields,field_description:education.field_education_course_display_name
-#: model:ir.model.fields,field_description:education.field_education_enrollment_display_name
-#: model:ir.model.fields,field_description:education.field_education_group_display_name
-#: model:ir.model.fields,field_description:education.field_education_record_subject_display_name
-#: model:ir.model.fields,field_description:education.field_education_record_display_name
-#: model:ir.model.fields,field_description:education.field_education_student_display_name
-#: model:ir.model.fields,field_description:education.field_education_subject_display_name
-#: model:ir.model.fields,field_description:education.field_education_teacher_display_name
+#: model:ir.model.fields,field_description:education.field_education_course__display_name
+#: model:ir.model.fields,field_description:education.field_education_course_category__display_name
+#: model:ir.model.fields,field_description:education.field_education_enrollment__display_name
+#: model:ir.model.fields,field_description:education.field_education_instrument__display_name
 msgid "Display Name"
 msgstr "Nombre a mostrar"
 
 #. module: education
 #: model:ir.model.fields.selection,name:education.selection__education_enrollment__state__done
-#: model:ir.model.fields.selection,name:education.selection__education_group__state__done
-#: model_terms:ir.ui.view,arch_db:education.view_education_group_form
 msgid "Done"
 msgstr "Finalizado"
 
 #. module: education
 #: model:ir.model.fields.selection,name:education.selection__education_enrollment__state__draft
-#: model:ir.model.fields.selection,name:education.selection__education_group__state__draft
 msgid "Draft"
 msgstr "Borrador"
 
 #. module: education
 #: model:ir.model.fields,field_description:education.field_education_course__duration
-#: model_terms:ir.ui.view,arch_db:education.view_education_course_search
 msgid "Duration"
 msgstr "Duración"
 
 #. module: education
-#: model:ir.module.category,name:education.education_category
 #: model:ir.ui.menu,name:education.education_base_menu
+#: model_terms:ir.ui.view,arch_db:education.res_config_settings_view_form
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_form
 msgid "Education"
 msgstr "Formación"
 
@@ -535,18 +247,9 @@ msgstr "Education Course"
 
 #. module: education
 #: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
 msgid "Education enrollment"
 msgstr "Education enrollment"
-
-#. module: education
-#: model_terms:ir.ui.view,arch_db:education.view_education_group_form
-msgid "Education group"
-msgstr "Education group"
-
-#. module: education
-#: model_terms:ir.ui.view,arch_db:education.view_education_record_form
-msgid "Education record"
-msgstr "Education record"
 
 #. module: education
 #: model_terms:ir.ui.view,arch_db:education.view_partner_education_form
@@ -554,297 +257,157 @@ msgid "Educational"
 msgstr "Educativo"
 
 #. module: education
-#: model:ir.model.fields,help:education.field_education_student_partner_share
-#: model:ir.model.fields,help:education.field_education_teacher_partner_share
-msgid "Either customer (no user), either shared user. Indicated the current partner is a customer without access or with a limited access created for sharing data."
-msgstr "Ya sea cliente (no usuario), como usuario compartido. Indica si el socio actual es un cliente sin acceso o con un acceso limitado creado para compartir datos."
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_email
-#: model:ir.model.fields,field_description:education.field_education_teacher_email
-msgid "Email"
-msgstr "Correo electrónico"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_notify_email
-#: model:ir.model.fields,field_description:education.field_education_teacher_notify_email
-msgid "Email Messages and Notifications"
-msgstr "Enviar mensajes y notificaciones"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_employee
-#: model:ir.model.fields,field_description:education.field_education_teacher_employee
-msgid "Employee"
-msgstr "Empleado"
-
-#. module: education
 #: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
 msgid "Enroll"
 msgstr "Matricular"
 
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_enrollment__enrollment_date
+msgid "Enrollment Date"
+msgstr "Fecha de Matriculación"
 
 #. module: education
-#: model_terms:ir.ui.view,arch_db:education.view_education_student_kanban
-#: model_terms:ir.ui.view,arch_db:education.view_education_student_tree
-#: model_terms:ir.ui.view,arch_db:education.view_education_teacher
-#: model_terms:ir.ui.view,arch_db:education.view_education_teacher_kanban
-msgid "Faculties"
-msgstr "Profesores"
+#. odoo-python
+#: code:addons/education/models/partner.py:0
+#: model:ir.actions.act_window,name:education.education_enrollment_action
+#, python-format
+msgid "Enrollments"
+msgstr "Matrículas"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_res_partner_teacher
-#: model:ir.model.fields,field_description:education.field_res_users_teacher
-#: model_terms:ir.ui.view,arch_db:education.view_res_partner_education_filter
-msgid "Teacher"
-msgstr "Profesor"
-
-#. module: education
-#: model_terms:ir.ui.view,arch_db:education.view_education_student_form
-msgid "Faculty"
-msgstr "Profesor"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_fax
-#: model:ir.model.fields,field_description:education.field_education_teacher_fax
-msgid "Fax"
-msgstr "Fax"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_property_account_position_id
-#: model:ir.model.fields,field_description:education.field_education_teacher_property_account_position_id
-msgid "Fiscal Position"
-msgstr "Posición fiscal"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_message_follower_ids
-#: model:ir.model.fields,field_description:education.field_education_teacher_message_follower_ids
+#: model:ir.model.fields,field_description:education.field_education_course__message_follower_ids
+#: model:ir.model.fields,field_description:education.field_education_enrollment__message_follower_ids
+#: model:ir.model.fields,field_description:education.field_education_instrument__message_follower_ids
+#: model:ir.model.fields,field_description:education.field_res_company__message_follower_ids
 msgid "Followers"
 msgstr "Seguidores"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_message_channel_ids
-#: model:ir.model.fields,field_description:education.field_education_teacher_message_channel_ids
-msgid "Followers (Channels)"
-msgstr "Seguidores (Canales)"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_message_partner_ids
-#: model:ir.model.fields,field_description:education.field_education_teacher_message_partner_ids
+#: model:ir.model.fields,field_description:education.field_education_course__message_partner_ids
+#: model:ir.model.fields,field_description:education.field_education_enrollment__message_partner_ids
+#: model:ir.model.fields,field_description:education.field_education_instrument__message_partner_ids
+#: model:ir.model.fields,field_description:education.field_res_company__message_partner_ids
 msgid "Followers (Partners)"
 msgstr "Seguidores (Empresas)"
 
 #. module: education
-#: model:ir.model.fields,help:education.field_education_student_email_formatted
-#: model:ir.model.fields,help:education.field_education_teacher_email_formatted
-msgid "Format email address \"Name <email@domain>\""
-msgstr "Dirección email formatado \"Nombre <email@domain>\""
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+msgid "Genitori/Parenti"
+msgstr ""
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_email_formatted
-#: model:ir.model.fields,field_description:education.field_education_teacher_email_formatted
-msgid "Formatted Email"
-msgstr "Email formateado"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_group__date_from
-msgid "From Date"
-msgstr "Fecha Inicio"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_enrollment__group_id
-#: model:ir.model.fields,field_description:education.field_education_record_subject_group__group_id
-#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_search
-msgid "Group"
-msgstr "Grupo Académico"
-
-#. module: education
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_category_search
 #: model_terms:ir.ui.view,arch_db:education.view_education_course_search
 #: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_search
-#: model_terms:ir.ui.view,arch_db:education.view_education_group_search
-#: model_terms:ir.ui.view,arch_db:education.view_education_record_search
-#: model_terms:ir.ui.view,arch_db:education.view_education_student_search
-#: model_terms:ir.ui.view,arch_db:education.view_education_teacher_search
 msgid "Group By"
 msgstr "Agrupar por"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_has_unreconciled_entries
-#: model:ir.model.fields,field_description:education.field_education_teacher_has_unreconciled_entries
-msgid "Has unreconciled entries"
-msgstr "Contiene entradas irreconciliadas"
+#: model:ir.model.fields,field_description:education.field_education_course__has_message
+#: model:ir.model.fields,field_description:education.field_education_enrollment__has_message
+#: model:ir.model.fields,field_description:education.field_education_instrument__has_message
+#: model:ir.model.fields,field_description:education.field_res_company__has_message
+#, fuzzy
+msgid "Has Message"
+msgstr "Mensajes"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_course_category_id
-#: model:ir.model.fields,field_description:education.field_education_course_id
-#: model:ir.model.fields,field_description:education.field_education_enrollment_id
-#: model:ir.model.fields,field_description:education.field_education_group_id
-#: model:ir.model.fields,field_description:education.field_education_record_id
-#: model:ir.model.fields,field_description:education.field_education_record_subject_id
-#: model:ir.model.fields,field_description:education.field_education_student_id
-#: model:ir.model.fields,field_description:education.field_education_subject_id
-#: model:ir.model.fields,field_description:education.field_education_teacher_id
+#: model:ir.model.fields,field_description:education.field_education_course__id
+#: model:ir.model.fields,field_description:education.field_education_course_category__id
+#: model:ir.model.fields,field_description:education.field_education_enrollment__id
+#: model:ir.model.fields,field_description:education.field_education_instrument__id
 msgid "ID"
 msgstr "ID"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_im_status
-#: model:ir.model.fields,field_description:education.field_education_teacher_im_status
-msgid "IM Status"
-msgstr "Estado del chat"
-
-#. module: education
-#: model:ir.model.fields,help:education.field_education_student_message_unread
-#: model:ir.model.fields,help:education.field_education_teacher_message_unread
-msgid "If checked new messages require your attention."
-msgstr "Si está marcado, hay nuevos mensajes que requieren su atención"
-
-#. module: education
-#: model:ir.model.fields,help:education.field_education_student_message_needaction
-#: model:ir.model.fields,help:education.field_education_teacher_message_needaction
+#: model:ir.model.fields,help:education.field_education_course__message_needaction
+#: model:ir.model.fields,help:education.field_education_enrollment__message_needaction
+#: model:ir.model.fields,help:education.field_education_instrument__message_needaction
+#: model:ir.model.fields,help:education.field_res_company__message_needaction
 msgid "If checked, new messages require your attention."
 msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
 
 #. module: education
-#: model:ir.model.fields,help:education.field_education_student_opt_out
-#: model:ir.model.fields,help:education.field_education_teacher_opt_out
-msgid "If opt-out is checked, this contact has refused to receive emails for mass mailing and marketing campaign. Filter 'Available for Mass Mailing' allows users to filter the partners when performing mass mailing."
-msgstr "Si 'No acepta mensajes' está marcado, este contacto ha rehusado recibir correos electrónicos de envíos masivos y campañas de marketing. El filtro 'Disponible para envíos masivos' permite a los usuarios filtrar a las empresas cuando se realicen envíos masivos."
+#: model:ir.model.fields,help:education.field_education_course__message_has_error
+#: model:ir.model.fields,help:education.field_education_course__message_has_sms_error
+#: model:ir.model.fields,help:education.field_education_enrollment__message_has_error
+#: model:ir.model.fields,help:education.field_education_enrollment__message_has_sms_error
+#: model:ir.model.fields,help:education.field_education_instrument__message_has_error
+#: model:ir.model.fields,help:education.field_education_instrument__message_has_sms_error
+#: model:ir.model.fields,help:education.field_res_company__message_has_error
+#: model:ir.model.fields,help:education.field_res_company__message_has_sms_error
+#, fuzzy
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
 
 #. module: education
-#: model:ir.model.fields,help:education.field_education_student_team_id
-#: model:ir.model.fields,help:education.field_education_teacher_team_id
-msgid "If set, sale team used notably for sales and assignations related to this partner"
-msgstr "Si habilitado, representa al equipo de ventas usado para ventas y asignaciones relacionado con este tercero."
+#: model:ir.model.fields,field_description:education.field_education_course__teacher_id
+#: model:ir.model.fields,field_description:education.field_education_enrollment__teacher_id
+msgid "Insegnante"
+msgstr ""
 
 #. module: education
-#: model:ir.model.fields,help:education.field_education_student_lang
-#: model:ir.model.fields,help:education.field_education_teacher_lang
-msgid "If the selected language is loaded in the system, all documents related to this contact will be printed in this language. If not, it will be English."
-msgstr "Si el idioma seleccionado está cargado en el sistema, todos los documentos relacionados con el contacto se imprimirán en este idioma. Si no, se imprimirán en inglés."
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_image
-#: model:ir.model.fields,field_description:education.field_education_teacher_image
-msgid "Image"
-msgstr "Imágen"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_ref
-#: model:ir.model.fields,field_description:education.field_education_teacher_ref
-msgid "Internal Reference"
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+#, fuzzy
+msgid "Internal Notes"
 msgstr "Referencia interna"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_invoice_warn
-#: model:ir.model.fields,field_description:education.field_education_teacher_invoice_warn
-msgid "Invoice"
-msgstr "Factura"
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+#, fuzzy
+msgid "Internal notes..."
+msgstr "Referencia interna"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_invoice_ids
-#: model:ir.model.fields,field_description:education.field_education_teacher_invoice_ids
-msgid "Invoices"
-msgstr "Facturas"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_message_is_follower
-#: model:ir.model.fields,field_description:education.field_education_teacher_message_is_follower
+#: model:ir.model.fields,field_description:education.field_education_course__message_is_follower
+#: model:ir.model.fields,field_description:education.field_education_enrollment__message_is_follower
+#: model:ir.model.fields,field_description:education.field_education_instrument__message_is_follower
+#: model:ir.model.fields,field_description:education.field_res_company__message_is_follower
 msgid "Is Follower"
 msgstr "Es un seguidor"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_is_company
-#: model:ir.model.fields,field_description:education.field_education_teacher_is_company
-msgid "Is a Company"
-msgstr "¿Es una empresa?"
+#: model:ir.model.fields,field_description:education.field_education_course__enrollment_ids
+#: model:ir.model.fields,field_description:education.field_res_partner__enrollment_ids
+#: model:ir.model.fields,field_description:education.field_res_users__enrollment_ids
+#: model:ir.ui.menu,name:education.education_enrollment
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_form
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_form
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+msgid "Iscrizioni"
+msgstr ""
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_customer
-#: model:ir.model.fields,field_description:education.field_education_teacher_customer
-msgid "Is a Customer"
-msgstr "Es Cliente"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_supplier
-#: model:ir.model.fields,field_description:education.field_education_teacher_supplier
-msgid "Is a Vendor"
-msgstr "Es un Proveedor"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_function
-#: model:ir.model.fields,field_description:education.field_education_teacher_function
-msgid "Job Position"
-msgstr "Puesto de trabajo"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_issued_total
-#: model:ir.model.fields,field_description:education.field_education_student_journal_item_count
-#: model:ir.model.fields,field_description:education.field_education_teacher_issued_total
-#: model:ir.model.fields,field_description:education.field_education_teacher_journal_item_count
-msgid "Journal Items"
-msgstr "Apuntes contables"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_lang
-#: model:ir.model.fields,field_description:education.field_education_teacher_lang
-msgid "Language"
-msgstr "Idioma"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_message_last_post
-#: model:ir.model.fields,field_description:education.field_education_teacher_message_last_post
-msgid "Last Message Date"
-msgstr "Fecha del último mensaje"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_course___last_update
-#: model:ir.model.fields,field_description:education.field_education_course_category___last_update
-#: model:ir.model.fields,field_description:education.field_education_enrollment___last_update
-#: model:ir.model.fields,field_description:education.field_education_group___last_update
-#: model:ir.model.fields,field_description:education.field_education_record___last_update
-#: model:ir.model.fields,field_description:education.field_education_student___last_update
-#: model:ir.model.fields,field_description:education.field_education_subject___last_update
-#: model:ir.model.fields,field_description:education.field_education_teacher___last_update
+#: model:ir.model.fields,field_description:education.field_education_course____last_update
+#: model:ir.model.fields,field_description:education.field_education_course_category____last_update
+#: model:ir.model.fields,field_description:education.field_education_enrollment____last_update
+#: model:ir.model.fields,field_description:education.field_education_instrument____last_update
 msgid "Last Modified on"
 msgstr "Última modificación en"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_course_category_write_uid
-#: model:ir.model.fields,field_description:education.field_education_course_write_uid
-#: model:ir.model.fields,field_description:education.field_education_enrollment_write_uid
-#: model:ir.model.fields,field_description:education.field_education_group_write_uid
-#: model:ir.model.fields,field_description:education.field_education_record_subject_write_uid
-#: model:ir.model.fields,field_description:education.field_education_record_write_uid
-#: model:ir.model.fields,field_description:education.field_education_student_write_uid
-#: model:ir.model.fields,field_description:education.field_education_subject_write_uid
-#: model:ir.model.fields,field_description:education.field_education_teacher_write_uid
+#: model:ir.model.fields,field_description:education.field_education_course__write_uid
+#: model:ir.model.fields,field_description:education.field_education_course_category__write_uid
+#: model:ir.model.fields,field_description:education.field_education_enrollment__write_uid
+#: model:ir.model.fields,field_description:education.field_education_instrument__write_uid
 msgid "Last Updated by"
 msgstr "Última actualización por"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_course_category_write_date
-#: model:ir.model.fields,field_description:education.field_education_course_write_date
-#: model:ir.model.fields,field_description:education.field_education_enrollment_write_date
-#: model:ir.model.fields,field_description:education.field_education_group_write_date
-#: model:ir.model.fields,field_description:education.field_education_record_subject_write_date
-#: model:ir.model.fields,field_description:education.field_education_record_write_date
-#: model:ir.model.fields,field_description:education.field_education_student_write_date
-#: model:ir.model.fields,field_description:education.field_education_subject_write_date
-#: model:ir.model.fields,field_description:education.field_education_teacher_write_date
+#: model:ir.model.fields,field_description:education.field_education_course__write_date
+#: model:ir.model.fields,field_description:education.field_education_course_category__write_date
+#: model:ir.model.fields,field_description:education.field_education_enrollment__write_date
+#: model:ir.model.fields,field_description:education.field_education_instrument__write_date
 msgid "Last Updated on"
 msgstr "Última actualización el"
 
 #. module: education
-#: model:ir.model.fields,help:education.field_education_student_last_time_entries_checked
-#: model:ir.model.fields,help:education.field_education_teacher_last_time_entries_checked
-msgid "Last time the invoices & payments matching was performed for this partner. It is set either if there's not at least an unreconciled debit and an unreconciled credit or if you click the \"Done\" button."
-msgstr "Última vez que se conciliaros facturas y pagos de este asociado. Se configura incluso si no hay ningún débito o crédito por conciliar, o si pulsa el botón \"Hecho\"."
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_last_time_entries_checked
-#: model:ir.model.fields,field_description:education.field_education_teacher_last_time_entries_checked
-msgid "Latest Invoices & Payments Matching Date"
-msgstr "Fecha de la última conciliación de facturas y pagos"
+#: model:ir.model.fields,field_description:education.field_education_course__message_main_attachment_id
+#: model:ir.model.fields,field_description:education.field_education_enrollment__message_main_attachment_id
+#: model:ir.model.fields,field_description:education.field_education_instrument__message_main_attachment_id
+#: model:ir.model.fields,field_description:education.field_res_company__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
 
 #. module: education
 #: model:res.groups,name:education.education_manager
@@ -852,123 +415,93 @@ msgid "Manager"
 msgstr "Responsable"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_image_medium
-#: model:ir.model.fields,field_description:education.field_education_teacher_image_medium
-msgid "Medium-sized image"
-msgstr "Imagen de tamaño mediano"
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+msgid "Meetings"
+msgstr ""
 
 #. module: education
-#: model:ir.model.fields,help:education.field_education_student_image_medium
-#: model:ir.model.fields,help:education.field_education_teacher_image_medium
-msgid "Medium-sized image of this contact. It is automatically resized as a 128x128px image, with aspect ratio preserved. Use this field in form views or some kanban views."
-msgstr "Imagen mediana de este contacto. Se redimensiona automáticamente a 128x128 px, con el ratio de aspecto preservado. Se usa este campo en las vistas los formularios y en algunas vistas de kanban."
+#: model:ir.model.fields,field_description:education.field_education_course__message_has_error
+#: model:ir.model.fields,field_description:education.field_education_enrollment__message_has_error
+#: model:ir.model.fields,field_description:education.field_education_instrument__message_has_error
+#: model:ir.model.fields,field_description:education.field_res_company__message_has_error
+msgid "Message Delivery error"
+msgstr ""
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_invoice_warn_msg
-#: model:ir.model.fields,field_description:education.field_education_teacher_invoice_warn_msg
-msgid "Message for Invoice"
-msgstr "Mensaje para factura"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_sale_warn_msg
-#: model:ir.model.fields,field_description:education.field_education_teacher_sale_warn_msg
-msgid "Message for Sales Order"
-msgstr "Mensaje para el pedido de venta"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_message_ids
-#: model:ir.model.fields,field_description:education.field_education_teacher_message_ids
+#: model:ir.model.fields,field_description:education.field_education_course__message_ids
+#: model:ir.model.fields,field_description:education.field_education_enrollment__message_ids
+#: model:ir.model.fields,field_description:education.field_education_instrument__message_ids
+#: model:ir.model.fields,field_description:education.field_res_company__message_ids
 msgid "Messages"
 msgstr "Mensajes"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_mobile
-#: model:ir.model.fields,field_description:education.field_education_teacher_mobile
-msgid "Mobile"
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+#, fuzzy
+msgid "Mobile:"
 msgstr "Móvil"
+
+#. module: education
+#: model:ir.module.category,name:education.education_category
+#, fuzzy
+msgid "Music Education"
+msgstr "Formación"
 
 #. module: education
 #: model:ir.model.fields,field_description:education.field_education_course__name
 #: model:ir.model.fields,field_description:education.field_education_course_category__name
-#: model:ir.model.fields,field_description:education.field_education_group__name
-#: model:ir.model.fields,field_description:education.field_education_subject__name
+#: model:ir.model.fields,field_description:education.field_education_instrument__name
 #: model_terms:ir.ui.view,arch_db:education.view_education_course_category_search
 #: model_terms:ir.ui.view,arch_db:education.view_education_course_search
-#: model_terms:ir.ui.view,arch_db:education.view_education_group_search
 msgid "Name"
 msgstr "Nombre"
 
 #. module: education
-#: model:ir.actions.act_window,name:education.education_enrollment_action
-#: model:ir.model.fields,field_description:education.field_education_group_enrollment_ids
-#: model:ir.model.fields,field_description:education.field_education_record_enrollment_ids
-#: model:ir.model.fields,field_description:education.field_education_record_record_subject_ids
-#: model:ir.ui.menu,name:education.education_enrollment
-#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_tree
-#: model_terms:ir.ui.view,arch_db:education.view_education_record_form
-msgid "Enrollments"
-msgstr "Matrículas"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_course_subject__subject_id
-#: model:ir.model.fields,field_description:education.field_education_record_subject__subject_id
-#: model:ir.model.fields,field_description:education.field_education_record_subject_group__subject_id
-#: model_terms:ir.ui.view,arch_db:education.view_record_subject_search
-msgid "Subject"
-msgstr "Asignatura"
-
-#. module: education
-#: model:ir.actions.act_window,help:education.education_subject_action
-msgid "Click to create a new Subject."
-msgstr "Click to create a new Asignatura."
-
-#. module: education
-#: code:addons/education/models/group.py:13
+#. odoo-python
+#: code:addons/education/models/enrollment.py:0
 #, python-format
 msgid "New"
 msgstr "Nuevo"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_comment
-#: model:ir.model.fields,field_description:education.field_education_teacher_comment
-msgid "Notes"
-msgstr "Notas"
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+msgid "Nome"
+msgstr ""
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_message_needaction_counter
-#: model:ir.model.fields,field_description:education.field_education_teacher_message_needaction_counter
+#: model:ir.model.fields,field_description:education.field_education_course__message_needaction_counter
+#: model:ir.model.fields,field_description:education.field_education_enrollment__message_needaction_counter
+#: model:ir.model.fields,field_description:education.field_education_instrument__message_needaction_counter
+#: model:ir.model.fields,field_description:education.field_res_company__message_needaction_counter
 msgid "Number of Actions"
 msgstr "Número de acciones"
 
 #. module: education
-#: model:ir.model.fields,help:education.field_education_student_message_needaction_counter
-#: model:ir.model.fields,help:education.field_education_teacher_message_needaction_counter
-msgid "Number of messages which requires an action"
+#: model:ir.model.fields,field_description:education.field_education_course__message_has_error_counter
+#: model:ir.model.fields,field_description:education.field_education_enrollment__message_has_error_counter
+#: model:ir.model.fields,field_description:education.field_education_instrument__message_has_error_counter
+#: model:ir.model.fields,field_description:education.field_res_company__message_has_error_counter
+#, fuzzy
+msgid "Number of errors"
+msgstr "Número de acciones"
+
+#. module: education
+#: model:ir.model.fields,help:education.field_education_course__message_needaction_counter
+#: model:ir.model.fields,help:education.field_education_enrollment__message_needaction_counter
+#: model:ir.model.fields,help:education.field_education_instrument__message_needaction_counter
+#: model:ir.model.fields,help:education.field_res_company__message_needaction_counter
+#, fuzzy
+msgid "Number of messages requiring action"
 msgstr "Número de mensajes que requieren una acción"
 
 #. module: education
-#: model:ir.model.fields,help:education.field_education_student_message_unread_counter
-#: model:ir.model.fields,help:education.field_education_teacher_message_unread_counter
-msgid "Number of unread messages"
-msgstr "Número de mensajes no leidos"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_opt_out
-#: model:ir.model.fields,field_description:education.field_education_teacher_opt_out
-msgid "Opt-Out"
-msgstr "No acepta recibir mensajes"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_parent_name
-#: model:ir.model.fields,field_description:education.field_education_teacher_parent_name
-msgid "Parent name"
-msgstr "Nombre Padre"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_partner_id
-#: model:ir.model.fields,field_description:education.field_education_teacher_partner_id
-msgid "Partner id"
-msgstr "Partner id"
+#: model:ir.model.fields,help:education.field_education_course__message_has_error_counter
+#: model:ir.model.fields,help:education.field_education_enrollment__message_has_error_counter
+#: model:ir.model.fields,help:education.field_education_instrument__message_has_error_counter
+#: model:ir.model.fields,help:education.field_res_company__message_has_error_counter
+#, fuzzy
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes que requieren una acción"
 
 #. module: education
 #: model_terms:ir.ui.view,arch_db:education.view_education_course_category_search
@@ -976,234 +509,101 @@ msgid "Parent"
 msgstr "Categoría Padre"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_debit_limit
-#: model:ir.model.fields,field_description:education.field_education_teacher_debit_limit
-msgid "Payable Limit"
-msgstr "Límite a pagar"
+#: model:ir.model.fields,field_description:education.field_education_course_category__parent_id
+msgid "Parent Category"
+msgstr "Categoría padre"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_payment_token_ids
-#: model:ir.model.fields,field_description:education.field_education_teacher_payment_token_ids
-msgid "Payment Tokens"
-msgstr "Tableros de pago"
+#: model:ir.model.fields,field_description:education.field_education_course_category__parent_path
+#, fuzzy
+msgid "Parent Path"
+msgstr "Nombre Padre"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_phone
-#: model:ir.model.fields,field_description:education.field_education_teacher_phone
-msgid "Phone"
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+#, fuzzy
+msgid "Partners"
+msgstr "Partner id"
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+#, fuzzy
+msgid "Phone:"
 msgstr "Teléfono"
 
 #. module: education
-#: model:ir.model.fields,help:education.field_education_student_notify_email
-#: model:ir.model.fields,help:education.field_education_teacher_notify_email
-msgid "Policy to receive emails for new messages pushed to your personal Inbox:\n"
-"- Never: no emails are sent\n"
-"- All Messages: for every notification you receive in your Inbox"
-msgstr "Política para recibir correos electrónicos para los nuevos mensajes insertados en su bandeja de entrada personal\n"
-"- Nunca: No se enviará ningún correo\n"
-"- Todos los mensajes: Se enviará un correo para cada notificación que reciba en su bandeja de entrada"
+#: model_terms:ir.ui.view,arch_db:education.res_config_settings_view_form
+msgid "Prodotti"
+msgstr ""
 
 #. module: education
-#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
-msgid "Re-Enroll"
-msgstr "Rematricular"
+#: model_terms:ir.ui.view,arch_db:education.res_config_settings_view_form
+msgid "Prodotto"
+msgstr ""
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_enrollment_record_id
-#: model:ir.model.fields,field_description:education.field_education_group_record_id
-#: model:ir.model.fields,field_description:education.field_education_record_subject_record_id
-#: model_terms:ir.ui.view,arch_db:education.view_education_group_search
-msgid "Record"
-msgstr "Registro"
+#: model_terms:ir.ui.view,arch_db:education.res_config_settings_view_form
+msgid "Prodotto ecucation"
+msgstr ""
 
 #. module: education
-#: model:ir.actions.act_window,name:education.education_record_action
 #: model:ir.ui.menu,name:education.education_record_root
-#: model:ir.ui.menu,name:education.record_menu
 msgid "Records"
 msgstr "Expedientes Académicos"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_parent_id
-#: model:ir.model.fields,field_description:education.field_education_teacher_parent_id
-msgid "Related Company"
-msgstr "Empresa relacionada"
+#: model:ir.model.fields,field_description:education.field_education_course__message_has_sms_error
+#: model:ir.model.fields,field_description:education.field_education_enrollment__message_has_sms_error
+#: model:ir.model.fields,field_description:education.field_education_instrument__message_has_sms_error
+#: model:ir.model.fields,field_description:education.field_res_company__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_property_product_pricelist
-#: model:ir.model.fields,field_description:education.field_education_teacher_property_product_pricelist
-msgid "Sale Pricelist"
-msgstr "Tarifa de venta"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_sale_order_ids
-#: model:ir.model.fields,field_description:education.field_education_student_sale_warn
-#: model:ir.model.fields,field_description:education.field_education_teacher_sale_order_ids
-#: model:ir.model.fields,field_description:education.field_education_teacher_sale_warn
-msgid "Sales Order"
-msgstr "Pedido de venta"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_team_id
-#: model:ir.model.fields,field_description:education.field_education_teacher_team_id
-msgid "Sales Team"
-msgstr "Equipo de ventas"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_user_id
-#: model:ir.model.fields,field_description:education.field_education_teacher_user_id
-msgid "Salesperson"
-msgstr "Comercial"
-
-#. module: education
-#: model:ir.model.fields,help:education.field_education_student_invoice_warn
-#: model:ir.model.fields,help:education.field_education_student_sale_warn
-#: model:ir.model.fields,help:education.field_education_teacher_invoice_warn
-#: model:ir.model.fields,help:education.field_education_teacher_sale_warn
-msgid "Selecting the \"Warning\" option will notify user with the message, Selecting \"Blocking Message\" will throw an exception with the message and block the flow. The Message has to be written in the next field."
-msgstr "Si selecciona la opción \"Aviso\" se notificará a los usuarios con el mensaje, si selecciona \"Mensaje de bloqueo\" se lanzará una excepción con el mensaje y se bloqueará el flujo. El mensaje debe escribirse en el siguiente campo."
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_self
-#: model:ir.model.fields,field_description:education.field_education_teacher_self
-msgid "Self"
-msgstr "Si mismo"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_partner_share
-#: model:ir.model.fields,field_description:education.field_education_teacher_partner_share
-msgid "Share Partner"
-msgstr "Compartir empresa"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_signup_type
-#: model:ir.model.fields,field_description:education.field_education_teacher_signup_type
-msgid "Signup Token Type"
-msgstr "Tipo de la palabra de ingreso"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_signup_valid
-#: model:ir.model.fields,field_description:education.field_education_teacher_signup_valid
-msgid "Signup Token is Valid"
-msgstr "La palabra de ingreso es válida"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_signup_url
-#: model:ir.model.fields,field_description:education.field_education_teacher_signup_url
-msgid "Signup URL"
-msgstr "URL de ingreso"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_signup_expiration
-#: model:ir.model.fields,field_description:education.field_education_teacher_signup_expiration
-msgid "Signup expiration"
-msgstr "Vencimiento de registro"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_signup_token
-#: model:ir.model.fields,field_description:education.field_education_teacher_signup_token
-msgid "Signup token"
-msgstr "Token de Registro"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_image_small
-#: model:ir.model.fields,field_description:education.field_education_teacher_image_small
-msgid "Small-sized image"
-msgstr "Imagen de tamaño pequeño"
-
-#. module: education
-#: model:ir.model.fields,help:education.field_education_student_image_small
-#: model:ir.model.fields,help:education.field_education_teacher_image_small
-msgid "Small-sized image of this contact. It is automatically resized as a 64x64px image, with aspect ratio preserved. Use this field anywhere a small image is required."
-msgstr "Imagen de tamaño pequeño de este contacto. Se redimensiona automáticamente a 64x64 px, con el ratio de aspecto preservado. Use este campo donde se requiera una imagen pequeña."
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_state_id
-#: model:ir.model.fields,field_description:education.field_education_teacher_state_id
-msgid "State"
-msgstr "Estado"
+#: model:ir.actions.act_window,name:education.action_education_config
+#: model:ir.ui.menu,name:education.menu_education_config
+msgid "Settings"
+msgstr ""
 
 #. module: education
 #: model:ir.model.fields,field_description:education.field_education_enrollment__state
-#: model:ir.model.fields,field_description:education.field_education_group__state
 msgid "Status"
 msgstr "Estado"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_street
-#: model:ir.model.fields,field_description:education.field_education_teacher_street
-msgid "Street"
-msgstr "Calle"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_street2
-#: model:ir.model.fields,field_description:education.field_education_teacher_street2
-msgid "Street2"
-msgstr "Calle2"
+#: model:ir.model.fields,field_description:education.field_education_course__instrument_id
+msgid "Strumento"
+msgstr ""
 
 #. module: education
 #: model:ir.model.fields,field_description:education.field_education_enrollment__student_id
-#: model:ir.model.fields,field_description:education.field_education_record__student_id
-#: model:ir.model.fields,field_description:education.field_education_record_subject__student_id
-#: model:ir.model.fields,field_description:education.field_education_record_subject_group__student_id
 #: model:ir.model.fields,field_description:education.field_res_partner__student
 #: model:ir.model.fields,field_description:education.field_res_users__student
 #: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_search
-#: model_terms:ir.ui.view,arch_db:education.view_education_record_search
-#: model_terms:ir.ui.view,arch_db:education.view_record_subject_search
 #: model_terms:ir.ui.view,arch_db:education.view_res_partner_education_filter
 msgid "Student"
+msgstr "Alumno"
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__students
+#, fuzzy
+msgid "Studenti"
 msgstr "Alumno"
 
 #. module: education
 #: model:ir.actions.act_window,name:education.education_student_action
 #: model:ir.ui.menu,name:education.education_student_menu
 #: model:ir.ui.menu,name:education.education_student_root
-#: model_terms:ir.ui.view,arch_db:education.view_education_group_form
-#: model_terms:ir.ui.view,arch_db:education.view_education_student_kanban
-#: model_terms:ir.ui.view,arch_db:education.view_education_student_tree
 msgid "Students"
 msgstr "Alumnos"
 
 #. module: education
-#: model:ir.actions.act_window,name:education.education_subject_action
-#: model:ir.model.fields,field_description:education.field_education_course_subject_ids
-#: model:ir.model.fields,field_description:education.field_education_enrollment_subject_ids
-#: model:ir.ui.menu,name:education.education_subject_menu
-#: model_terms:ir.ui.view,arch_db:education.view_education_course_form
-#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
-#: model_terms:ir.ui.view,arch_db:education.view_education_record_form
-msgid "Subjects"
-msgstr "Asignaturas"
-
-#. module: education
-#: code:addons/education/models/enrollment.py:62
-#, python-format
-msgid "You must add subjects to complete the enrollment"
-msgstr "Debes añadir asignaturas para completar la matrícula"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_vat
-#: model:ir.model.fields,field_description:education.field_education_teacher_vat
-msgid "TIN"
-msgstr "NIF"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_category_id
-#: model:ir.model.fields,field_description:education.field_education_teacher_category_id
-msgid "Tags"
-msgstr "Etiquetas"
-
-#. module: education
-#: model:ir.model.fields,help:education.field_education_student_vat
-#: model:ir.model.fields,help:education.field_education_teacher_vat
-msgid "Tax Identification Number. Fill it if the company is subjected to taxes. Used by the some of the legal statements."
-msgstr "Número de identificación fiscal. Llénelo si la compañía esta sujeta a impuestos. Usado por algunos documentos legales."
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_group_teacher_in_charge
-msgid "Teacher in charge"
-msgstr "Tutor"
+#: model:ir.model.fields,field_description:education.field_res_partner__teacher
+#: model:ir.model.fields,field_description:education.field_res_users__teacher
+#: model:res.groups,name:education.education_teacher
+#: model_terms:ir.ui.view,arch_db:education.view_res_partner_education_filter
+msgid "Teacher"
+msgstr "Profesor"
 
 #. module: education
 #: model:ir.actions.act_window,name:education.education_teacher_action
@@ -1213,155 +613,14 @@ msgid "Teachers"
 msgstr "Profesores"
 
 #. module: education
-#: model:ir.model.fields,help:education.field_education_student_property_account_position_id
-#: model:ir.model.fields,help:education.field_education_teacher_property_account_position_id
-msgid "The fiscal position will determine taxes and accounts used for the partner."
-msgstr "La posición fiscal determinará los impuestos y cuentas utilizados por el asociado."
-
-#. module: education
-#: model:ir.model.fields,help:education.field_education_student_user_id
-#: model:ir.model.fields,help:education.field_education_teacher_user_id
-msgid "The internal user that is in charge of communicating with this contact if any."
-msgstr "El usuario interno encargado de comunicarse con este contacto si lo hubiese."
-
-#. module: education
-#: model:ir.model.fields,help:education.field_education_student_has_unreconciled_entries
-#: model:ir.model.fields,help:education.field_education_teacher_has_unreconciled_entries
-msgid "The partner has at least one unreconciled debit and credit since last time the invoices & payments matching was performed."
-msgstr "El asociado tiene al menos un débito o crédito no conciliado desde la última vez que se realizó la conciliación de facturas y pagos."
-
-#. module: education
-#: model:ir.model.fields,help:education.field_education_student_tz
-#: model:ir.model.fields,help:education.field_education_teacher_tz
-msgid "The partner's timezone, used to output proper date and time values inside printed reports. It is important to set a value for this field. You should use the same timezone that is otherwise used to pick and render date and time values: your computer's timezone."
-msgstr "Zona horaria de la empresa, usada para mostrar la fecha y hora adecuadas en los informes impresos. Es importante establecer un valor para este campo. Debería usar la misma zona horaria que se coge en caso contrario para mostrar los valores de fecha y hora: la zona horaria de su ordenador."
-
-#. module: education
-#: model:ir.model.fields,help:education.field_education_student_property_account_payable_id
-#: model:ir.model.fields,help:education.field_education_teacher_property_account_payable_id
-msgid "This account will be used instead of the default one as the payable account for the current partner"
-msgstr "Esta cuenta se utilizará en lugar de la cuenta por defecto como la cuenta pendiente de pago del asociado actual."
-
-#. module: education
-#: model:ir.model.fields,help:education.field_education_student_property_account_receivable_id
-#: model:ir.model.fields,help:education.field_education_teacher_property_account_receivable_id
-msgid "This account will be used instead of the default one as the receivable account for the current partner"
-msgstr "Esta cuenta se utilizará en lugar de la cuenta por defecto como la cuenta pendiente de cobro del asociado actual."
-
-#. module: education
-#: model:ir.model.fields,help:education.field_education_student_image
-#: model:ir.model.fields,help:education.field_education_teacher_image
-msgid "This field holds the image used as avatar for this contact, limited to 1024x1024px"
-msgstr "Este campo contiene la imagen utilizada como avatar para este contacto, limitada a 1024x1024 px"
-
-#. module: education
-#: model:ir.model.fields,help:education.field_education_student_property_supplier_payment_term_id
-#: model:ir.model.fields,help:education.field_education_teacher_property_supplier_payment_term_id
-msgid "This payment term will be used instead of the default one for purchase orders and vendor bills"
-msgstr "Se utilizará esta condición de pago, en lugar de la predeterminada, para los pedidos de compra y las facturas de proveedor."
-
-#. module: education
-#: model:ir.model.fields,help:education.field_education_student_property_payment_term_id
-#: model:ir.model.fields,help:education.field_education_teacher_property_payment_term_id
-msgid "This payment term will be used instead of the default one for sale orders and customer invoices"
-msgstr "Se utilizará esta condición de pago, en lugar de la predeterminada, para los pedidos de venta y facturas de clientes"
-
-#. module: education
-#: model:ir.model.fields,help:education.field_education_student_property_product_pricelist
-#: model:ir.model.fields,help:education.field_education_teacher_property_product_pricelist
-msgid "This pricelist will be used, instead of the default one, for sales to the current partner"
-msgstr "Esta tarifa se utilizará, en lugar de la por defecto, para las ventas de la empresa actual."
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_tz
-#: model:ir.model.fields,field_description:education.field_education_teacher_tz
-msgid "Timezone"
-msgstr "Zona horaria"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_tz_offset
-#: model:ir.model.fields,field_description:education.field_education_teacher_tz_offset
-msgid "Timezone offset"
-msgstr "Zona horaria"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_title
-#: model:ir.model.fields,field_description:education.field_education_teacher_title
-msgid "Title"
-msgstr "Título"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_group__date_to
-msgid "To Date"
-msgstr "Fecha Fin"
-
-#. module: education
-#: model_terms:ir.ui.view,arch_db:education.view_education_group_form
-msgid "Toggle Active"
-msgstr "Iniciar"
+#: model_terms:ir.ui.view,arch_db:education.res_config_settings_view_form
+msgid "These taxes are set in any new product created."
+msgstr ""
 
 #. module: education
 #: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
-msgid "Toggle Approve"
-msgstr "Aprobar"
-
-#. module: education
-#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
-msgid "Get Subjects"
-msgstr "Obtener Asignaturas"
-
-#. module: education
-#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
-msgid "Toggle Done"
-msgstr "Finalizar"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_total_invoiced
-#: model:ir.model.fields,field_description:education.field_education_teacher_total_invoiced
-msgid "Total Invoiced"
-msgstr "Total facturado"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_debit
-#: model:ir.model.fields,field_description:education.field_education_teacher_debit
-msgid "Total Payable"
-msgstr "Total a pagar"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_credit
-#: model:ir.model.fields,field_description:education.field_education_teacher_credit
-msgid "Total Receivable"
-msgstr "Total a cobrar"
-
-#. module: education
-#: model:ir.model.fields,help:education.field_education_student_credit
-#: model:ir.model.fields,help:education.field_education_teacher_credit
-msgid "Total amount this customer owes you."
-msgstr "Monto total que le debe el cliente."
-
-#. module: education
-#: model:ir.model.fields,help:education.field_education_student_debit
-#: model:ir.model.fields,help:education.field_education_teacher_debit
-msgid "Total amount you have to pay to this vendor."
-msgstr "Monto total a pagar a este proveedor."
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_message_unread
-#: model:ir.model.fields,field_description:education.field_education_teacher_message_unread
-msgid "Unread Messages"
-msgstr "Mensajes por leer"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_message_unread_counter
-#: model:ir.model.fields,field_description:education.field_education_teacher_message_unread_counter
-msgid "Unread Messages Counter"
-msgstr "Contador de mensajes sin leer"
-
-#. module: education
-#: model:ir.model.fields,help:education.field_education_student_type
-#: model:ir.model.fields,help:education.field_education_teacher_type
-msgid "Used to select automatically the right address according to the context in sales and purchases documents."
-msgstr "﻿Utilizado para seleccionar automáticamente la dirección correcta según el contexto en documentos de ventas y compras."
+msgid "To draft"
+msgstr "Borrador"
 
 #. module: education
 #: model:res.groups,name:education.education_user
@@ -1369,40 +628,26 @@ msgid "User"
 msgstr "Usuario"
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_user_ids
-#: model:ir.model.fields,field_description:education.field_education_teacher_user_ids
-msgid "Users"
-msgstr "Usuarios"
+#: model:ir.model.fields,field_description:education.field_education_course__website_message_ids
+#: model:ir.model.fields,field_description:education.field_education_enrollment__website_message_ids
+#: model:ir.model.fields,field_description:education.field_education_instrument__website_message_ids
+#: model:ir.model.fields,field_description:education.field_res_company__website_message_ids
+#, fuzzy
+msgid "Website Messages"
+msgstr "Mensajes"
 
 #. module: education
-#: model:ir.model.fields,help:education.field_education_student_currency_id
-#: model:ir.model.fields,help:education.field_education_teacher_currency_id
-msgid "Utility field to express amount currency"
-msgstr "Campo útil para expresar importe en divisa."
+#: model:ir.model.fields,help:education.field_education_course__website_message_ids
+#: model:ir.model.fields,help:education.field_education_enrollment__website_message_ids
+#: model:ir.model.fields,help:education.field_education_instrument__website_message_ids
+#: model:ir.model.fields,help:education.field_res_company__website_message_ids
+msgid "Website communication history"
+msgstr ""
 
 #. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_property_supplier_payment_term_id
-#: model:ir.model.fields,field_description:education.field_education_teacher_property_supplier_payment_term_id
-msgid "Vendor Payment Terms"
-msgstr "Términos de Pago"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_website
-#: model:ir.model.fields,field_description:education.field_education_teacher_website
-msgid "Website"
-msgstr "Sitio web"
-
-#. module: education
-#: model:ir.model.fields,help:education.field_education_student_website
-#: model:ir.model.fields,help:education.field_education_teacher_website
-msgid "Website of Partner or Company"
-msgstr "Sitio web de la empresa o compañía"
-
-#. module: education
-#: model:ir.model.fields,field_description:education.field_education_student_zip
-#: model:ir.model.fields,field_description:education.field_education_teacher_zip
-msgid "Zip"
-msgstr "C.P."
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+msgid "e.g. Brandom Freeman"
+msgstr ""
 
 #. module: education
 #: model:ir.model,name:education.model_education_course
@@ -1410,70 +655,641 @@ msgid "education.course"
 msgstr "education.course"
 
 #. module: education
-#: model:ir.model,name:education.model_education_course_category
-msgid "education.course.category"
-msgstr "education.course.category"
-
-#. module: education
 #: model:ir.model,name:education.model_education_enrollment
 msgid "education.enrollment"
 msgstr "education.enrollment"
 
 #. module: education
-#: model:ir.model,name:education.model_education_group
-msgid "education.group"
-msgstr "education.group"
-
-#. module: education
-#: model:ir.model,name:education.model_education_record
-msgid "education.record"
-msgstr "education.record"
-
-#. module: education
-#: model:ir.model,name:education.model_education_student
-msgid "res.partner"
-msgstr "res.partner"
-
-#. module: education
-#: model:ir.model,name:education.model_education_subject
-msgid "education.subject"
-msgstr "education.subject"
+#: model:ir.model,name:education.model_education_instrument
+#, fuzzy
+msgid "education.instrument"
+msgstr "education.enrollment"
 
 #. module: education
 #: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_search
 msgid "enrollments"
 msgstr "Matrículas"
 
-#. module: education
-#: model_terms:ir.ui.view,arch_db:education.view_education_group_search
-msgid "groups"
-msgstr "Grupos Académicos"
+#~ msgid ""
+#~ "<span class=\"o_stat_text\">\n"
+#~ "              Enrollments\n"
+#~ "            </span>"
+#~ msgstr ""
+#~ "<span class=\"o_stat_text\">\n"
+#~ "              Matrículas\n"
+#~ "            </span>"
 
-#. module: education
-#: model:ir.actions.act_window,name:education.education_group_action
-#: model:ir.ui.menu,name:education.education_group
-#: model_terms:ir.ui.view,arch_db:education.view_record_subject_form
-msgid "Groups"
-msgstr "Grupos"
+#~ msgid ""
+#~ "<span class=\"o_stat_text\">\n"
+#~ "              Groups\n"
+#~ "            </span>"
+#~ msgstr ""
+#~ "<span class=\"o_stat_text\">\n"
+#~ "              Grupos Académicos\n"
+#~ "            </span>"
 
+#, python-format
+#~ msgid "Academic Groups"
+#~ msgstr "Grupos Académicos"
 
+#~ msgid "Academic Information"
+#~ msgstr "Información Académica"
 
-#. module: education
-#: model_terms:ir.ui.view,arch_db:education.view_education_record_search
-msgid "records"
-msgstr "Expedientes Académicos"
+#~ msgid "Click to create a new Subject Record."
+#~ msgstr "Click para crear un nuevo Expediente de Asignatura."
 
-#. module: education
-#: model_terms:ir.ui.view,arch_db:education.view_education_student_search
-msgid "students"
-msgstr "Alumnos"
+#~ msgid "Subject Records"
+#~ msgstr "Expediente de Asignaturas"
 
-#. module: education
-#: model_terms:ir.ui.view,arch_db:education.view_education_teacher_form
-msgid "teacher"
-msgstr "Profesor"
+#~ msgid "Subject Record"
+#~ msgstr "Expediente de asignatura"
 
-#. module: education
-#: model_terms:ir.ui.view,arch_db:education.view_education_teacher_search
-msgid "teachers"
-msgstr "Profesores"
+#~ msgid "Subjects by Group"
+#~ msgstr "Asignaturas por grupo"
+
+#~ msgid "Subjects Records"
+#~ msgstr "Expedientes de Asignaturas"
+
+#, python-format
+#~ msgid "You can not delete a group with registered students"
+#~ msgstr "No puedes borrar un grupo académico con alumnos matriculados"
+
+#~ msgid "Admission Details"
+#~ msgstr "Expedientes Académicos"
+
+#~ msgid "# of Sales Order"
+#~ msgstr "# de Pedido de Venta"
+
+#~ msgid "Academic Records"
+#~ msgstr "Expediente Académico"
+
+#~ msgid "Account Payable"
+#~ msgstr "Cuenta a pagar"
+
+#~ msgid "Account Receivable"
+#~ msgstr "Cuenta por Cobrar"
+
+#~ msgid "Address Type"
+#~ msgstr "Tipo de dirección"
+
+#~ msgid "Assistance"
+#~ msgstr "Asistencia"
+
+#~ msgid "Bank"
+#~ msgstr "Banco"
+
+#~ msgid "Banks"
+#~ msgstr "Bancos"
+
+#~ msgid "Barcode"
+#~ msgstr "Código de barras"
+
+#~ msgid "Bounce"
+#~ msgstr "Rebote"
+
+#~ msgid "Cancel Enroll"
+#~ msgstr "Anular Matrícula"
+
+#~ msgid "Channels"
+#~ msgstr "Canales"
+
+#~ msgid "Check if the contact is a company, otherwise it is a person"
+#~ msgstr ""
+#~ "Marque esta casilla si el contacto es una compañía. En caso contrario, "
+#~ "será una persona."
+
+#~ msgid "Check this box if this contact is a customer."
+#~ msgstr "Click en esta casilla si el contacto es un cliente"
+
+#~ msgid ""
+#~ "Check this box if this contact is a vendor. If it's not checked, purchase "
+#~ "people will not see it when encoding a purchase order."
+#~ msgstr ""
+#~ "Marque esta casilla si el contacto es un proveedor. Si no está marcada, "
+#~ "el equipo de compras no lo verá cuando esté haciendo una orden de compra."
+
+#~ msgid "Check this box if this contact is an Employee."
+#~ msgstr "Marque si el contacto es un empleado"
+
+#~ msgid "City"
+#~ msgstr "Ciudad"
+
+#~ msgid "Click to create a new Group."
+#~ msgstr "Click para crear un nuevo Grupo Académico."
+
+#~ msgid "Click to create a new Record."
+#~ msgstr "Click para crear un nuevo Expediente Académico."
+
+#, python-format
+#~ msgid "The student has already been enrolled in "
+#~ msgstr "El alumno ya ha sido matriculado en "
+
+#, python-format
+#~ msgid "The student has already been enrolled in this pack"
+#~ msgstr "El alumno ya ha sido matriculado en este pack"
+
+#~ msgid "Color Index"
+#~ msgstr "Índice de Colores"
+
+#~ msgid "Commercial Entity"
+#~ msgstr "Entidad comercial"
+
+#~ msgid "Companies that refers to partner"
+#~ msgstr "Compañías que se refieren a la empresa"
+
+#~ msgid "Company Name"
+#~ msgstr "Nombre de la compañía"
+
+#~ msgid "Company Name Entity"
+#~ msgstr "Entidad del nombre de la compañía"
+
+#~ msgid "Company Type"
+#~ msgstr "Tipo de Compañía"
+
+#~ msgid "Contracts"
+#~ msgstr "Contratos"
+
+#~ msgid "Count Payment Token"
+#~ msgstr "Cuenta Token de Pago"
+
+#~ msgid "Counter of the number of bounced emails for this contact"
+#~ msgstr ""
+#~ "Contador del número de correos electrónicos rebotados de este contacto"
+
+#~ msgid "Country"
+#~ msgstr "País"
+
+#~ msgid "Enrollment"
+#~ msgstr "Matrícula"
+
+#~ msgid "Last Group"
+#~ msgstr "Último grupo"
+
+#~ msgid "Last Group Record"
+#~ msgstr "Expediente último grupo"
+
+#~ msgid "Invoicing Method"
+#~ msgstr "Método de Facturación"
+
+#~ msgid "Credit Limit"
+#~ msgstr "Crédito concedido"
+
+#~ msgid "Currency"
+#~ msgstr "Moneda"
+
+#~ msgid "Customer Payment Terms"
+#~ msgstr "Plazo de pago de cliente"
+
+#~ msgid "Date"
+#~ msgstr "Fecha"
+
+#~ msgid "Date of the last message posted on the record."
+#~ msgstr "Fecha del último mensaje publicado en el registro."
+
+#~ msgid "Degree of trust you have in this debtor"
+#~ msgstr "Grado de confianza para este deudor"
+
+#~ msgid "Education record"
+#~ msgstr "Education record"
+
+#~ msgid ""
+#~ "Either customer (no user), either shared user. Indicated the current "
+#~ "partner is a customer without access or with a limited access created for "
+#~ "sharing data."
+#~ msgstr ""
+#~ "Ya sea cliente (no usuario), como usuario compartido. Indica si el socio "
+#~ "actual es un cliente sin acceso o con un acceso limitado creado para "
+#~ "compartir datos."
+
+#~ msgid "Email"
+#~ msgstr "Correo electrónico"
+
+#~ msgid "Email Messages and Notifications"
+#~ msgstr "Enviar mensajes y notificaciones"
+
+#~ msgid "Employee"
+#~ msgstr "Empleado"
+
+#~ msgid "Faculties"
+#~ msgstr "Profesores"
+
+#~ msgid "Faculty"
+#~ msgstr "Profesor"
+
+#~ msgid "Fax"
+#~ msgstr "Fax"
+
+#~ msgid "Fiscal Position"
+#~ msgstr "Posición fiscal"
+
+#~ msgid "Followers (Channels)"
+#~ msgstr "Seguidores (Canales)"
+
+#~ msgid "Format email address \"Name <email@domain>\""
+#~ msgstr "Dirección email formatado \"Nombre <email@domain>\""
+
+#~ msgid "Formatted Email"
+#~ msgstr "Email formateado"
+
+#~ msgid "From Date"
+#~ msgstr "Fecha Inicio"
+
+#~ msgid "Group"
+#~ msgstr "Grupo Académico"
+
+#~ msgid "Has unreconciled entries"
+#~ msgstr "Contiene entradas irreconciliadas"
+
+#~ msgid "IM Status"
+#~ msgstr "Estado del chat"
+
+#~ msgid "If checked new messages require your attention."
+#~ msgstr "Si está marcado, hay nuevos mensajes que requieren su atención"
+
+#~ msgid ""
+#~ "If opt-out is checked, this contact has refused to receive emails for "
+#~ "mass mailing and marketing campaign. Filter 'Available for Mass Mailing' "
+#~ "allows users to filter the partners when performing mass mailing."
+#~ msgstr ""
+#~ "Si 'No acepta mensajes' está marcado, este contacto ha rehusado recibir "
+#~ "correos electrónicos de envíos masivos y campañas de marketing. El filtro "
+#~ "'Disponible para envíos masivos' permite a los usuarios filtrar a las "
+#~ "empresas cuando se realicen envíos masivos."
+
+#~ msgid ""
+#~ "If set, sale team used notably for sales and assignations related to this "
+#~ "partner"
+#~ msgstr ""
+#~ "Si habilitado, representa al equipo de ventas usado para ventas y "
+#~ "asignaciones relacionado con este tercero."
+
+#~ msgid ""
+#~ "If the selected language is loaded in the system, all documents related "
+#~ "to this contact will be printed in this language. If not, it will be "
+#~ "English."
+#~ msgstr ""
+#~ "Si el idioma seleccionado está cargado en el sistema, todos los "
+#~ "documentos relacionados con el contacto se imprimirán en este idioma. Si "
+#~ "no, se imprimirán en inglés."
+
+#~ msgid "Image"
+#~ msgstr "Imágen"
+
+#~ msgid "Invoice"
+#~ msgstr "Factura"
+
+#~ msgid "Invoices"
+#~ msgstr "Facturas"
+
+#~ msgid "Is a Company"
+#~ msgstr "¿Es una empresa?"
+
+#~ msgid "Is a Customer"
+#~ msgstr "Es Cliente"
+
+#~ msgid "Is a Vendor"
+#~ msgstr "Es un Proveedor"
+
+#~ msgid "Job Position"
+#~ msgstr "Puesto de trabajo"
+
+#~ msgid "Journal Items"
+#~ msgstr "Apuntes contables"
+
+#~ msgid "Language"
+#~ msgstr "Idioma"
+
+#~ msgid "Last Message Date"
+#~ msgstr "Fecha del último mensaje"
+
+#~ msgid ""
+#~ "Last time the invoices & payments matching was performed for this "
+#~ "partner. It is set either if there's not at least an unreconciled debit "
+#~ "and an unreconciled credit or if you click the \"Done\" button."
+#~ msgstr ""
+#~ "Última vez que se conciliaros facturas y pagos de este asociado. Se "
+#~ "configura incluso si no hay ningún débito o crédito por conciliar, o si "
+#~ "pulsa el botón \"Hecho\"."
+
+#~ msgid "Latest Invoices & Payments Matching Date"
+#~ msgstr "Fecha de la última conciliación de facturas y pagos"
+
+#~ msgid "Medium-sized image"
+#~ msgstr "Imagen de tamaño mediano"
+
+#~ msgid ""
+#~ "Medium-sized image of this contact. It is automatically resized as a "
+#~ "128x128px image, with aspect ratio preserved. Use this field in form "
+#~ "views or some kanban views."
+#~ msgstr ""
+#~ "Imagen mediana de este contacto. Se redimensiona automáticamente a "
+#~ "128x128 px, con el ratio de aspecto preservado. Se usa este campo en las "
+#~ "vistas los formularios y en algunas vistas de kanban."
+
+#~ msgid "Message for Invoice"
+#~ msgstr "Mensaje para factura"
+
+#~ msgid "Message for Sales Order"
+#~ msgstr "Mensaje para el pedido de venta"
+
+#~ msgid "Subject"
+#~ msgstr "Asignatura"
+
+#~ msgid "Click to create a new Subject."
+#~ msgstr "Click to create a new Asignatura."
+
+#~ msgid "Notes"
+#~ msgstr "Notas"
+
+#~ msgid "Number of unread messages"
+#~ msgstr "Número de mensajes no leidos"
+
+#~ msgid "Opt-Out"
+#~ msgstr "No acepta recibir mensajes"
+
+#~ msgid "Payable Limit"
+#~ msgstr "Límite a pagar"
+
+#~ msgid "Payment Tokens"
+#~ msgstr "Tableros de pago"
+
+#~ msgid ""
+#~ "Policy to receive emails for new messages pushed to your personal Inbox:\n"
+#~ "- Never: no emails are sent\n"
+#~ "- All Messages: for every notification you receive in your Inbox"
+#~ msgstr ""
+#~ "Política para recibir correos electrónicos para los nuevos mensajes "
+#~ "insertados en su bandeja de entrada personal\n"
+#~ "- Nunca: No se enviará ningún correo\n"
+#~ "- Todos los mensajes: Se enviará un correo para cada notificación que "
+#~ "reciba en su bandeja de entrada"
+
+#~ msgid "Re-Enroll"
+#~ msgstr "Rematricular"
+
+#~ msgid "Record"
+#~ msgstr "Registro"
+
+#~ msgid "Related Company"
+#~ msgstr "Empresa relacionada"
+
+#~ msgid "Sale Pricelist"
+#~ msgstr "Tarifa de venta"
+
+#~ msgid "Sales Order"
+#~ msgstr "Pedido de venta"
+
+#~ msgid "Sales Team"
+#~ msgstr "Equipo de ventas"
+
+#~ msgid "Salesperson"
+#~ msgstr "Comercial"
+
+#~ msgid ""
+#~ "Selecting the \"Warning\" option will notify user with the message, "
+#~ "Selecting \"Blocking Message\" will throw an exception with the message "
+#~ "and block the flow. The Message has to be written in the next field."
+#~ msgstr ""
+#~ "Si selecciona la opción \"Aviso\" se notificará a los usuarios con el "
+#~ "mensaje, si selecciona \"Mensaje de bloqueo\" se lanzará una excepción "
+#~ "con el mensaje y se bloqueará el flujo. El mensaje debe escribirse en el "
+#~ "siguiente campo."
+
+#~ msgid "Self"
+#~ msgstr "Si mismo"
+
+#~ msgid "Share Partner"
+#~ msgstr "Compartir empresa"
+
+#~ msgid "Signup Token Type"
+#~ msgstr "Tipo de la palabra de ingreso"
+
+#~ msgid "Signup Token is Valid"
+#~ msgstr "La palabra de ingreso es válida"
+
+#~ msgid "Signup URL"
+#~ msgstr "URL de ingreso"
+
+#~ msgid "Signup expiration"
+#~ msgstr "Vencimiento de registro"
+
+#~ msgid "Signup token"
+#~ msgstr "Token de Registro"
+
+#~ msgid "Small-sized image"
+#~ msgstr "Imagen de tamaño pequeño"
+
+#~ msgid ""
+#~ "Small-sized image of this contact. It is automatically resized as a "
+#~ "64x64px image, with aspect ratio preserved. Use this field anywhere a "
+#~ "small image is required."
+#~ msgstr ""
+#~ "Imagen de tamaño pequeño de este contacto. Se redimensiona "
+#~ "automáticamente a 64x64 px, con el ratio de aspecto preservado. Use este "
+#~ "campo donde se requiera una imagen pequeña."
+
+#~ msgid "State"
+#~ msgstr "Estado"
+
+#~ msgid "Street"
+#~ msgstr "Calle"
+
+#~ msgid "Street2"
+#~ msgstr "Calle2"
+
+#~ msgid "Subjects"
+#~ msgstr "Asignaturas"
+
+#, python-format
+#~ msgid "You must add subjects to complete the enrollment"
+#~ msgstr "Debes añadir asignaturas para completar la matrícula"
+
+#~ msgid "TIN"
+#~ msgstr "NIF"
+
+#~ msgid "Tags"
+#~ msgstr "Etiquetas"
+
+#~ msgid ""
+#~ "Tax Identification Number. Fill it if the company is subjected to taxes. "
+#~ "Used by the some of the legal statements."
+#~ msgstr ""
+#~ "Número de identificación fiscal. Llénelo si la compañía esta sujeta a "
+#~ "impuestos. Usado por algunos documentos legales."
+
+#~ msgid "Teacher in charge"
+#~ msgstr "Tutor"
+
+#~ msgid ""
+#~ "The fiscal position will determine taxes and accounts used for the "
+#~ "partner."
+#~ msgstr ""
+#~ "La posición fiscal determinará los impuestos y cuentas utilizados por el "
+#~ "asociado."
+
+#~ msgid ""
+#~ "The internal user that is in charge of communicating with this contact if "
+#~ "any."
+#~ msgstr ""
+#~ "El usuario interno encargado de comunicarse con este contacto si lo "
+#~ "hubiese."
+
+#~ msgid ""
+#~ "The partner has at least one unreconciled debit and credit since last "
+#~ "time the invoices & payments matching was performed."
+#~ msgstr ""
+#~ "El asociado tiene al menos un débito o crédito no conciliado desde la "
+#~ "última vez que se realizó la conciliación de facturas y pagos."
+
+#~ msgid ""
+#~ "The partner's timezone, used to output proper date and time values inside "
+#~ "printed reports. It is important to set a value for this field. You "
+#~ "should use the same timezone that is otherwise used to pick and render "
+#~ "date and time values: your computer's timezone."
+#~ msgstr ""
+#~ "Zona horaria de la empresa, usada para mostrar la fecha y hora adecuadas "
+#~ "en los informes impresos. Es importante establecer un valor para este "
+#~ "campo. Debería usar la misma zona horaria que se coge en caso contrario "
+#~ "para mostrar los valores de fecha y hora: la zona horaria de su ordenador."
+
+#~ msgid ""
+#~ "This account will be used instead of the default one as the payable "
+#~ "account for the current partner"
+#~ msgstr ""
+#~ "Esta cuenta se utilizará en lugar de la cuenta por defecto como la cuenta "
+#~ "pendiente de pago del asociado actual."
+
+#~ msgid ""
+#~ "This account will be used instead of the default one as the receivable "
+#~ "account for the current partner"
+#~ msgstr ""
+#~ "Esta cuenta se utilizará en lugar de la cuenta por defecto como la cuenta "
+#~ "pendiente de cobro del asociado actual."
+
+#~ msgid ""
+#~ "This field holds the image used as avatar for this contact, limited to "
+#~ "1024x1024px"
+#~ msgstr ""
+#~ "Este campo contiene la imagen utilizada como avatar para este contacto, "
+#~ "limitada a 1024x1024 px"
+
+#~ msgid ""
+#~ "This payment term will be used instead of the default one for purchase "
+#~ "orders and vendor bills"
+#~ msgstr ""
+#~ "Se utilizará esta condición de pago, en lugar de la predeterminada, para "
+#~ "los pedidos de compra y las facturas de proveedor."
+
+#~ msgid ""
+#~ "This payment term will be used instead of the default one for sale orders "
+#~ "and customer invoices"
+#~ msgstr ""
+#~ "Se utilizará esta condición de pago, en lugar de la predeterminada, para "
+#~ "los pedidos de venta y facturas de clientes"
+
+#~ msgid ""
+#~ "This pricelist will be used, instead of the default one, for sales to the "
+#~ "current partner"
+#~ msgstr ""
+#~ "Esta tarifa se utilizará, en lugar de la por defecto, para las ventas de "
+#~ "la empresa actual."
+
+#~ msgid "Timezone"
+#~ msgstr "Zona horaria"
+
+#~ msgid "Timezone offset"
+#~ msgstr "Zona horaria"
+
+#~ msgid "Title"
+#~ msgstr "Título"
+
+#~ msgid "To Date"
+#~ msgstr "Fecha Fin"
+
+#~ msgid "Toggle Active"
+#~ msgstr "Iniciar"
+
+#~ msgid "Toggle Approve"
+#~ msgstr "Aprobar"
+
+#~ msgid "Get Subjects"
+#~ msgstr "Obtener Asignaturas"
+
+#~ msgid "Toggle Done"
+#~ msgstr "Finalizar"
+
+#~ msgid "Total Invoiced"
+#~ msgstr "Total facturado"
+
+#~ msgid "Total Payable"
+#~ msgstr "Total a pagar"
+
+#~ msgid "Total Receivable"
+#~ msgstr "Total a cobrar"
+
+#~ msgid "Total amount this customer owes you."
+#~ msgstr "Monto total que le debe el cliente."
+
+#~ msgid "Total amount you have to pay to this vendor."
+#~ msgstr "Monto total a pagar a este proveedor."
+
+#~ msgid "Unread Messages"
+#~ msgstr "Mensajes por leer"
+
+#~ msgid "Unread Messages Counter"
+#~ msgstr "Contador de mensajes sin leer"
+
+#~ msgid ""
+#~ "Used to select automatically the right address according to the context "
+#~ "in sales and purchases documents."
+#~ msgstr ""
+#~ "﻿Utilizado para seleccionar automáticamente la dirección correcta según el "
+#~ "contexto en documentos de ventas y compras."
+
+#~ msgid "Users"
+#~ msgstr "Usuarios"
+
+#~ msgid "Utility field to express amount currency"
+#~ msgstr "Campo útil para expresar importe en divisa."
+
+#~ msgid "Vendor Payment Terms"
+#~ msgstr "Términos de Pago"
+
+#~ msgid "Website"
+#~ msgstr "Sitio web"
+
+#~ msgid "Website of Partner or Company"
+#~ msgstr "Sitio web de la empresa o compañía"
+
+#~ msgid "Zip"
+#~ msgstr "C.P."
+
+#~ msgid "education.group"
+#~ msgstr "education.group"
+
+#~ msgid "education.record"
+#~ msgstr "education.record"
+
+#~ msgid "res.partner"
+#~ msgstr "res.partner"
+
+#~ msgid "education.subject"
+#~ msgstr "education.subject"
+
+#~ msgid "groups"
+#~ msgstr "Grupos Académicos"
+
+#~ msgid "Groups"
+#~ msgstr "Grupos"
+
+#~ msgid "records"
+#~ msgstr "Expedientes Académicos"
+
+#~ msgid "students"
+#~ msgstr "Alumnos"
+
+#~ msgid "teacher"
+#~ msgstr "Profesor"
+
+#~ msgid "teachers"
+#~ msgstr "Profesores"

@@ -10,7 +10,7 @@ from odoo.tests.common import TransactionCase
 
 class TestEducationTimetableLine(TransactionCase):
     def setUp(self):
-        super(TestEducationTimetableLine, self).setUp()
+        super().setUp()
 
         # Timetable Line data
         education_timetable_obj = self.env["education.timetable.line"]
