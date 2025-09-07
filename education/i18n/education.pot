@@ -1,0 +1,645 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* education
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.res_config_settings_view_form
+msgid ""
+"<span class=\"o_form_label\">Prodotto</span>\n"
+"                                    <span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-specific.\" aria-label=\"Values set here are company-specific.\" groups=\"base.group_multi_company\" role=\"img\"/>"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_form
+msgid ""
+"<span class=\"o_stat_value\">\n"
+"                        </span>\n"
+"                        <span class=\"o_stat_text\">\n"
+"                            Iscrizioni\n"
+"                        </span>"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__message_needaction
+#: model:ir.model.fields,field_description:education.field_education_enrollment__message_needaction
+#: model:ir.model.fields,field_description:education.field_education_instrument__message_needaction
+#: model:ir.model.fields,field_description:education.field_res_company__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__active
+msgid "Active"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_search
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+msgid "Archived"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__message_attachment_count
+#: model:ir.model.fields,field_description:education.field_education_enrollment__message_attachment_count
+#: model:ir.model.fields,field_description:education.field_education_instrument__message_attachment_count
+#: model:ir.model.fields,field_description:education.field_res_company__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
+msgid "Cancel"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields.selection,name:education.selection__education_enrollment__state__cancel
+msgid "Cancelled"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__category_id
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_search
+msgid "Category"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course_category__child_id
+msgid "Child Categories"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.actions.act_window,help:education.education_course_category_action
+msgid "Click to create a new Course Category."
+msgstr ""
+
+#. module: education
+#: model_terms:ir.actions.act_window,help:education.education_course_action
+msgid "Click to create a new Course."
+msgstr ""
+
+#. module: education
+#: model_terms:ir.actions.act_window,help:education.education_enrollment_action
+msgid "Click to create a new Enrollment."
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__code
+#: model:ir.model.fields,field_description:education.field_education_enrollment__code
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_search
+msgid "Code"
+msgstr ""
+
+#. module: education
+#: model:ir.model,name:education.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__company_id
+#: model:ir.model.fields,field_description:education.field_education_enrollment__company_id
+msgid "Company"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course_category__complete_name
+msgid "Complete Name"
+msgstr ""
+
+#. module: education
+#: model:ir.model,name:education.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: education
+#: model:ir.ui.menu,name:education.education_config_root
+msgid "Configuration"
+msgstr ""
+
+#. module: education
+#: model:ir.model,name:education.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+msgid "Contact / Address"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+msgid "Contact image"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_res_partner__courses
+#: model:ir.model.fields,field_description:education.field_res_users__courses
+#: model:ir.ui.menu,name:education.education_course
+#: model:ir.ui.menu,name:education.education_course_root
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_form
+msgid "Corsi"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_enrollment__course_id
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_search
+msgid "Course"
+msgstr ""
+
+#. module: education
+#: model:ir.actions.act_window,name:education.education_course_category_action
+#: model:ir.model,name:education.model_education_course_category
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_category_form
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_category_search
+msgid "Course Category"
+msgstr ""
+
+#. module: education
+#: model:ir.actions.act_window,name:education.education_course_action
+#: model:ir.model.fields,field_description:education.field_education_instrument__course_ids
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_search
+msgid "Courses"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__create_uid
+#: model:ir.model.fields,field_description:education.field_education_course_category__create_uid
+#: model:ir.model.fields,field_description:education.field_education_enrollment__create_uid
+#: model:ir.model.fields,field_description:education.field_education_instrument__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__create_date
+#: model:ir.model.fields,field_description:education.field_education_course_category__create_date
+#: model:ir.model.fields,field_description:education.field_education_enrollment__create_date
+#: model:ir.model.fields,field_description:education.field_education_instrument__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_res_config_settings__education_product_id
+msgid "Default Education Product"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_res_company__education_product_id
+msgid "Default product for education"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__display_name
+#: model:ir.model.fields,field_description:education.field_education_course_category__display_name
+#: model:ir.model.fields,field_description:education.field_education_enrollment__display_name
+#: model:ir.model.fields,field_description:education.field_education_instrument__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields.selection,name:education.selection__education_enrollment__state__done
+msgid "Done"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields.selection,name:education.selection__education_enrollment__state__draft
+msgid "Draft"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__duration
+msgid "Duration"
+msgstr ""
+
+#. module: education
+#: model:ir.ui.menu,name:education.education_base_menu
+#: model_terms:ir.ui.view,arch_db:education.res_config_settings_view_form
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_form
+msgid "Education"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_form
+msgid "Education Course"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+msgid "Education enrollment"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_form
+msgid "Educational"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
+msgid "Enroll"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_enrollment__enrollment_date
+msgid "Enrollment Date"
+msgstr ""
+
+#. module: education
+#. odoo-python
+#: code:addons/education/models/partner.py:0
+#: model:ir.actions.act_window,name:education.education_enrollment_action
+#, python-format
+msgid "Enrollments"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__message_follower_ids
+#: model:ir.model.fields,field_description:education.field_education_enrollment__message_follower_ids
+#: model:ir.model.fields,field_description:education.field_education_instrument__message_follower_ids
+#: model:ir.model.fields,field_description:education.field_res_company__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__message_partner_ids
+#: model:ir.model.fields,field_description:education.field_education_enrollment__message_partner_ids
+#: model:ir.model.fields,field_description:education.field_education_instrument__message_partner_ids
+#: model:ir.model.fields,field_description:education.field_res_company__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+msgid "Genitori/Parenti"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_category_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_search
+msgid "Group By"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__has_message
+#: model:ir.model.fields,field_description:education.field_education_enrollment__has_message
+#: model:ir.model.fields,field_description:education.field_education_instrument__has_message
+#: model:ir.model.fields,field_description:education.field_res_company__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__id
+#: model:ir.model.fields,field_description:education.field_education_course_category__id
+#: model:ir.model.fields,field_description:education.field_education_enrollment__id
+#: model:ir.model.fields,field_description:education.field_education_instrument__id
+msgid "ID"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,help:education.field_education_course__message_needaction
+#: model:ir.model.fields,help:education.field_education_enrollment__message_needaction
+#: model:ir.model.fields,help:education.field_education_instrument__message_needaction
+#: model:ir.model.fields,help:education.field_res_company__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,help:education.field_education_course__message_has_error
+#: model:ir.model.fields,help:education.field_education_course__message_has_sms_error
+#: model:ir.model.fields,help:education.field_education_enrollment__message_has_error
+#: model:ir.model.fields,help:education.field_education_enrollment__message_has_sms_error
+#: model:ir.model.fields,help:education.field_education_instrument__message_has_error
+#: model:ir.model.fields,help:education.field_education_instrument__message_has_sms_error
+#: model:ir.model.fields,help:education.field_res_company__message_has_error
+#: model:ir.model.fields,help:education.field_res_company__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__teacher_id
+#: model:ir.model.fields,field_description:education.field_education_enrollment__teacher_id
+msgid "Insegnante"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+msgid "Internal Notes"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+msgid "Internal notes..."
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__message_is_follower
+#: model:ir.model.fields,field_description:education.field_education_enrollment__message_is_follower
+#: model:ir.model.fields,field_description:education.field_education_instrument__message_is_follower
+#: model:ir.model.fields,field_description:education.field_res_company__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__enrollment_ids
+#: model:ir.model.fields,field_description:education.field_res_partner__enrollment_ids
+#: model:ir.model.fields,field_description:education.field_res_users__enrollment_ids
+#: model:ir.ui.menu,name:education.education_enrollment
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_form
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_form
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+msgid "Iscrizioni"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course____last_update
+#: model:ir.model.fields,field_description:education.field_education_course_category____last_update
+#: model:ir.model.fields,field_description:education.field_education_enrollment____last_update
+#: model:ir.model.fields,field_description:education.field_education_instrument____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__write_uid
+#: model:ir.model.fields,field_description:education.field_education_course_category__write_uid
+#: model:ir.model.fields,field_description:education.field_education_enrollment__write_uid
+#: model:ir.model.fields,field_description:education.field_education_instrument__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__write_date
+#: model:ir.model.fields,field_description:education.field_education_course_category__write_date
+#: model:ir.model.fields,field_description:education.field_education_enrollment__write_date
+#: model:ir.model.fields,field_description:education.field_education_instrument__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__message_main_attachment_id
+#: model:ir.model.fields,field_description:education.field_education_enrollment__message_main_attachment_id
+#: model:ir.model.fields,field_description:education.field_education_instrument__message_main_attachment_id
+#: model:ir.model.fields,field_description:education.field_res_company__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: education
+#: model:res.groups,name:education.education_manager
+msgid "Manager"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+msgid "Meetings"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__message_has_error
+#: model:ir.model.fields,field_description:education.field_education_enrollment__message_has_error
+#: model:ir.model.fields,field_description:education.field_education_instrument__message_has_error
+#: model:ir.model.fields,field_description:education.field_res_company__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__message_ids
+#: model:ir.model.fields,field_description:education.field_education_enrollment__message_ids
+#: model:ir.model.fields,field_description:education.field_education_instrument__message_ids
+#: model:ir.model.fields,field_description:education.field_res_company__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+msgid "Mobile:"
+msgstr ""
+
+#. module: education
+#: model:ir.module.category,name:education.education_category
+msgid "Music Education"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__name
+#: model:ir.model.fields,field_description:education.field_education_course_category__name
+#: model:ir.model.fields,field_description:education.field_education_instrument__name
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_category_search
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_search
+msgid "Name"
+msgstr ""
+
+#. module: education
+#. odoo-python
+#: code:addons/education/models/enrollment.py:0
+#, python-format
+msgid "New"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+msgid "Nome"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__message_needaction_counter
+#: model:ir.model.fields,field_description:education.field_education_enrollment__message_needaction_counter
+#: model:ir.model.fields,field_description:education.field_education_instrument__message_needaction_counter
+#: model:ir.model.fields,field_description:education.field_res_company__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__message_has_error_counter
+#: model:ir.model.fields,field_description:education.field_education_enrollment__message_has_error_counter
+#: model:ir.model.fields,field_description:education.field_education_instrument__message_has_error_counter
+#: model:ir.model.fields,field_description:education.field_res_company__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,help:education.field_education_course__message_needaction_counter
+#: model:ir.model.fields,help:education.field_education_enrollment__message_needaction_counter
+#: model:ir.model.fields,help:education.field_education_instrument__message_needaction_counter
+#: model:ir.model.fields,help:education.field_res_company__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,help:education.field_education_course__message_has_error_counter
+#: model:ir.model.fields,help:education.field_education_enrollment__message_has_error_counter
+#: model:ir.model.fields,help:education.field_education_instrument__message_has_error_counter
+#: model:ir.model.fields,help:education.field_res_company__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.view_education_course_category_search
+msgid "Parent"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course_category__parent_id
+msgid "Parent Category"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course_category__parent_path
+msgid "Parent Path"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+msgid "Partners"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+msgid "Phone:"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.res_config_settings_view_form
+msgid "Prodotti"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.res_config_settings_view_form
+msgid "Prodotto"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.res_config_settings_view_form
+msgid "Prodotto ecucation"
+msgstr ""
+
+#. module: education
+#: model:ir.ui.menu,name:education.education_record_root
+msgid "Records"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__message_has_sms_error
+#: model:ir.model.fields,field_description:education.field_education_enrollment__message_has_sms_error
+#: model:ir.model.fields,field_description:education.field_education_instrument__message_has_sms_error
+#: model:ir.model.fields,field_description:education.field_res_company__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: education
+#: model:ir.actions.act_window,name:education.action_education_config
+#: model:ir.ui.menu,name:education.menu_education_config
+msgid "Settings"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_enrollment__state
+msgid "Status"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__instrument_id
+msgid "Strumento"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_enrollment__student_id
+#: model:ir.model.fields,field_description:education.field_res_partner__student
+#: model:ir.model.fields,field_description:education.field_res_users__student
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_search
+#: model_terms:ir.ui.view,arch_db:education.view_res_partner_education_filter
+msgid "Student"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__students
+msgid "Studenti"
+msgstr ""
+
+#. module: education
+#: model:ir.actions.act_window,name:education.education_student_action
+#: model:ir.ui.menu,name:education.education_student_menu
+#: model:ir.ui.menu,name:education.education_student_root
+msgid "Students"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_res_partner__teacher
+#: model:ir.model.fields,field_description:education.field_res_users__teacher
+#: model:res.groups,name:education.education_teacher
+#: model_terms:ir.ui.view,arch_db:education.view_res_partner_education_filter
+msgid "Teacher"
+msgstr ""
+
+#. module: education
+#: model:ir.actions.act_window,name:education.education_teacher_action
+#: model:ir.ui.menu,name:education.education_teacher_menu
+#: model:ir.ui.menu,name:education.education_teacher_root
+msgid "Teachers"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.res_config_settings_view_form
+msgid "These taxes are set in any new product created."
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_form
+msgid "To draft"
+msgstr ""
+
+#. module: education
+#: model:res.groups,name:education.education_user
+msgid "User"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,field_description:education.field_education_course__website_message_ids
+#: model:ir.model.fields,field_description:education.field_education_enrollment__website_message_ids
+#: model:ir.model.fields,field_description:education.field_education_instrument__website_message_ids
+#: model:ir.model.fields,field_description:education.field_res_company__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: education
+#: model:ir.model.fields,help:education.field_education_course__website_message_ids
+#: model:ir.model.fields,help:education.field_education_enrollment__website_message_ids
+#: model:ir.model.fields,help:education.field_education_instrument__website_message_ids
+#: model:ir.model.fields,help:education.field_res_company__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.view_partner_education_simply_form
+msgid "e.g. Brandom Freeman"
+msgstr ""
+
+#. module: education
+#: model:ir.model,name:education.model_education_course
+msgid "education.course"
+msgstr ""
+
+#. module: education
+#: model:ir.model,name:education.model_education_enrollment
+msgid "education.enrollment"
+msgstr ""
+
+#. module: education
+#: model:ir.model,name:education.model_education_instrument
+msgid "education.instrument"
+msgstr ""
+
+#. module: education
+#: model_terms:ir.ui.view,arch_db:education.view_education_enrollment_search
+msgid "enrollments"
+msgstr ""
