@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="fcm_token_form_view" model="ir.ui.view">
+        <field name="name">Fcm token form</field>
+        <field name="model">fcm.token</field>
+        <field name="arch" type="xml">
+            <form string="fcm_token">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="user_id" />
+                            <field name="token" />
+                            <field name="create_date" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="fcm_token_tree_view" model="ir.ui.view">
+        <field name="name">Multi fcm token tree</field>
+        <field name="model">fcm.token</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="user_id" />
+                <field name="token" />
+                <field name="create_date" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="fcm_token_action" model="ir.actions.act_window">
+        <field name="name">FCM Tokens</field>
+        <field name="res_model">fcm.token</field>
+        <field name="view_mode">tree,form</field>
+        <field
+            name="help"
+        >Click to add an fcm_token attached to an specific record.</field>
+    </record>
+
+    <menuitem id="fcm_token_menu" action="fcm_token_action" parent="base.menu_custom" />
+
+</odoo>

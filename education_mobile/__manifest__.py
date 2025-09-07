@@ -1,0 +1,20 @@
+{
+    "name": "Education Mobile",
+    "version": "16.0.1.0.0",
+    "license": "AGPL-3",
+    "category": "Education",
+    "sequence": 1,
+    "complexity": "easy",
+    "website": "https://github.com/TheClaud99/music-education",
+    "author": "Claudio Mano",
+    "depends": ["education_timetable"],
+    "external_dependencies": {"python": ["firebase-admin"]},
+    "data": [
+        "security/ir.model.access.csv",
+        "data/cron.xml",
+        "views/token_view.xml",
+    ],
+    "demo": [],
+    "installable": True,
+    "assets": {},
+}
