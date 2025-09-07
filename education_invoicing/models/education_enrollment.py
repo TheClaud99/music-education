@@ -1,14 +1,10 @@
-# Copyright 2017 Pesol (<http://pesol.es>)
-#                Angel Moya <angel.moya@pesol.es>
-#                Luis Adan Jimenez Hernandez <luis.jimenez@pesol.es>
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
-
-import odoo.addons.decimal_precision as dp
 from dateutil.relativedelta import relativedelta
-from lxml import etree
+
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 from odoo.osv import expression
+
+import odoo.addons.decimal_precision as dp
 
 
 class EducationEnrollment(models.Model):
@@ -240,21 +236,21 @@ class EducationEnrollment(models.Model):
             )
 
     def action_done(self):
-        super(EducationEnrollment, self).action_done()
+        super().action_done()
         self.student_id.write({"customer": True})
         self.compute_invoicing_method()
         self.invoices_generate()
 
     def action_cancel(self):
-        super(EducationEnrollment, self).action_cancel()
+        super().action_cancel()
 
     def unlink(self):
         for record in self:
             if not record.invoice_ids.filtered(lambda i: i.state in ["paid", "open"]):
-                return super(EducationEnrollment, self).unlink()
+                return super().unlink()
             else:
                 raise ValidationError(
-                    _("You can not delete an enrollment with open " "or paid invoices")
+                    _("You can not delete an enrollment with open or paid invoices")
                 )
 
 
@@ -326,4 +322,4 @@ class EducationEnrollmentInvoicingMethodLine(models.Model):
             else:
                 for invoice in record.invoice_ids:
                     invoice.unlink()
-        return super(EducationEnrollmentInvoicingMethodLine, self).unlink()
+        return super().unlink()

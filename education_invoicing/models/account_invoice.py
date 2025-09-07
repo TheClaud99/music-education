@@ -1,11 +1,6 @@
-# Copyright 2017 Pesol (<http://pesol.es>)
-#                Angel Moya <angel.moya@pesol.es>
-#                Luis Adan Jimenez Hernandez <luis.jimenez@pesol.es>
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
-
 from dateutil.relativedelta import relativedelta
 
-from odoo import _, api, fields, models
+from odoo import fields, models
 
 
 class AccountInvoice(models.Model):
@@ -21,7 +16,7 @@ class AccountInvoice(models.Model):
     )
 
     def action_invoice_paid(self):
-        res = super(AccountInvoice, self).action_invoice_paid()
+        res = super().action_invoice_paid()
         for record in self:
             if record.state == "paid":
                 for lines in record.enrollment_id.invoicing_line_ids:
@@ -41,7 +36,7 @@ class AccountInvoice(models.Model):
         return res
 
     def action_invoice_open(self):
-        super(AccountInvoice, self).action_invoice_open()
+        super().action_invoice_open()
         invoicing_method_line_obj = self.env["education.enrollment.invoicing.line"]
         line = self.enrollment_invoicing_line_id
         amount = self.amount_total

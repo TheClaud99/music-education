@@ -1,7 +1,3 @@
-# Copyright 2017 Pesol (<http://pesol.es>)
-#                Angel Moya <angel.moya@pesol.es>
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
-
 from odoo import api, fields, models
 
 
@@ -22,11 +18,11 @@ class EducationEnrollment(models.Model):
 
     def action_done(self):
         if self.pack:
-            super(EducationEnrollment, self).action_done()
+            super().action_done()
             self.create_pack_lines()
             self.state = "in_process"
         else:
-            super(EducationEnrollment, self).action_done()
+            super().action_done()
 
     def create_pack_lines(self):
         self.ensure_one()
@@ -45,7 +41,7 @@ class EducationEnrollment(models.Model):
 
     def set_done(self):
         if not self.pack:
-            super(EducationEnrollment, self).set_done()
+            super().set_done()
 
     @api.onchange("course_id")
     def _onchange_course(self):
