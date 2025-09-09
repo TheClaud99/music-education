@@ -11,6 +11,7 @@ LOCKED_FIELD_STATES = {state: [("readonly", True)] for state in ["done"]}
 
 class EducationTimetableLine(models.Model):
     _name = "education.timetable.line"
+    _description = "Linea orario di corsi"
     _inherit = ["mail.thread"]
 
     name = fields.Char(required=False, default=lambda self: _("New"))

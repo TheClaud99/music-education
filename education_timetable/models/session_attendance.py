@@ -3,6 +3,7 @@ from odoo import _, api, fields, models
 
 class EducationSessionAttendance(models.Model):
     _name = "education.session.attendance"
+    _description = "Presenza alla lezione"
     _inherit = ["mail.thread"]
 
     name = fields.Char(

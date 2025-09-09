@@ -42,6 +42,7 @@ class EducationCourseCategory(models.Model):
 
 class EducationInstrument(models.Model):
     _name = "education.instrument"
+    _description = "Strumento musicale"
     _inherit = ["mail.thread"]
 
     name = fields.Char(required=True)
@@ -55,6 +56,7 @@ class EducationInstrument(models.Model):
 
 class EducationCourse(models.Model):
     _name = "education.course"
+    _description = "Corso di musica"
     _inherit = ["mail.thread"]
 
     name = fields.Char(required=True, tracking=True)

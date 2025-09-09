@@ -3,6 +3,7 @@ from odoo import api, fields, models
 
 class EducationSessionPresence(models.TransientModel):
     _name = "education.session.presence"
+    _description = "Wizard per la gestione delle presenze alle lezioni"
 
     session_id = fields.Many2one(comodel_name="education.session", string="Session")
 

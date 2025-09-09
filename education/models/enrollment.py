@@ -3,6 +3,7 @@ from odoo import _, api, fields, models
 
 class EducationEnrollment(models.Model):
     _name = "education.enrollment"
+    _description = "Iscrizione a un corso"
     _inherit = ["mail.thread"]
     _rec_name = "code"
     _order = "enrollment_date desc"
