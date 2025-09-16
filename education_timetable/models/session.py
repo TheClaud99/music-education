@@ -84,7 +84,7 @@ class EducationSession(models.Model):
         """Overridden just for dependencies; see `name_get()` for implementation."""
         return super()._compute_display_name()
 
-    @api.constrains("combination_id", "meeting_id")
+    @api.constrains("meeting_id")
     def _check_scheduling(self):
         """Scheduled bookings must have no conflicts."""
         # Nothing to do if no bookings are scheduled
@@ -185,7 +185,6 @@ class EducationSession(models.Model):
                 calendar_slot_duration=FloatTimeParser.value_to_html(
                     self.duration, False
                 ),
-                default_resource_booking_ids=[(6, 0, self.ids)],
                 default_name=self.name,
             ),
             "name": _("Schedule booking"),

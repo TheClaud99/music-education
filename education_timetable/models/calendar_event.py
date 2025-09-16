@@ -48,7 +48,7 @@ class CalendarEvent(models.Model):
 
             event.payment_state = "not_paid"
 
-    @api.constrains("resource_booking_ids", "start", "stop")
+    @api.constrains("start", "stop")
     def _check_bookings_scheduling(self):
         """Scheduled bookings must have no conflicts."""
         sessions = self.sudo().session_ids
