@@ -10,7 +10,6 @@ class EducationSession(models.Model):
     _name = "education.session"
     _inherit = ["mail.thread", "mail.activity.mixin", "portal.mixin"]
     _description = "Resource Booking"
-    _order = "start DESC"
     _sql_constraints = [
         (
             "unique_meeting_id",
