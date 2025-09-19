@@ -101,6 +101,11 @@ class EducationTimetableLine(models.Model):
         default=lambda self: self.env.company,
     )
 
+    @api.onchange("course_id")
+    def _onchange_course_id(self):
+        if self.course_id:
+            self.teacher_id = self.course_id.teacher_id
+
     def get_days(self, start, end):
         step = timedelta(days=1)
         for i in range((end - start).days + 1):
