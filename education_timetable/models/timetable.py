@@ -115,16 +115,16 @@ class EducationTimetableLine(models.Model):
         start = day.strftime("%Y-%m-%d") + " " + self.get_hours(self.start_time)
         stop = day.strftime("%Y-%m-%d") + " " + self.get_hours(self.end_time)
         duration = self.end_time - self.start_time
-        tz_name = self._context.get("tz") or self.env.user.tz
+        tz_name = self.env.context.get("tz") or self.env.user.tz
         tz = pytz.timezone(tz_name)
         start = (
-            tz.normalize(tz.localize(fields.Datetime.from_string(start)))
+            tz.normalize(tz.localize(fields.Datetime.to_datetime(start)))
             .astimezone(pytz.utc)
             .replace(tzinfo=None)
         )
 
         stop = (
-            tz.normalize(tz.localize(fields.Datetime.from_string(stop)))
+            tz.normalize(tz.localize(fields.Datetime.to_datetime(stop)))
             .astimezone(pytz.utc)
             .replace(tzinfo=None)
         )
@@ -164,12 +164,23 @@ class EducationTimetableLine(models.Model):
         self.state = "done"
         session_obj = self.env["education.session"]
         meeting_obj = self.env["calendar.event"].with_context(no_mail_to_attendees=True)
-        start = fields.Date.from_string(self.date_from)
-        end = fields.Date.from_string(self.date_to)
+        start = fields.Date.to_date(self.date_from)
+        end = fields.Date.to_date(self.date_to)
 
         if end < start:
             raise UserError(
                 _("La data di fine non può essere minore della data di inizio")
+            )
+
+        if not 0.00 < self.start_time < 23.99:
+            raise UserError(_("L'orario di inizio non è valido"))
+
+        if not 0.00 < self.end_time < 23.99:
+            raise UserError(_("L'orario di fine non è valido"))
+
+        if self.end_time <= self.start_time:
+            raise UserError(
+                _("L'orario di fine deve essere maggiore dell'orario di inizio")
             )
 
         if not self.students:
