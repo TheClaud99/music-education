@@ -2,6 +2,11 @@ from odoo import _, api, fields, models
 
 
 class EducationSessionAttendance(models.Model):
+    """
+    Rappresenta la presenza di uno studente a una lezione.
+    È usata per tracciare le presenze e lo stato dei pagamenti.
+    """
+
     _name = "education.session.attendance"
     _description = "Presenza alla lezione"
     _inherit = ["mail.thread"]

@@ -7,6 +7,13 @@ from odoo import _, api, fields, models
 
 
 class EducationSession(models.Model):
+    """
+    Rappresenta una lezione prenotata.
+    È collegata a un evento del calendario, che ne determina data e ora.
+    Le attendances collegate a questa sessione rappresentano gli studenti
+    che parteciperanno alla lezione, e lo stato dei loro pagamenti.
+    """
+
     _name = "education.session"
     _inherit = ["mail.thread", "mail.activity.mixin", "portal.mixin"]
     _description = "Resource Booking"

@@ -19,22 +19,22 @@ MODELS = (
     (
         "education_timetable",
         "education.session.attendance",
-        {"manager": FULL_ACCESS, "user": READONLY},
+        {"manager": FULL_ACCESS, "user": READONLY, "portal": READONLY},
     ),
     (
         "education_timetable",
         "education.session.presence.line",
-        {"manager": FULL_ACCESS, "user": READONLY},
+        {"manager": FULL_ACCESS, "user": READONLY, "portal": READONLY},
     ),
     (
         "education_timetable",
         "education.session.presence",
-        {"manager": FULL_ACCESS, "user": READONLY},
+        {"manager": FULL_ACCESS, "user": READONLY, "portal": READONLY},
     ),
     (
         "education_timetable",
         "education.session",
-        {"manager": FULL_ACCESS, "user": READONLY},
+        {"manager": FULL_ACCESS, "user": READONLY, "portal": READONLY},
     ),
     (
         "education_timetable",
@@ -47,7 +47,7 @@ MODELS = (
         {
             "manager": FULL_ACCESS,
             "user": READONLY,
-            "all_employee": (READONLY, {"override": True}),
+            "all_employee": (1, 0, 0, 0, {"override": True}),
         },
     ),
 )
@@ -60,6 +60,7 @@ ROLES = {
     "manager": ("education", "education_manager"),
     "user": ("education", "education_user"),
     "all_employee": ("base", "group_user"),
+    "portal": ("base", "group_portal"),
 }
 
 
