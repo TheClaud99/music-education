@@ -1,8 +1,35 @@
-[![Build Status](https://travis-ci.org/openeducat/openeducat_erp.svg?branch=11.0)](https://travis-ci.org/openeducat/openeducat_erp)
-[![Coverage Status](https://coveralls.io/repos/openeducat/openeducat_erp/badge.svg?branch=11.0&service=github)](https://coveralls.io/github/openeducat/openeducat_erp?branch=11.0)
 
-Music School management for Odoo 16
-=====================
 
-Links
-=====
+# music-education
+<!-- /!\ Non OCA Context : Set here the badge of your runbot / runboat instance. -->
+[![Pre-commit Status](https://github.com/TheClaud99/music-education/actions/workflows/pre-commit.yml/badge.svg?branch=19.0)](https://github.com/TheClaud99/music-education/actions/workflows/pre-commit.yml?query=branch%3A19.0)
+[![Build Status](https://github.com/TheClaud99/music-education/actions/workflows/test.yml/badge.svg?branch=19.0)](https://github.com/TheClaud99/music-education/actions/workflows/test.yml?query=branch%3A19.0)
+[![codecov](https://codecov.io/gh/TheClaud99/music-education/branch/19.0/graph/badge.svg)](https://codecov.io/gh/TheClaud99/music-education)
+<!-- /!\ Non OCA Context : Set here the badge of your translation instance. -->
+
+<!-- /!\ do not modify above this line -->
+
+Music Education
+
+<!-- /!\ do not modify below this line -->
+
+<!-- prettier-ignore-start -->
+
+[//]: # (addons)
+
+This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+
+[//]: # (end addons)
+
+<!-- prettier-ignore-end -->
+
+## Licenses
+
+This repository is licensed under [AGPL-3.0](LICENSE).
+
+However, each module can have a totally different license, as long as they adhere to TheClaud99
+policy. Consult each module's `__manifest__.py` file, which contains a `license` key
+that explains its license.
+
+----
+<!-- /!\ Non OCA Context : Set here the full description of your organization. -->

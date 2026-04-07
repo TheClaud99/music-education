@@ -1,24 +1,27 @@
 # Do NOT update manually; changes here will be overwritten by Copier
-_commit: v1.14.2
+_commit: v1.39
 _src_path: gh:oca/oca-addons-repo-template
+additional_ruff_rules: []
 ci: GitHub
-dependency_installation_mode: PIP
+convert_readme_fragments_to_markdown: true
+enable_checklog_odoo: true
 generate_requirements_txt: true
-github_check_license: true
+github_check_license: false
 github_ci_extra_env: {}
 github_enable_codecov: true
 github_enable_makepot: true
-github_enable_stale_action: true
-github_enforce_dev_status_compatibility: true
+github_enable_stale_action: false
+github_enforce_dev_status_compatibility: false
 include_wkhtmltopdf: false
-odoo_version: 16.0
-org_name: Odoo Community Association (OCA)
-org_slug: OCA
+odoo_test_flavor: Odoo
+odoo_version: 19.0
+org_name: TheClaud99
+org_slug: TheClaud99
 rebel_module_groups: []
-repo_description: 'TODO: add repo description.'
-repo_name: connector-prestashop
-repo_slug: connector-prestashop
-repo_website: https://github.com/OCA/connector-prestashop
-travis_apt_packages: []
-travis_apt_sources: []
+repo_description: Music Education
+repo_name: music-education
+repo_slug: music-education
+repo_website: https://github.com/TheClaud99/music-education
+use_pyproject_toml: true
+use_ruff: true
 
